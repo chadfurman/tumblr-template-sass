@@ -1,0 +1,803 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+body
+{
+  background: url('{image:Background}') fixed center;
+  background-color: {color:Background};
+  font-family: {font:Body Font}; margin-bottom:2px;
+}
+
+.header
+{
+  width:500px;margin-bottom:2px;
+}
+
+.header h1
+{
+  font-family: 'OstrichSansRoundedMedium', Impact, Helvetica, Arial, sans-serif;
+  line-height: 80%;
+  letter-spacing: -1;
+  text-transform:uppercase;
+  font-size: 90px;
+  font-weight: normal;
+}
+
+.post h1
+{
+  font-family: 'BebasNeueRegular', Impact, Helvetica, Arial, sans-serif;
+  letter-spacing: -1;
+  color: {color:Text};
+  text-transform:uppercase;
+  font-size: 37px;
+  font-weight: normal;
+}
+
+.post h2
+{
+  font-family: 'BebasNeueRegular', Impact, Helvetica, Arial, sans-serif;
+  letter-spacing: -1;
+  color: {color:Text};
+  text-transform:uppercase;
+  font-size: 37px;
+  font-weight: normal;
+}
+
+h2
+{
+  font: 28px 'BebasNeueRegular', Impact, Helvetica, Arial, sans-serif;color: {color:Text};margin-bottom:2px;
+}
+
+h3
+{
+  font: 24px 'BebasNeueRegular', Impact, Helvetica, Arial, sans-serif; margin-bottom:3px; color: {color:Text};
+}
+
+h4
+{
+  font: 16px 'BebasNeueRegular', Impact, Helvetica, Arial, sans-serif;
+  margin-bottom:3px; letter-spacing: 1.3px;
+  font-weight:normal;color: {color:Text};
+}
+
+p
+{
+  font: 14px {font:Body Font}; color: {color:Text};
+}
+
+ul
+{
+  font: 14px {font:Body Font}; color: {color:Text};
+}
+
+li
+{
+  font: 14px {font:Body Font}; color: {color:Text};
+}
+
+blockquote
+{
+  font: 14px {font:Body Font};  color: {color:Text};
+}
+
+blockquote
+{
+  margin: 1em 0 1em 20px; padding: 0 0 0 20px; border-left: 3px solid #CACACA;
+}
+
+h1 a, h2 a, h3 a, h4 a
+{
+  color: {color:Accent}; text-decoration: none;  -moz-transition: .1s ease-in-out; -o-transition: .1s ease-in-out; -webkit-transition: .1s ease-in-out;
+}
+
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited
+{
+  color: {color:Accent};
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover
+{
+  color: {color:Text}; background: none;
+}
+
+h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus
+{
+  outline: thin dotted;
+}
+
+h1 a:active, h2 a:active, h3 a:active, h4 a:active
+{
+  outline: 0;
+}
+
+p a, ul a , li a
+{
+  color: {color:Accent}; text-decoration: none;  -moz-transition: .1s ease-in-out; -o-transition: .1s ease-in-out; -webkit-transition: .1s ease-in-out;
+}
+
+p a:visited, ul a:visited, li a:visited
+{
+  color: {color:Accent};
+}
+
+p a:hover, ul a:hover, li a:hover
+{
+  color: {color:Text Hover}; background: {color:Accent};
+}
+
+p a:focus, ul a:focus, li a:focus
+{
+  outline: thin dotted;
+}
+
+p a:active, ul a:active, li a:active
+{
+  outline: 0;
+}
+
+.source
+{
+  color: {color:Text};
+}
+
+.source a:link
+{
+  color: {color:Accent}; text-decoration: none;  -moz-transition: .1s ease-in-out; -o-transition: .1s ease-in-out; -webkit-transition: .1s ease-in-out;
+}
+
+.source a:visited
+{
+  color: {color:Accent};
+}
+
+.source a:hover
+{
+  color: {color:Text Hover}; background: {color:Accent};
+}
+
+.source a:active
+{
+  outline: 0;
+}
+
+#nav
+{
+  text-transform: none;
+}
+
+#description
+{
+  font-size: 14px;
+  width:500px;
+  padding-bottom:2%;
+}
+
+#posts
+{
+  width: 500px;
+  text-align:left;
+}
+
+.chat ul
+{
+  font: 14px {font:Body Font};
+  color: {color:Text};
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.chat .label
+{
+  font: 14px {font:Body Font};
+  color: {color:Text};
+  font-weight: bold;
+  line-height:25px;
+}
+
+.notes2 p
+{
+  font-size:12px;
+  color: {color:Links};
+  margin-top:14px;
+  padding-bottom:-5px;
+  margin-bottom:5px;
+}
+
+.notes3 p
+{
+  font-size:12px;
+  color: {color:Links};
+  margin-top:-15px;
+  padding-bottom:20px;
+}
+
+
+.notes-ask p
+{
+  font-size:12px;
+  color: {color:Links};
+  margin-top:-25px;
+  padding-top:-20px;
+  padding-bottom:20px;
+}
+
+nav
+{
+  width:85%;
+}
+
+nav#util ul
+{
+  margin-left: 0px;
+  margin-right:0px;
+  padding-top:0;
+  padding-bottom:0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+nav#util ul li
+{
+  z-index: 1;
+  color: {color:Text};
+  display: block;
+  text-align: center;
+  display: inline;
+  list-style: none;
+}
+
+nav#util ul li a
+{
+
+  color: {color:Text};
+  text-decoration:none;
+  display: inline-block;
+  font-family: 'BebasNeueRegular', "Arial Narrow", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 14px;
+  color: {color:Text};
+  padding: 2px 10px;
+  border-right: 1px solid #f0f0f0;
+}
+
+nav#util ul li a:hover 
+{
+  color: {color:Text Hover}; background: {color:Accent};
+}
+
+nav#util ul li:last-child a
+{
+  border-right: none;
+}
+
+nav#util ul li a:hover
+{
+  color: {color:Text Hover}
+}
+
+blockquote img
+{
+  max-width:100%;
+}
+
+.answer
+{
+  width: 500px;
+  padding-right: 40px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.answer-question .body
+{
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  background: {color:Text};
+  opacity: 0.9;
+  color: {color:Text Hover};
+  font-size: 14px;
+  padding: 10px 16px;
+  width: 388px;
+  float: left;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.answer-asker
+{
+  float: right;
+  width: 80px;
+}
+
+.answer-point
+{
+  width: .7em;
+  float: left;
+  padding-top: 10px;
+}
+
+.answer-point-top,
+.answer-point-bottom
+{
+  width: 0;
+  height: 0;
+}
+
+.answer-point-top
+{
+  opacity: 0.9;
+  border-bottom: 8px solid {color:Text};
+  border-right: 8px solid rgba(0,0,0,0);
+}
+
+.answer-point-bottom
+{
+  opacity: 0.9;
+  border-left: 8px solid {color:Text};
+  border-bottom: 8px solid rgba(0,0,0,0);
+}
+
+.answer-asker .answer-asker-avatar
+{
+  float: left;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  width: 64px;
+  height: 64px;
+  display: block;
+  text-indent: -100px;
+  font-size: 0px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  margin-bottom: 40%;z-index:-1000;
+}
+
+.answer-asker .answer-asker-avatar a
+{
+
+  display: block;
+  text-indent: -9000px;
+  width: 64px;
+  height: 64px;
+}
+
+.answer-answer
+{
+
+  margin-top: 22px;
+  width: 388px;
+}
+
+
+.answer-answer .body
+{
+  padding-top: 22px;
+  margin-left: 10px;padding-bottom:10px;
+}
+
+.conversation tr:first-child td, .conversation tr:first-child th
+{
+  border-top: 0;
+}
+
+.conversation table
+{
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: {color:Text};
+  opacity: .98;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.conversation th
+{
+  padding: 9px 0 9px 11px;
+  border-top: 1px solid #696969;
+  text-align: right;
+  text-transform: Capitalized;
+  color: {color:text hover};
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.conversation td
+{
+  padding: 9px;
+  border-top: 1px solid #696969;
+  font-size: 13px;
+  color: {color:text hover};
+  line-height: 1;
+}
+
+.post ol.notes li.note
+{
+  border-bottom: solid 1px #f0f0f0;
+  padding: 6px 0;
+  margin: 0 !important;
+  font: 12px {font:Body Font}; color: {color:Text};
+}
+
+.post ol.notes li.note blockquote
+{
+  border-color: #f0f0f0;
+  padding: 4px 10px;
+  margin: 10px 0px 0px 25px;
+  font: 12px {font:Body Font}; color: {color:Text};
+}
+
+.short
+{
+  border: solid 0px;-webkit-border-radius: 2px;-moz-border-radius: 2px;float: left;width: 500px;background: none;position: relative;
+}
+
+{block:IfFadeImagesOnHover}
+.logo
+{
+  align:center !important; padding-bottom:0px;
+  -moz-transition: .3s ease-in-out; -o-transition: .3s ease-in-out; -webkit-transition: .3s ease-in-out;
+}
+
+.logo:hover
+{
+  opacity: 0.7;
+}
+{/block:IfFadeImagesOnHover}
+
+.logo2
+{
+  padding-bottom:50px;
+}
+
+#footer
+{
+  text-align:center; width:500px;
+}
+
+#tweets
+{
+  width:500px;text-align:center;margin-top:0px;
+}
+
+#tweets ul
+{
+  list-style: none; list-style-image: none; margin: 0; padding: 0;  margin-left: -25px;width:500px;
+}
+
+#tweets li
+{
+  text-indent:22px;list-style-type:none;color:{color:Text};width:540px;
+}
+
+#tweets .hash
+{
+  color:{color:Accent};
+}
+
+#tweets .reply
+{
+  color:{color:Accent};
+}
+
+.post ol.notes
+{
+  padding: 0;list-style-type: none;
+}
+
+.post ol.notes li.note img.avatar
+{
+  vertical-align: -4px;margin-right: 10px; width: 16px;height: 16px;
+}
+
+.post ol.notes li.note .answer_content
+{
+  font-weight: normal;
+}
+
+.post ol.notes li.note blockquote a
+{
+  text-decoration: none;
+}
+
+{Block:IfNotHideScrollToTop}
+#back-top
+{
+
+  position: fixed;
+  bottom: 8px;
+  right: 20px;
+}
+
+#back-top a
+{
+
+  width: 49px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  transition: 0.6s;
+}
+
+#back-top a:hover
+{
+  opacity: 0.5;
+  background: none;
+}
+
+#back-top a:hover span
+{
+  opacity: 0.5;
+  background: none;
+}
+
+{block:IfNotLightIcons}
+#back-top span
+{
+  width: 49px;
+  height: 49px;
+  display: block;
+  margin-bottom: 7px;
+  background:  url(http://static.tumblr.com/exbflx8/INPmh8wxh/black_arrow.png) no-repeat center center;
+  background-size: 48px 48px;
+  opacity: 0.8;
+}
+
+{/block:IfNotLightIcons}
+{block:IfLightIcons}
+#back-top span
+{
+  width: 49px;
+  height: 49px;
+  display: block;
+  margin-bottom: 7px;
+  background:  url(http://static.tumblr.com/exbflx8/85dmh8x0f/light_arrow.png) no-repeat center center;
+  background-size: 48px 48px;
+  opacity: 0.8;
+}
+
+{/block:IfLightIcons}
+{/Block:IfNotHideScrollToTop}
+{block:IfFadeImagesOnHover}
+.photo img
+{
+  opacity:1;
+  filter:alpha(opacity=100);
+  -webkit-transition: opacity 0.8s linear;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.photo img:hover
+{
+  opacity:0.8;
+  filter:alpha(opacity=80);
+  -webkit-transition: opacity 0.3s linear;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+{/block:IfFadeImagesOnHover}
+
+.pagination
+{
+  width:500px; align:center;
+}
+
+.readmore a
+{
+  float: left; background-color: {color:Text}; color: {color:Text Hover};  display: inline;  list-style: none; padding: 1px 11px; font-family: 'BebasNeueRegular', "Arial Narrow", Arial, sans-serif;  font-weight: normal; text-transform: uppercase;letter-spacing: 1px; margin-right:2px; font-weight: normal; text-decoration: none;-moz-transition: .1s ease-in-out; -o-transition: .1s ease-in-out; -webkit-transition: .1s ease-in-out; font-size:14px;
+}
+
+.readmore a:hover
+{
+  background-color: {color:Accent}; padding-right: 18px; padding-left: 18px;
+}
+
+.previous a
+{
+  float: center; background-color: {color:Text}; color: {color:Text Hover};  display: inline;  list-style: none;  padding: 1px 11px; font-family: 'BebasNeueRegular', "Arial Narrow", Arial, sans-serif;  font-weight: normal; text-transform: uppercase;letter-spacing: 1px; margin-right:2px; font-weight: normal; text-decoration: none;-moz-transition: .1s ease-in-out; -o-transition: .1s ease-in-out; -webkit-transition: .1s ease-in-out; font-size:14px;
+}
+
+.previous a:hover
+{
+  background-color: {color:Accent}; padding-right: 18px; padding-left: 18px;
+}
+
+.next a
+{
+  float: center; background-color: {color:Text}; color: {color:Text Hover};  display: inline;  list-style: none; padding: 1px 11px; font-family: 'BebasNeueRegular', "Arial Narrow", Arial, sans-serif;  font-weight: normal; text-transform: uppercase;letter-spacing: 1px; margin-right:2px; font-weight: normal; text-decoration: none;-moz-transition: .1s ease-in-out; -o-transition: .1s ease-in-out; -webkit-transition: .1s ease-in-out; font-size:14px;
+}
+
+.next a:hover
+{
+  background-color: {color:Accent}; padding-right: 18px; padding-left: 18px;
+}
+
+.tumblr_video_container
+{
+  padding-bottom:4px;
+}
+
+::selection
+{
+  background: {color:Selection Color};
+}
+
+::-moz-selection
+{
+  background: {color:Selection Color};
+}
+
+
+
+{CustomCSS}
+
+#tema
+{
+  width: 96px; height:20px; position: absolute; top:28px; right:3px;
+}
+
+ul.post-meta
+{
+  list-style-type: none;
+  margin: 0;
+  margin-top: -15;
+  padding: 6px 0px 40px 00px;
+  text-transform: lowercase;
+}
+
+ul.post-meta li:before {
+  display: block;
+  float: left;
+  margin: 3px 0 0 0;
+  height: 12px;
+  width: 12px;
+  content: "\00a0";
+}
+
+ul.post-meta li a {
+  font-weight: normal;
+  text-decoration: none;
+  font-size:12px;
+  color: {color:Text};;
+  padding: 0 6px 2px 6px;
+  -moz-transition: .2s ease-in-out;
+  -o-transition: .2s ease-in-out;
+  -webkit-transition: .2s ease-in-out;
+}
+
+ul.post-meta li a:hover {
+  background: {color:Accent};
+  color: {color:Text Hover};
+  padding: 0 6px 0px 6px;
+}
+
+ul.post-meta li.timeago {
+  float: left;
+}
+
+ul.post-meta li.timeago:before {
+  background: {block:IfNotLightIcons} url(http://static.tumblr.com/exbflx8/fD8mhx4qx/retina_black.png) {/block:IfNotLightIcons} {block:IfLightIcons} url(http://static.tumblr.com/exbflx8/yh0mhx8xc/retina_white.png) {/block:IfLightIcons} 0 0 no-repeat;
+background-size: 63px 12px;
+}
+ul.post-meta li.notes {
+  float: right;
+  margin-right: 0px;
+}
+ul.post-meta li.notes:before {
+  background: {block:IfNotLightIcons} url(http://static.tumblr.com/exbflx8/fD8mhx4qx/retina_black.png) {/block:IfNotLightIcons} {block:IfLightIcons} url(http://static.tumblr.com/exbflx8/yh0mhx8xc/retina_white.png) {/block:IfLightIcons} -12px 0 no-repeat;
+background-size: 63px 12px;
+}
+
+ul.post-meta li.heart {
+  float: right;
+  margin-right: 25px;
+  z-index:-1;
+}
+
+.likey {
+  height: 20px;
+  width: 10px;
+  position: relative;
+  top: -14px;
+  left: 10px;
+  right:0px;
+  z-index: 5 !important;
+}
+
+ul.post-meta li.repost {
+  float: right;
+  margin-right: 40px;
+  padding: 0px;
+  height: 0px;
+}
+
+ul.post-meta li.repost a:hover {
+  background: none !important;
+  color: {color:Text} !important;
+  padding: none;
+  height: 0px;
+  width: 0px;
+}
+.reblogy {
+  padding: 0px;
+  height: 0px;
+  width: 0px;
+  position: relative;
+  top: -13px;
+  left: -6px;
+  right:0px;
+  z-index: 5 !important;
+}
+
+ul.post-meta li.comments {
+  float: right;
+  margin-right: 10px;
+}
+ul.post-meta li.comments:before {
+  background: {block:IfNotLightIcons} url(http://static.tumblr.com/exbflx8/fD8mhx4qx/retina_black.png) {/block:IfNotLightIcons} {block:IfLightIcons} url(http://static.tumblr.com/exbflx8/yh0mhx8xc/retina_white.png) {/block:IfLightIcons} -24px 0 no-repeat;
+background-size: 63px 12px;
+}
+
+span.anote
+{
+  margin-top: 4px;
+}
+
+
+.notes-ask2
+{
+  margin-top:-25px;width:500px;
+}
+
+.notes
+{
+  padding-bottom: {text:Post Spacing};
+}
+
+.fuge
+{
+  position: absolute; top:26px; right:0px;  white-space: nowrap; outline: 0; text-decoration: none; cursor: pointer; font: 600 12px/18px "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif; height: 20px; padding: 0 5px; -webkit-font-smoothing: antialiased; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; -webkit-transition-property: padding; -moz-transition-property: padding; -ms-transition-property: padding; -o-transition-property: padding; transition-property: padding; -webkit-transition-duration: .1s; -moz-transition-duration: .1s; -ms-transition-duration: .1s; -o-transition-duration: .1s; transition-duration: .1s; -webkit-transition-timing-function: ease; -moz-transition-timing-function: ease; -ms-transition-timing-function: ease; -o-transition-timing-function: ease; transition-timing-function: ease; color: white; border: 1px solid rgba(0, 0, 0, 0.18); background: rgba(0, 0, 0, 0.38); text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.08); -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; margin: 0 3px 0 0; padding-left: 20px;
+}
+
+.fuge a
+{
+  float: left; display: block; color: #1C1C1C; cursor: pointer; text-decoration: none;
+}
+
+.fuge::before
+{
+  display: block; content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 20px; border-radius: inherit; background: url("http://static.tumblr.com/exbflx8/YOimhcxma/iframe_sprite.png") 0 0 no-repeat;
+}
+
+.fuge::before
+{
+  background-position: 0 0;
+}
+
+.btn::after
+{
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0; content: ""; -webkit-border-radius: inherit; -moz-border-radius: inherit; border-radius: inherit;
+}
+
+.fuge:hover::after, .btn:focus::after
+{
+  background:rgba(255,255,255,0.09)
+}
+

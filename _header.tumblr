@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>
+			{block:SearchPage}Search results for "{SearchQuery}" | {/block:SearchPage}
+			{block:TagPage}{Tag} | {/block:TagPage}
+			{block:PostSummary}{PostSummary} | {/block:PostSummary}
+			{Title}
+		</title>
+
+		<!-- <link rel="stylesheet" href="http://static.tumblr.com/exbflx8/2Gzmh91hs/fonts.css" type="text/css" charset="utf-8"> -->
+		<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+		<script src="http://static.tumblr.com/exbflx8/N3Gm20yy7/modernizr.custom.51965.js"></script>
+		<script src="http://static.tumblr.com/exbflx8/sx8m20zl5/jquery.min.js"></script>
+		<script type="text/javascript" src="http://static.tumblr.com/q0etgkr/lPHlj76n8/infinitescrollingbycodysherman.js"></script>
+		{Block:IfNotHideScrollToTop}
+			<script>
+				$(document).ready(function(){
+					$("#back-top").hide();
+					$(function () {
+						$(window).scroll(function () {
+							if ($(this).scrollTop() > 100) {
+								$('#back-top').fadeIn();
+							} else {
+								$('#back-top').fadeOut();
+							}
+						});
+						$('#back-top a').click(function () {
+							$('body,html').animate({
+								scrollTop: 0
+							}, 800);
+							return false;
+						});
+					});
+				});
+			</script>
+		{/Block:IfNotHideScrollToTop}
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=750">
+		<meta property="og:site_name" content="{Title}"/>
+		{block:PermalinkPage}
+			<meta property="og:url" content="{Permalink}"/>
+			<meta property="og:type" content="article"/>
+			{block:Posts}
+				{block:Text}
+					{block:Title}
+						<meta property="og:title" content="{PlaintextTitle}"/>
+					{/block:Title}
+					<meta property="og:description" content="{PlaintextBody}"/>
+				{/block:Text}
+				{block:Photo}
+					<meta property="og:image" content="{PhotoURL-500}"/>
+					{block:Caption}
+						<meta property="og:description" content="{PlaintextCaption}"/>
+					{/block:Caption}
+				{/block:Photo}
+				{block:Photoset}
+					{block:Photos}
+					<meta property="og:image" content="{PhotoURL-500}"/>
+					{/block:Photos}
+					{block:Caption}
+						<meta property="og:description" content="{PlaintextCaption}"/>
+					{/block:Caption}
+				{/block:Photoset}
+				{block:Quote}
+					<meta property="og:title" content="{PlaintextQuote}"/>
+					<meta property="og:description" content="{PlaintextSource}"/>
+					<meta property="og:image" content="{PortraitURL-96}"/>
+				{/block:Quote}
+				{block:Link}
+					<meta property="og:title" content="{PlaintextName}"/>
+					<meta property="og:description" content="{PlaintextDescription}"/>
+					<meta property="og:image" content="{PortraitURL-96}"/>
+				{/block:Link}
+				{block:Chat}
+					<meta property="og:title" content="{PlaintextTitle}"/>
+					<meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
+					<meta property="og:image" content="{PortraitURL-96}"/>
+				{/block:Chat}
+				{block:Audio}
+					<meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
+					<meta property="og:description" content="{PlaintextCaption}"/>
+					{block:AlbumArt}
+						<meta property="og:image" content="{AlbumArtURL}"/>
+					{/block:AlbumArt}
+				{/block:Audio}
+				{block:Video}
+					{block:Caption}
+						<meta property="og:description" content="{PlaintextCaption}"/>
+					{/block:Caption}
+				{/block:Video}
+				{block:Answer}
+					<meta property="og:title" content="{PlaintextQuestion}"/>
+					<meta property="og:description" content="{PlaintextAnswer}"/>
+					<meta property="og:image" content="{PortraitURL-96}"/>
+				{/block:Answer}
+			{/block:Posts}
+		{/block:PermalinkPage}
+		{block:IndexPage}
+			<meta property="og:title" content="{Title}"/>
+			<meta property="og:description" content="{MetaDescription}"/>
+		{/block:IndexPage}
+		{block:HasTags}
+			<meta name="keywords" content="{block:Tags} {/block:Tags}" />
+		{/block:HasTags}
+		{block:Description}
+			<meta name="description" content="{MetaDescription}" />
+		{/block:Description}
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+		<meta name="image:Background" content=""/>
+		<meta name="image:Header" content=""/>
+
+		<meta name="if:Hide Caption" content="1">
+		<meta name="if:Hide Date Tags Source" content="0">
+		<meta name="if:Show Post Tags" content="1">
+		<meta name="if:Hide Scroll To Top" content="0">
+		<meta name="if:Hide HighRes Button" content="0">
+		<meta name="if:Fade Images On Hover" content="1">
+		<meta name="if:Light Icons" content="0">
+		<meta name="if:Show Archive Link" content="1">
+		<meta name="if:Show RSS Link" content="1">
+		<meta name="if:Show Post Author" content="0">
+		<meta name="if:Block Pinterest" content="0"/>
+
+		<meta name="color:Background" content="#ffffff"/>
+		<meta name="color:Text" content="#000000"/>
+		<meta name="color:Text Hover" content="#ffffff"/>
+		<meta name="color:Accent" content="#00e0d5"/>
+		<meta name="color:Selection Color" content="#d8d9d9">
+
+		<meta name="text:Top Spacing" content="10px"/>
+		<meta name="text:Post Spacing" content="15px"/>
+		<meta name="text:Google Analytics ID" content=""/>
+		<meta name="text:Facebook URL" content=""/>
+		<meta name="text:Twitter URL" content=""/>
+		<meta name="text:Flickr URL" content=""/>
+		<meta name="text:Google Plus URL" content=""/>
+		<meta name="text:YouTube URL" content=""/>
+		<meta name="text:Vimeo URL" content=""/>
+		<meta name="text:Etsy URL" content=""/>
+		<meta name="text:Behance URL" content=""/>
+		<meta name="text:Pinterest URL" content=""/>
+		<meta name="text:Digg URL" content=""/>
+		<meta name="text:Dribbble URL" content=""/>
+		<meta name="text:StumbleUpon URL" content=""/>
+		<meta name="text:FormSpring URL" content=""/>
+		<meta name="text:SoundCloud URL" content=""/>
+		<meta name="text:Spotify URL" content=""/>
+		<meta name="text:MySpace URL" content=""/>
+		<meta name="text:Website URL" content=""/>
+		<meta name="text:Email Adress" content=""/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<div class="logo">
+					<a href="http://{name}.tumblr.com/"><img src="{image:Header}" /></a>
+				</div>
+				<div>
+					<h1><a href="http://{name}.tumblr.com/">{Title}</a></h1>
+				</div>
+				<div id="search">
+					<form action="/search" method="get">
+						<input type="text" name="q" value="{SearchQuery}"/>
+						<input type="submit" value="{lang:Search}"/>
+					</form>
+				</div>
+				{block:SearchPage}
+					<div id="searchresultcount">
+						{block:SearchResults}
+							<p>{lang:Your search for SearchQuery returned SearchResultCount results 2}.</p>
+						{/block:SearchResults}
+
+							{block:NoSearchResults}
+							<p>{lang:No search results for SearchQuery 2}.</p>
+							{/block:NoSearchResults}
+						</div>
+					{/block:SearchPage}
+				</div>
+
+				<nav id="util">
+					<ul>
+						<li class="listitem">
+							<a href="{text:Facebook URL}">Facebook</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div>
+					<p id="description">{Description}</p>
+				</div>

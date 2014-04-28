@@ -154,6 +154,218 @@
 		<meta name="text:MySpace URL" content=""/>
 		<meta name="text:Website URL" content=""/>
 		<meta name="text:Email Adress" content=""/>
+
+		<style type="text/css">
+			/** Customizer Styles in here **/
+			body
+			{
+				background-image: url('{image:Background}');
+				background-color: {color:Background};
+				font-family: {font:Body Font};
+				color: {color:Text};
+			}
+
+			.source,
+			ul.post-meta li a,
+			h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover,
+			h1, h2, h3, h4, h5 {
+				color: {color:Text};
+			}
+
+			#tweets .reply,
+			#tweets .hash,
+			.source a:visited,
+			.source a:link,
+			p a, ul a , li a,
+			p a:visited, ul a:visited, li a:visited,
+			h1 a, h2 a, h3 a, h4 a,
+			h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited
+			{
+				color: {color:Accent};
+			}
+
+			nav#util ul li a:hover,
+			.source a:hover,
+			p a:hover, ul a:hover, li a:hover,
+			ul.post-meta li a:hover
+			{
+				color: {color:Text Hover};
+				background: {color:Accent};
+			}
+
+			nav#util ul li a:hover
+			{
+				color: {color:Text Hover};
+			}
+
+			.answer-question .body
+			{
+				color: {color:Text Hover};
+				background: {color:Text};
+			}
+
+			.notes2 p,
+			.notes-ask p,
+			.notes3 p
+			{
+				color: {color:Links};
+			}
+
+			.conversation table
+			{
+				background: {color:Text};
+			}
+
+			.conversation th,
+			.conversation td
+			{
+				color: {color:text hover};
+			}
+
+			nav#primary ul li a,
+			ul.post-meta li.repost a:hover {
+				color: {color:Text};
+			}
+
+			.readmore a,
+			.next a,
+			.previous a
+			{
+				background-color: {color:Text};
+				color: {color:Text Hover};
+			}
+
+			.readmore a:hover,
+			.previous a:hover,
+			.next a:hover
+			{
+				background-color: {color:Accent};
+			}
+
+			.notes
+			{
+				padding-bottom: {text:Post Spacing};
+			}
+
+			::selection
+			{
+			background: {color:Selection Color};
+			}
+
+			::-moz-selection
+			{
+			background: {color:Selection Color};
+			}
+
+
+			ul.post-meta li.notes:before {
+				{block:IfNotLightIcons}
+					background: url(http://static.tumblr.com/exbflx8/fD8mhx4qx/retina_black.png);
+				{/block:IfNotLightIcons}
+				{block:IfLightIcons}
+					background: url(http://static.tumblr.com/exbflx8/yh0mhx8xc/retina_white.png)
+				{/block:IfLightIcons}
+			}
+			ul.post-meta li.timeago:before {
+				{block:IfNotLightIcons}
+					background-image: url(http://static.tumblr.com/exbflx8/fD8mhx4qx/retina_black.png);
+				{/block:IfNotLightIcons}
+				{block:IfLightIcons}
+					background-image: url(http://static.tumblr.com/exbflx8/yh0mhx8xc/retina_white.png);
+				{/block:IfLightIcons}
+			}
+
+			ul.post-meta li.comments:before {
+				{block:IfNotLightIcons}
+					background-image: url(http://static.tumblr.com/exbflx8/fD8mhx4qx/retina_black.png);
+				{/block:IfNotLightIcons}
+				{block:IfLightIcons}
+					background-image: url(http://static.tumblr.com/exbflx8/yh0mhx8xc/retina_white.png);
+				{/block:IfLightIcons}
+			}
+
+			{Block:IfNotHideScrollToTop}
+				#back-top
+				{
+
+					position: fixed;
+					bottom: 8px;
+					right: 20px;
+				}
+
+				#back-top a
+				{
+
+					width: 49px;
+					display: block;
+					text-align: center;
+					text-transform: uppercase;
+					text-decoration: none;
+					-webkit-transition: 0.6s;
+					-moz-transition: 0.6s;
+					transition: 0.6s;
+				}
+
+				#back-top a:hover
+				{
+					opacity: 0.5;
+					background: none;
+				}
+
+				#back-top a:hover span
+				{
+					opacity: 0.5;
+					background: none;
+				}
+
+				{block:IfNotLightIcons}
+					#back-top span
+					{
+						width: 49px;
+						height: 49px;
+						display: block;
+						margin-bottom: 7px;
+						background:  url(http://static.tumblr.com/exbflx8/INPmh8wxh/black_arrow.png) no-repeat center center;
+						background-size: 48px 48px;
+						opacity: 0.8;
+					}
+				{/block:IfNotLightIcons}
+				{block:IfLightIcons}
+					#back-top span
+					{
+						width: 49px;
+						height: 49px;
+						display: block;
+						margin-bottom: 7px;
+						background:  url(http://static.tumblr.com/exbflx8/85dmh8x0f/light_arrow.png) no-repeat center center;
+						background-size: 48px 48px;
+						opacity: 0.8;
+					}
+				{/block:IfLightIcons}
+			{/Block:IfNotHideScrollToTop}
+			{block:IfFadeImagesOnHover}
+				.photo img
+				{
+					opacity:1;
+					filter:alpha(opacity=100);
+					-webkit-transition: opacity 0.8s linear;
+					-webkit-transition: all 0.5s ease-out;
+					-moz-transition: all 0.5s ease-out;
+					transition: all 0.5s ease-out;
+				}
+
+				.photo img:hover
+				{
+					opacity:0.8;
+					filter:alpha(opacity=80);
+					-webkit-transition: opacity 0.3s linear;
+					-webkit-transition: all 0.3s ease-out;
+					-moz-transition: all 0.3s ease-out;
+					transition: all 0.3s ease-out;
+				}
+			{/block:IfFadeImagesOnHover}
+
+		</style>
 	</head>
 	<body>
 		<div class="container">

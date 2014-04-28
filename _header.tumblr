@@ -161,36 +161,39 @@
 				<div class="logo">
 					<a href="http://{name}.tumblr.com/"><img src="{image:Header}" /></a>
 				</div>
-				<div>
-					<h1><a href="http://{name}.tumblr.com/">{Title}</a></h1>
-				</div>
-				<div id="search">
-					<form action="/search" method="get">
-						<input type="text" name="q" value="{SearchQuery}"/>
-						<input type="submit" value="{lang:Search}"/>
-					</form>
+
+				<h1><a href="http://{name}.tumblr.com/">{Title}</a></h1>
+
+				<div class="search-form">
 				</div>
 				{block:SearchPage}
-					<div id="searchresultcount">
+					<div class="search-results">
 						{block:SearchResults}
 							<p>{lang:Your search for SearchQuery returned SearchResultCount results 2}.</p>
 						{/block:SearchResults}
 
-							{block:NoSearchResults}
-							<p>{lang:No search results for SearchQuery 2}.</p>
-							{/block:NoSearchResults}
-						</div>
-					{/block:SearchPage}
-				</div>
+						{block:NoSearchResults}
+						<p>{lang:No search results for SearchQuery 2}.</p>
+						{/block:NoSearchResults}
+					</div>
+				{/block:SearchPage}
+			</div>
 
-				<nav id="util">
-					<ul>
-						<li class="listitem">
-							<a href="{text:Facebook URL}">Facebook</a>
-						</li>
-					</ul>
-				</nav>
+			<nav class="primary">
+				<ul>
+					<li>
+						<a href="{text:Facebook URL}">Facebook</a>
+					</li>
+					<li>
+						<form action="/search" method="get">
+							<input type="text" name="q" value="{SearchQuery}"/>
+							<input type="submit" value="{lang:Search}"/>
+						</form>
+					</li>
+				</ul>
+			</nav>
 
-				<div>
-					<p id="description">{Description}</p>
-				</div>
+			<div class="description">{Description}</div>
+			{block:Posts}
+				<div id="posts">
+					<div class="autopagerize_page_element">

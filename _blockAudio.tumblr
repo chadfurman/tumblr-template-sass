@@ -1,81 +1,78 @@
-                  {block:Link}
-                    <div class="post link">
-                      <h3 style="font-family:'BebasNeueRegular', {font:Body Font};"><a href="{URL}" class="link" {Target}>{Name}</a></h3></span>
-                      {block:Description}
-                        <div class="description">{Description}</div>
-                      {/block:Description}
-                    </div>
-                    {block:PermalinkPage}
-                      {block:Caption}
-                        <div class="caption">{Caption}</div>
-                            {block:More} {/block:More}
-                        {/block:Caption}
-                      {/block:PermalinkPage}
-                      {block:Date}
-                        <div class="notes2">
-                          {block:ifNotHideDateTagsSource}<p>{block:IfShowPostTags}
-                          {block:HasTags}
-                            {lang:Tagged}
-                            {block:Tags}<a href="{TagURL}">#{Tag}</a>&nbsp;&nbsp;{/block:Tags}
-                          {/block:HasTags}
-                        {/block:IfShowPostTags}
-                        {block:IfNotShowPostAuthor}
-                          {lang:Posted on DayOfMonth Month Year}
-                        {/block:IfNotShowPostAuthor}
-                        {block:IfShowPostAuthor}
-                          {lang:Posted TimeAgo by PostAuthorName 2}
-                        {/block:IfShowPostAuthor}
-                        {block:RebloggedFrom}
-                          {lang:Reblogged from ReblogParentName 2}&nbsp;&nbsp;
-                        {/block:RebloggedFrom}
-                        {block:ContentSource}
-                          {lang:Source}
-                          <a href="{SourceURL}" target="_blank">{SourceTitle}</a>
-                        {/block:ContentSource}
-                      </p>
-                    {/block:ifNotHideDateTagsSource}
-                    {block:IfHideCaption}
-                      {block:ifHideDateTagsSource}
-                      {/block:ifHideDateTagsSource}
-                    {/block:IfHideCaption}
-                    {block:ifHideDateTagsSource}
-                      {block:PermalinkPage}
-                        <p>
-                          {block:IfShowPostTags}
-                            {block:HasTags}
-                              {lang:Tagged}
-                              {block:Tags}
-                                <a href="{TagURL}">#{Tag}</a>&nbsp;&nbsp;
-                              {/block:Tags}
-                            {/block:HasTags}
-                          {/block:IfShowPostTags}
-                          {block:IfNotShowPostAuthor}
-                            {lang:Posted on DayOfMonth Month Year}
-                          {/block:IfNotShowPostAuthor}
-                          {block:IfShowPostAuthor}
-                            {lang:Posted TimeAgo by PostAuthorName 2}
-                          {/block:IfShowPostAuthor}
-                          {block:RebloggedFrom}
-                            {lang:Reblogged from ReblogParentName 2}&nbsp;&nbsp;
-                          {/block:RebloggedFrom}
-                          {block:ContentSource}
-                            {lang:Source}
-                            <a href="{SourceURL}" target="_blank">{SourceTitle}</a>
-                          {/block:ContentSource}
-                        </p>
-                      {/block:PermalinkPage}
-                    {/block:ifHideDateTagsSource}
-                    {block:IfHideCaption}
-                      {block:ifHideDateTagsSource}{/block:ifHideDateTagsSource}
-                    {/block:IfHideCaption}
+{block:Audio}
+	{AudioEmbed-500}
+	{block:Caption}
+		<div class="caption">{Caption}</div>
+	{/block:Caption}
 
-                    <div style="width:60px;height:1px;background-color:{color:Text};float:left;opacity:0.3;"></div>
-                      <ul class="post-meta clearfix">
-                  			<li class="timeago"><a href="{Permalink}">{Timeago}</a></li>
-          							<li class="notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
-                        <li class="repost"><div class="reblogy">{block:IfNotLightIcons}{ReblogButton size="13" color="black"}{/block:IfNotLightIcons}{block:IfLightIcons}{ReblogButton size="13" color="white"}{/block:IfLightIcons}</div></li>
-                				<li class="heart"><div class="likey">{block:IfNotLightIcons}{LikeButton size="13" color="black"}{/block:IfNotLightIcons}{block:IfLightIcons}{LikeButton size="13" color="white"}{/block:IfLightIcons}</div></li>
-          						</ul>
-                    </div>
-                  {/block:Date}
-                {/block:Link}
+	{block:Date}
+		<div class="notes2">
+			{block:ifNotHideDateTagsSource}
+				<p>
+					{block:IfShowPostTags}
+						{block:HasTags}
+							{lang:Tagged}
+							{block:Tags}
+								<a href="{TagURL}">#{Tag}</a>&nbsp;&nbsp;
+							{/block:Tags}
+						{/block:HasTags}
+					{/block:IfShowPostTags}
+					{block:IfNotShowPostAuthor}
+						{lang:Posted on DayOfMonth Month Year}
+					{/block:IfNotShowPostAuthor}
+					{block:IfShowPostAuthor}
+						{lang:Posted TimeAgo by PostAuthorName 2}
+					{/block:IfShowPostAuthor}
+					{block:RebloggedFrom}
+						{lang:Reblogged from ReblogParentName 2}&nbsp;&nbsp;
+					{/block:RebloggedFrom}
+					{block:ContentSource}
+						{lang:Source}
+						<a href="{SourceURL}" target="_blank">{SourceTitle}</a>
+					{/block:ContentSource}
+				</p>
+			{/block:ifNotHideDateTagsSource}
+			{block:IfHideCaption}
+				{block:ifHideDateTagsSource}
+				{/block:ifHideDateTagsSource}
+			{/block:IfHideCaption}
+			{block:ifHideDateTagsSource}
+				{block:PermalinkPage}
+					<p>
+						{block:IfShowPostTags}
+							{block:HasTags}
+								{lang:Tagged}
+								{block:Tags}
+									<a href="{TagURL}">#{Tag}</a>&nbsp;&nbsp;
+								{/block:Tags}
+							{/block:HasTags}
+						{/block:IfShowPostTags}
+						{block:IfNotShowPostAuthor}
+							{lang:Posted on DayOfMonth Month Year}
+						{/block:IfNotShowPostAuthor}
+						{block:IfShowPostAuthor}
+							{lang:Posted TimeAgo by PostAuthorName 2}
+						{/block:IfShowPostAuthor}
+						{block:RebloggedFrom}
+							{lang:Reblogged from ReblogParentName 2}&nbsp;&nbsp;
+						{/block:RebloggedFrom}
+						{block:ContentSource}
+							{lang:Source}
+							<a href="{SourceURL}" target="_blank">{SourceTitle}</a>
+						{/block:ContentSource}
+					</p>
+				{/block:PermalinkPage}
+			{/block:ifHideDateTagsSource}
+			{block:IfHideCaption}
+				{block:ifHideDateTagsSource}
+				{/block:ifHideDateTagsSource}
+			{/block:IfHideCaption}
+			<div style="width:60px;height:1px;background-color:{color:Text};float:left;opacity:0.3;"></div>
+			<ul class="post-meta clearfix">
+				<li class="timeago"><a href="{Permalink}">{Timeago}</a></li>
+				<li class="notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
+				<li class="repost"><div class="reblogy">{block:IfNotLightIcons}{ReblogButton size="13" color="black"}{/block:IfNotLightIcons}{block:IfLightIcons}{ReblogButton size="13" color="white"}{/block:IfLightIcons}</div></li>
+				<li class="heart"><div class="likey">{block:IfNotLightIcons}{LikeButton size="13" color="black"}{/block:IfNotLightIcons}{block:IfLightIcons}{LikeButton size="13" color="white"}{/block:IfLightIcons}</div></li>
+			</ul>
+		</div>
+	{/block:Date}
+{/block:Audio}

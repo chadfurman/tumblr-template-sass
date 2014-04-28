@@ -1,6 +1,6 @@
 						</div>
 					</div>
-				</div>
+				{/block:Posts}
 			</div>
 		</div>
 		{Block:IfNotHideScrollToTop}

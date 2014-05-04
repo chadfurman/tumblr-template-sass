@@ -247,6 +247,8 @@
 				padding-bottom: {text:Post Spacing};
 			}
 
+			.post-{PostID} .answer-asker-avatar { background: url({AskerPortraitURL-64})}
+
 			::selection
 			{
 			background: {color:Selection Color};

@@ -731,3 +731,61 @@ span.anote
   background:rgba(255,255,255,0.09)
 }
 
+#back-top
+{
+  position: fixed;
+  bottom: 8px;
+  right: 20px;
+}
+
+#back-top a
+{
+
+  width: 49px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  transition: 0.6s;
+}
+
+#back-top a:hover
+{
+  opacity: 0.5;
+  background: none;
+}
+
+#back-top a:hover span
+{
+  opacity: 0.5;
+  background: none;
+}
+.photo img
+{
+  opacity:1;
+  filter:alpha(opacity=100);
+  -webkit-transition: opacity 0.8s linear;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.photo img:hover
+{
+  opacity:0.8;
+  filter:alpha(opacity=80);
+  -webkit-transition: opacity 0.3s linear;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.divbar
+{
+  width:60px;
+  height:1px;
+  float:left;
+  opacity:0.3;
+}

@@ -1,0 +1,9 @@
+						<div class="back-top">
+							<a href="#top" border="0px">{lang:Back to top}</a>
+						</div>
+					</div> <!-- end .posts-->
+				{/block:Posts}
+			</div> <!-- end .content -->
+		</div> <!-- end .container -->
+	</body>
+</html>

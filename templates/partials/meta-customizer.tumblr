@@ -1,0 +1,35 @@
+<meta name="image:Background" content=""/>
+<meta name="image:Header" content=""/>
+<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Text" content="#000000"/>
+<meta name="text:Facebook URL" content=""/>
+<meta name="text:YouTube URL" content=""/>
+<meta name="text:Etsy URL" content=""/>
+<meta name="text:Website URL" content=""/>
+<meta name="text:Email Adress" content=""/>
+
+<style type="text/css">
+	/** Customizer Styles in here **/
+	body
+	{
+		background-image: url('{image:Background}');
+		background-color: {color:Background};
+		font-family: {font:Body Font};
+		color: {color:Text};
+	}
+
+	.divbar {
+		background-color:{color:Text};
+	}
+
+	::selection
+	{
+	background: {color:Selection Color};
+	}
+
+	::-moz-selection
+	{
+	background: {color:Selection Color};
+	}
+
+</style>

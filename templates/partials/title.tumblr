@@ -1,0 +1,6 @@
+<title>
+	{block:SearchPage}Search results for "{SearchQuery}" | {/block:SearchPage}
+	{block:TagPage}{Tag} | {/block:TagPage}
+	{block:PostSummary}{PostSummary} | {/block:PostSummary}
+	{Title}
+</title>

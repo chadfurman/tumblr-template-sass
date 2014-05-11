@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<!-- @include partials/title.tumblr -->
+
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=750">
+
+	{block:HasTags}
+	<meta name="keywords" content="{block:Tags} {/block:Tags}" />
+	{/block:HasTags}
+
+	<!-- @include partials/meta-open-graph.tumblr -->
+	<!-- @include partials/meta-customizer.tumblr -->
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="logo">
+				<a href="http://{name}.tumblr.com/"><img src="{image:Header}" /></a>
+			</div>
+
+			<h1><a href="http://{name}.tumblr.com/">{Title}</a></h1>
+		</div>
+
+		<nav class="primary">
+			<ul>
+				<li>
+					<a href="{text:Facebook URL}">Facebook</a>
+				</li>
+				<li>
+					<form action="/search" method="get">
+						<input type="text" name="q" value="{SearchQuery}"/>
+						<input type="submit" value="{lang:Search}"/>
+					</form>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="content">
+			<div class="description">
+				{Description}
+			</div>
+			{block:Posts}
+				<div class="posts">
+					<!-- Begin post types -->
+
+					<!-- @include partials/block-text.tumblr -->
+
+					<!-- End post types -->
+					<div class="back-top">
+						<a href="#top">{lang:Back to top}</a>
+					</div>
+				</div> <!-- end .posts-->
+			{/block:Posts}
+		</div> <!-- end .content -->
+	</div> <!-- end .container -->
+</body>
+</html>

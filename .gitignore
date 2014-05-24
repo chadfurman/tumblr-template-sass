@@ -1,3 +1,4 @@
 stylesheets/*
 node_modules/
+bower_components/
 template.tumblr

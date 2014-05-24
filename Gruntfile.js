@@ -22,13 +22,17 @@ module.exports = function(grunt) {
 		},
 		preprocess : {
 			html : {
-				src : 'build/unprocessed.template.tumblr',
+				src : 'theme/templates/main.tumblr',
 				dest : 'theme.tumblr'
 			}
-		}
+		},
+		clean: ['build']
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-preprocess');
-	grunt.registerTask('default', ['concat', 'preprocess']);
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.registerTask(
+		'default', ['concat', 'preprocess', 'clean']
+	);
 }

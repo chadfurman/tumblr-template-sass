@@ -5,8 +5,6 @@
 
 
 /** Global variables imported before everything else */
-@import "variables.scss";
+@import "variables";
 
-@import "blueprint";
-@import "compass/reset";
-@import "main.scss";
+@import "app";

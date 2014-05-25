@@ -4,10 +4,9 @@ module.exports = function(grunt) {
 		preprocess : {
 			html : {
 				src : 'theme/templates/main.tumblr',
-				dest : 'theme/theme.tumblr'
+				dest : 'theme.tumblr'
 			}
 		},
-		clean: ['build'],
 		compass: {
 			dist: {
 				options: {
@@ -17,12 +16,27 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		concat: {
+			js: {
+				src: [
+					'theme/js/*.js',
+					'bower_components/jquery/dist/jquery.js',
+					'bower_components/foundation/js/foundation/foundation.js',
+					'bower_components/foundation/js/foundation/foundation.topbar.js',
+				],
+				dest: 'theme.js',
+			},
+			css: {
+				src: ['theme/css/screen.css'],
+				dest: 'theme.css',
+			}
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-preprocess');
-	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.registerTask(
-		'default', ['preprocess', 'clean', 'compass']
+		'default', ['preprocess', 'concat', 'compass']
 	);
 }

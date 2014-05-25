@@ -12,7 +12,10 @@ module.exports = function(grunt) {
 				options: {
 					sassDir: 'theme/sass',
 					cssDir: 'theme/css',
-					environment: 'production'
+					imagesDir: 'theme/img',
+					javascriptsDir: 'theme/js',
+					importPath: 'bower_components/foundation/scss',
+					outputStyle: 'expanded'
 				}
 			}
 		},

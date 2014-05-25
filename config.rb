@@ -7,8 +7,6 @@ sass_dir = "sass"
 images_dir = "images"
 javascripts_dir = "javascripts"
 
-require "zurb-foundation"
-
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
 

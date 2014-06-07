@@ -3,3 +3,6 @@ node_modules/
 bower_components/
 template.tumblr
 theme/css/
+theme.js
+theme.css
+theme.tumblr

@@ -63,26 +63,26 @@
 			<div class="description">
 				{Description}
 			</div>
-			{block:Posts}
-				<div class="posts">
-					<!-- Begin post types -->
+			<div class="posts">
+				{block:Posts}
+						<!-- Begin post types -->
 
-					<!-- @include partials/block-text.tumblr -->
-					<!-- @include partials/block-photo.tumblr -->
-					<!-- @include partials/block-panorama.tumblr -->
-					<!-- @include partials/block-photoset.tumblr -->
-					<!-- @include partials/block-quote.tumblr -->
-					<!-- @include partials/block-link.tumblr -->
-					<!-- @include partials/block-chat.tumblr -->
-					<!-- @include partials/block-video.tumblr -->
-					<!-- @include partials/block-audio.tumblr -->
+						<!-- @include partials/block-text.tumblr -->
+						<!-- @include partials/block-photo.tumblr -->
+						<!-- @include partials/block-panorama.tumblr -->
+						<!-- @include partials/block-photoset.tumblr -->
+						<!-- @include partials/block-quote.tumblr -->
+						<!-- @include partials/block-link.tumblr -->
+						<!-- @include partials/block-chat.tumblr -->
+						<!-- @include partials/block-video.tumblr -->
+						<!-- @include partials/block-audio.tumblr -->
 
-					<!-- End post types -->
-					<div class="back-top">
-						<a href="#top">{lang:Back to top}</a>
-					</div>
-				</div> <!-- end .posts-->
-			{/block:Posts}
+						<!-- End post types -->
+						<div class="back-top">
+							<a href="#top">{lang:Back to top}</a>
+						</div>
+				{/block:Posts}
+			</div> <!-- end .posts-->
 		</div> <!-- end .content -->
 		<div class="footer">
 			{block:PreviousPage}

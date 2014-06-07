@@ -34,12 +34,36 @@ module.exports = function(grunt) {
 				dest: 'theme.css',
 			}
 		},
+		watch: {
+		  scripts: {
+			files: ['theme/js/*.js'],
+			tasks: ['concat'],
+			options: {
+			  spawn: false,
+			},
+		  },
+		  styles: {
+			files: ['theme/sass/*'],
+			tasks: ['compass'],
+			options: {
+			  spawn: false,
+			},
+		  },
+		  templates: {
+			files: ['theme/templates/*'],
+			tasks: ['preprocess'],
+			options: {
+			  spawn: false,
+			},
+		  },
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.registerTask(
-		'default', ['preprocess', 'compass', 'concat']
+		'default', ['preprocess', 'compass', 'concat', 'watch']
 	);
 }

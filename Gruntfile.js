@@ -22,10 +22,10 @@ module.exports = function(grunt) {
 		concat: {
 			js: {
 				src: [
-					'theme/js/*.js',
 					'bower_components/jquery/dist/jquery.js',
 					'bower_components/foundation/js/foundation/foundation.js',
 					'bower_components/foundation/js/foundation/foundation.topbar.js',
+					'theme/js/theme.js'
 				],
 				dest: 'theme.js',
 			},

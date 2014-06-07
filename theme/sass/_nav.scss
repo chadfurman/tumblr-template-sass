@@ -1,0 +1,12 @@
+nav.top-bar {
+  height: auto;
+  position: static;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: none;
+}
+
+.top-bar-section .has-form {
+  background: none;
+}

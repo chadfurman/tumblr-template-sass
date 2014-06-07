@@ -5,6 +5,8 @@
 
 
 /** Global variables imported before everything else */
-@import "variables";
-
 @import "app";
+
+@import "layout";
+@import "nav";
+@import "posts";

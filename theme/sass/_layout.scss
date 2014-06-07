@@ -1,0 +1,23 @@
+.container {
+  @include grid-row;
+  max-width: none;
+  .header {
+    @include grid-row;
+    max-width: none;
+    .logo {
+      @include grid-column(12, true, false, false, false, false, true);
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.content {
+  @include grid-row;
+  .posts {
+    @include grid-column(8, false, true);
+
+    background: rgba(255,255,255,0.8);
+  }
+}

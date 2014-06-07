@@ -3,6 +3,8 @@
 <head>
 	<!-- @include partials/title.tumblr -->
 
+	<link rel="stylesheet" type="text/css" href="">
+
 	<link rel="shortcut icon" href="{Favicon}">
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -23,23 +25,39 @@
 			<div class="logo">
 				<a href="http://{name}.tumblr.com/"><img src="{image:Header}" /></a>
 			</div>
+			<nav class="top-bar" data-topbar>
+				<ul class="title-area">
+					<li class="name">
+						<h1 class="title"><a href="http://{name}.tumblr.com/">{Title}</a></h1>
+					</li>
+					<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				</ul>
 
-			<h1><a href="http://{name}.tumblr.com/">{Title}</a></h1>
+				<section class="top-bar-section">
+					<!-- Right Nav Section -->
+					<ul class="right">
+
+						<!-- Custom Pages -->
+						{block:Pages}
+							<li><a href="{URL}">{Label}</a></li>
+						{/block:Pages}
+
+						<!-- Search Form -->
+						<li class="has-form">
+							<div class="row collapse">
+								<div class="large-8 small-9 columns">
+									<input type="text" placeholder="Find Stuff">
+								</div>
+								<div class="large-4 small-3 columns">
+									<a href="#" class="alert button expand">Search</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</nav>
 		</div>
-
-		<nav class="primary">
-			<ul>
-				<li>
-					<a href="{text:Facebook URL}">Facebook</a>
-				</li>
-				<li>
-					<form action="/search" method="get">
-						<input type="text" name="q" value="{SearchQuery}"/>
-						<input type="submit" value="{lang:Search}"/>
-					</form>
-				</li>
-			</ul>
-		</nav>
 
 		<div class="content">
 			<div class="description">
@@ -50,6 +68,14 @@
 					<!-- Begin post types -->
 
 					<!-- @include partials/block-text.tumblr -->
+					<!-- @include partials/block-photo.tumblr -->
+					<!-- @include partials/block-panorama.tumblr -->
+					<!-- @include partials/block-photoset.tumblr -->
+					<!-- @include partials/block-quote.tumblr -->
+					<!-- @include partials/block-link.tumblr -->
+					<!-- @include partials/block-chat.tumblr -->
+					<!-- @include partials/block-video.tumblr -->
+					<!-- @include partials/block-audio.tumblr -->
 
 					<!-- End post types -->
 					<div class="back-top">
@@ -58,6 +84,18 @@
 				</div> <!-- end .posts-->
 			{/block:Posts}
 		</div> <!-- end .content -->
+		<div class="footer">
+			{block:PreviousPage}
+			<a href="{PreviousPage}">&#171; Previous</a>
+			{/block:PreviousPage}{block:NextPage}
+			<a href="{NextPage}">Next &#187;</a>
+			{/block:NextPage}
+
+			<a href="/archive">Archive</a>
+		</div>
 	</div> <!-- end .container -->
+
+	<!-- Insert URL for theme.js here -->
+	<script src=""></script>
 </body>
 </html>

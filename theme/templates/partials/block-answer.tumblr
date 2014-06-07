@@ -1,0 +1,12 @@
+{block:Answer}
+	<div class="post answer">
+			<div class="question">
+				<img src="{AskerPortraitURL-64}"> {Asker}: {Question}
+			</div>
+			<div class="answer">
+				{Answer}
+			</div>
+		</div>
+		<!-- @include post-meta.tumblr -->
+	</div>
+{/block:Answer}

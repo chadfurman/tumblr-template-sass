@@ -1,0 +1,8 @@
+{block:Photoset}
+	<div class="post photoset">
+		{Photoset-500}{block:Caption}
+			<div class="caption">{Caption}</div>
+		{/block:Caption}
+		<!-- @include post-meta.tumblr -->
+	</div>
+{/block:Photoset}

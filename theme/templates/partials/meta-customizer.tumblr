@@ -1,6 +1,15 @@
 <meta name="image:Background" content=""/>
-<meta name="image:Header" content=""/>
 <meta name="color:Background" content="#ffffff"/>
+<meta name="select:BackgroundRepeat" content="no-repeat" title="None"/>
+<meta name="select:BackgroundRepeat" content="repeat-x" title="X-Axis"/>
+<meta name="select:BackgroundRepeat" content="repeat-y" title="Y-Axis"/>
+<meta name="select:BackgroundRepeat" content="repeat" title="Both X-Axis and Y-Axis"/>
+
+<meta name="color:Header" content="#ffffff"/>
+<meta name="image:Header" content=""/>
+
+<meta name="color:Text" content="#000000"/>
+<meta name="color:link[k" content="#000000"/>
 <meta name="color:Text" content="#000000"/>
 <meta name="text:Facebook URL" content=""/>
 <meta name="text:YouTube URL" content=""/>
@@ -14,6 +23,7 @@
 	{
 		background-image: url('{image:Background}');
 		background-color: {color:Background};
+		background-repeat: {select:BackgroundRepeat};
 		font-family: {font:Body Font};
 		color: {color:Text};
 	}

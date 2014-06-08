@@ -1,0 +1,13 @@
+.primary-nav {
+  @include grid-column(12, false, true);
+  background-color: rgba(darken($primary-color,.25), .8);
+  line-height: 2em;
+  >ul {
+    @include grid-column(8, false, true);
+    @include inline-list;
+    margin: auto;
+    li a {
+      color: $body-font-color;
+    }
+  }
+}

@@ -14,7 +14,15 @@
   }
 }
 
+.content-wrapper {
+  @include grid-row(nest-collapse);
+  background: rgba($primary-color, 0.8);
+}
+
 .content {
   @include grid-column(8, false, true);
-  background: rgba(255,255,255,0.8);
+  background: rgba($primary-color, 0.8);
+  .description {
+    padding-top: 1em;
+  }
 }

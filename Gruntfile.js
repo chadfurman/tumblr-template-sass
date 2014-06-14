@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 					'bower_components/jquery/dist/jquery.js',
 					'bower_components/foundation/js/foundation/foundation.js',
 					'bower_components/foundation/js/foundation/foundation.magellan.js',
-					'theme/js/pxuPhotoset.min.js',
+					'theme/js/pxuPhotoset.js',
 					'theme/js/theme.js'
 				],
 				dest: 'theme.js',

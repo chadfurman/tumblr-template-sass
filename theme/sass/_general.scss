@@ -1,0 +1,7 @@
+a, a:active, a:visited {
+  color: $body-font-color;
+}
+
+a:hover {
+  color: lighten($body-font-color, .25);
+}

@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 			},
 		  },
 		  styles: {
-			files: ['theme/sass/*'],
+			files: ['theme/sass/*', 'theme/sass/post_types/*'],
 			tasks: ['compass', 'concat:css'],
 			options: {
 			  spawn: false,

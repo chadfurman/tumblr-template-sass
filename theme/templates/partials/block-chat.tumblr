@@ -1,8 +1,12 @@
 {block:Chat}
 	<div class="post chat">
-		{block:Title}
-			<h3><a href="{Permalink}">{Title}</a></h3>
-		{/block:Title}
+		<div class="header">
+			{block:Title}
+				<h2 class="title">
+					<a href="{Permalink}">{Title}</a>
+				</h2>
+			{/block:Title}
+		</div>
 
 		<ul class="chat">
 			{block:Lines}

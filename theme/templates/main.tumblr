@@ -38,7 +38,6 @@
 				</div>
 				<div class="posts">
 					{block:Posts}
-						{block:Title}<h1 class="title"><a href="{Permalink}">{Title}</a></h1>{/block:Title}
 						<!-- Begin post types -->
 
 						<!-- @include partials/block-text.tumblr -->
@@ -50,7 +49,6 @@
 						<!-- @include partials/block-chat.tumblr -->
 						<!-- @include partials/block-video.tumblr -->
 						<!-- @include partials/block-audio.tumblr -->
-
 						<!-- End post types -->
 						<div class="back-top">
 							<a href="#top">{lang:Back to top}</a>

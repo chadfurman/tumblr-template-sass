@@ -1,6 +1,11 @@
 <nav data-magellan-expedition="fixed" class="primary-nav">
 	<ul>
-		<li data-magellan-arrival="build"><a href="#build">Build with HTML</a></li>
-		<li data-magellan-arrival="js"><a href="#js">Arrival 2</a></li>
+			<li data-magellan-arrival="submitter"><a href="/">Home</a></li>
+		{block:SubmissionsEnabled}
+			<li data-magellan-arrival="submitter"><a href="/submit">{SubmitLabel}</a></li>
+		{/block:SubmissionsEnabled}
+		{block:AskEnabled}
+			<li data-magellan-arrival="submitter"><a href="/submit">{AskLabel}</a></li>
+		{/block:AskEnabled}
 	</ul>
 </nav>

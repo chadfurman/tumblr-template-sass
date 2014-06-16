@@ -1,5 +1,12 @@
 {block:Audio}
 	<div class="post audio">
+		<div class="header">
+			{block:Title}
+				<h2 class="title">
+					<a href="{Permalink}">{Title}</a>
+				</h2>
+			{/block:Title}
+		</div>
 		{AudioEmbed}
 		{block:Caption}
 			<div class="caption">{Caption}</div>

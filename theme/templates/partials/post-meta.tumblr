@@ -2,6 +2,7 @@
 	<div class="post-meta">
 		{block:HasTags}
 			{lang:Tagged}
+
 			<ul class="tags">
 				{block:Tags}
 					<li class="tag">
@@ -10,22 +11,33 @@
 				{/block:Tags}
 			</ul>
 		{/block:HasTags}
-		<div class="date-posted">{lang:Posted on Month DayOfMonth Year with NoteCount notes}</div>
-		<div class="author">{lang:By PostAuthorName 2}</div>
+
 		{block:RebloggedFrom}
 			<div class="reblogged">
 				{lang:reblogged from ReblogParentName 2}
 			</div>
 		{/block:RebloggedFrom}
+
 		{block:ContentSource}
 			<div class="content-source">
 				{lang:Source}<a href="{SourceUrl}" target="_blank">{SourceTitle}</a>
 			</div>
+
 			<div class="notes">
 				<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
 			</div>
 		{/block:ContentSource}
-		<div class="share-buttons">
+
+		<div class="date-posted">
+			<a href="{Permalink}">{lang:Posted on Month DayOfMonth Year with NoteCount notes}</a>
+		</div>
+
+		<div class="meta-buttons">
+			<div class="note-count">
+				{block:NoteCount}
+					<a href="{Permalink}">{NoteCountWithLabel}</a>
+				{/block:NoteCount}
+			</div>
 			<div class="reblog-button">
 				{ReblogButton size="13" color="black"}
 			</div>
@@ -33,6 +45,9 @@
 				{LikeButton size="13" color="black"}
 			</div>
 		</div>
+		{block:PermalinkPage}
+			{PostNotes}
+		{/block:PermalinkPage}
 	</div>
 	<div class="divbar"></div>
 {/block:Date}

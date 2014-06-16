@@ -1,0 +1,17 @@
+.quote .body:before,
+.quote .body:after {
+  content: "\"";
+}
+
+.quote .body {
+  font-size: 3em;
+  text-align: center;
+  padding: 0 1em;
+}
+
+.quote .source {
+  text-align: right;
+  margin-right: 4em;
+  margin-top: 1em;
+}
+

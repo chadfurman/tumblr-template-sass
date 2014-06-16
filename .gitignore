@@ -1,7 +1,5 @@
-stylesheets/*
 node_modules/
-bower_components/
-template.tumblr
+libs/bower_components/
 theme/css/
 theme.js
 theme.css

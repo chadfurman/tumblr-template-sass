@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 					cssDir: 'theme/css',
 					imagesDir: 'theme/img',
 					javascriptsDir: 'theme/js',
-					importPath: 'bower_components/foundation/scss',
+					importPath: 'libs/bower_components/foundation/scss',
 					outputStyle: 'expanded'
 				}
 			}

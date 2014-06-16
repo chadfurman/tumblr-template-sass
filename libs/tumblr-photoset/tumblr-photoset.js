@@ -1,29 +1,34 @@
-/*!
- --------------------------------
- PXU Photoset Extended
- --------------------------------
- + https://github.com/PixelUnion/Extended-Tumblr-Photoset
- + http://pixelunion.net
- + Version 1.8.0
- + Copyright 2013 Pixel Union
- + Licensed under the MIT license
+/**
+ * Tumblr Photoset (jQuery)
+ *
+ * Inspired by: https://github.com/PixelUnion/Extended-Tumblr-Photoset
+ * Module template from: https://github.com/umdjs/umd/blob/master/jqueryPlugin.js
+ * Licensed under the MIT license
  */
 
-(function( $ ){
-
-	$.fn.pxuPhotoset = function( options, callback ) {
+// Uses AMD or browser globals to create a jQuery plugin.
+(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define(['jquery'], factory);
+	} else {
+		// Browser globals
+		factory(jQuery);
+	}
+}(function ($) {
+	$.fn.tumblrPhotoset = function( options, callback ) {
 
 		var defaults = {
-			'lightbox'       : true,
-			'highRes'        : true,
-			'rounded'        : 'corners',
-			'borderRadius'   : '5px',
-			'exif'           : true,
-			'captions'       : true,
-			'gutter'         : '10px',
-			'photoset'       : '.photo-slideshow',
-			'photoWrap'      : '.photo-data',
-			'photo'          : '.pxu-photo'
+				'lightbox'       : true,
+				'highRes'        : true,
+				'rounded'        : 'corners',
+				'borderRadius'   : '5px',
+				'exif'           : true,
+				'captions'       : true,
+				'gutter'         : '10px',
+				'photoset'       : '.photo-slideshow',
+				'photoWrap'      : '.photo-data',
+				'photo'          : '.pxu-photo'
 		};
 
 		var settings = $.extend(defaults, options);
@@ -390,5 +395,4 @@
 		}); // end return each
 
 	}; // end PXU Photoset Extended
-
-})( jQuery );
+}));

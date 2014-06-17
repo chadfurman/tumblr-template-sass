@@ -10,6 +10,10 @@ Run these commands in a terminal
  - npm install
  - bower install
  - grunt
+
+Grunt will end with a watch task, recompiling the templates and sass files when you edit them.
+Note that all assets are compiled into theme.tumblr, theme.js, and theme.css in the root of the repository.
+
  - copy the contents of theme.tumblr to the blog's "edit theme" HTML view
  - upload both theme.js and theme.css as static assets
  - add theme.js to the bottom of the tumblr theme (you'll see the script tag with an empty src attribute)

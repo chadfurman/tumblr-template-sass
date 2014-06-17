@@ -1,7 +1,7 @@
 $(document).foundation();
 
 $(document).ready(function() {
-	console.log($('.photo-slideshow').pxuPhotoset({
+	console.log($('.photo-slideshow').tumblrPhotoset({
 		'ligthbox'  : true, // uses the default Tumblr lightbox, change to false to use your own
 		'highRes'   : true, // will use high res images
 		'rounded'   : 'corners', // corners, all or false

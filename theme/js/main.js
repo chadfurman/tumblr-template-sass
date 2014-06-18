@@ -1,12 +1,13 @@
 require.config({
-	baseUrl: "/another/path",
+	baseUrl: "/libs",
 	paths: {
-		"some": "some/v1.0"
+		"jquery": "bower_components/jquery/jquery.js"
 	},
 	waitSeconds: 15
 });
-require( ["some/module", "my/module", "a.js", "b.js"],
-	function(jquery) {
+require( ["jquery"],
+	function($) {
+		console.log('thank god!  it worked.');
 		$(document).foundation();
 
 		$(document).ready(function() {

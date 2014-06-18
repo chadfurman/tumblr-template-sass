@@ -17,6 +17,8 @@
 	<meta name="keywords" content="{block:Tags} {/block:Tags}" />
 	{/block:HasTags}
 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js"></script>
+
 	<!-- @include partials/meta-open-graph.tumblr -->
 	<!-- @include partials/meta-customizer.tumblr -->
 </head>

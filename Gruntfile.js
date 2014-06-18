@@ -22,11 +22,10 @@ module.exports = function(grunt) {
 		concat: {
 			js: {
 				src: [
-					'libs/bower_components/jquery/dist/jquery.js',
 					'libs/bower_components/foundation/js/foundation/foundation.js',
 					'libs/bower_components/foundation/js/foundation/foundation.magellan.js',
 					'libs/tumblr-photoset/tumblr-photoset.js',
-					'theme/js/theme.js'
+					'theme/js/main.js'
 				],
 				dest: 'theme.js',
 			},

@@ -16,7 +16,6 @@
 
 .content-wrapper {
   @include grid-row(nest-collapse);
-  background: rgba($primary-color, 0.8);
 }
 
 .content {

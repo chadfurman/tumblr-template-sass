@@ -22,3 +22,5 @@ Note that all assets are compiled into theme.tumblr, theme.js, and theme.css in 
  - add theme.css to the top of the tumblr theme
 
 For heavy editing and testing, it's good to note that inserting theme.js first means you won't have to close the assets panel.
+
+*Note*:  In a future release, I plan to compile all assets into a single theme.tumblr file for easy upload.

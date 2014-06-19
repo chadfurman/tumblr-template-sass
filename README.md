@@ -1,3 +1,5 @@
+** Currently, the photoset is broken.  I appologize.  **
+
 tumblr-template-sass
 ====================
 

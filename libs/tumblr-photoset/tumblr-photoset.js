@@ -10,27 +10,13 @@
 (function (factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
-		define(['jquery'], factory);
+		define(['jquery', 'albumPhotoset'], factory);
 	} else {
 		// Browser globals
 		factory(jQuery);
 	}
-}(function ($) {
-	$.fn.tumblrPhotoset = function( options, callback ) {
-
-		var defaults = {
-				'lightbox'       : true,
-				'highRes'        : true,
-				'rounded'        : 'corners',
-				'borderRadius'   : '5px',
-				'exif'           : true,
-				'captions'       : true,
-				'gutter'         : '10px',
-				'photoset'       : '.photo-slideshow',
-				'photoWrap'      : '.photo-data',
-				'photo'          : '.pxu-photo'
-		};
-		var settings = $.extend(defaults, options);
+}(function ($, albumPhotoset) {
+	$.fn.tumblrPhotoset = function() {
 
 		/**
 		 * Tumblr Photoset
@@ -43,13 +29,7 @@
 		 *  2 on the second, and 1 image on the last row.means be 3 rows, 3 images in the first
 		 *  row, 2 in the second, 1 in the third resulting in a total of 6 images
 		 */
-		var $this = $(this);
-		var layout = JSON.stringify($this.data('layout')).split('');
-		var allImages = $this.find(settings.photo + ' img');
-
-		// activate alternative image rollover
-		$(settings.photoWrap)
-			.on("mouseenter", function() { $(this).find('.rollover').css("visibility", "visible"); } )
-			.on("mouseleave", function() { $(this).find('.rollover').css("visibility", "hidden"); } );
+		var photoset = albumPhotoset($(this));
+		albumPhotoset.render();
 	};
 }));

@@ -16,40 +16,47 @@
 		factory(jQuery);
 	}
 }(function ($) {
-	return function($photoset) {
-		var layout = JSON.stringify($photoset.data('layout')).split('');
-		var photosetImages = $photoset.find('img.photo');
+  var albumPhotoset = {
+    init: function ($photoset) {
+      this.layout = JSON.stringify($photoset.data('layout')).split('');
+      this.photosetImages = $photoset.find('img.photo');
+      this.$photoset = $photoset;
+    },
 
-		// imagePositionPointer determines where we start in the array of images for each row
-		var imagePositionPointer = 0;
-		for (var rowCounter = 0; rowCounter < layout.length; rowCounter++) { // each row
+    // imagePositionPointer determines where we start in the array of images for each row
+    render: function() {
+      var imagePositionPointer = 0;
+      for (var rowCounter = 0; rowCounter < this.layout.length; rowCounter++) { // each row
 
-			// numImagesInRow is the current row's image count
-			var numImagesInRow = parseInt(layout[rowCounter]);
+        // numImagesInRow is the current row's image count
+        var numImagesInRow = parseInt(this.layout[rowCounter]);
 
-			// row is the jcreate the row dom
-			var $row = $('<ul class="medium-block-grid-' + numImagesInRow + '"></ul>');
+        // row is the jcreate the row dom
+        var $row = $('<ul class="medium-block-grid-' + numImagesInRow + '"></ul>');
 
 
-			// build out and append to our row each image item
-			for (var rowImageCounter = imagePositionPointer;
-				rowImageCounter < (numImagesInRow + imagePositionPointer);
-				rowImageCounter++
-			) { // each row image
-				$image = $('<li></li>');
-				$image.append(photosetImages[rowImageCounter]);
+        // build out and append to our row each image item
+        for (var rowImageCounter = imagePositionPointer;
+             rowImageCounter < (numImagesInRow + imagePositionPointer);
+             rowImageCounter++
+          ) { // each row image
+          $image = $('<li></li>');
+          $image.append(this.photosetImages[rowImageCounter]);
 
-				// @todo implement hover
-				// .on("mouseenter", function() { $(this).find('.rollover').css("visibility", "visible"); } )
-				// .on("mouseleave", function() { $(this).find('.rollover').css("visibility", "hidden"); } );
-				// if hover enabled, every other image is the onMouseOver for the image prior
-				// if no hover, simply add each image to the row dom
-				$row.append($image);
-			}
+          // @todo implement hover
+          // .on("mouseenter", function() { $(this).find('.rollover').css("visibility", "visible"); } )
+          // .on("mouseleave", function() { $(this).find('.rollover').css("visibility", "hidden"); } );
+          // if hover enabled, every other image is the onMouseOver for the image prior
+          // if no hover, simply add each image to the row dom
+          $row.append($image);
+        }
 
-			// determine where we start in the array of images for the next row
-			imagePositionPointer += numImagesInRow;
-			$photoset.append($row);
-		} // end row loop
-	}; // end return method
+        // determine where we start in the array of images for the next row
+        imagePositionPointer += numImagesInRow;
+        this.$photoset.append($row);
+      } // end row loop
+    } // end render()
+  };
+
+  return albumPhotoset;
 }));

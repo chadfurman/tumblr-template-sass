@@ -1,5 +1,5 @@
-require( ["jquery", "foundation", "foundation.magellan", "tumblrPhotoset", "albumPhotoset"],
-	function($, foundation) {
+require( ["jquery", "foundation", "foundation.magellan", "tumblrPhotoset"],
+	function($, foundation, foundationMagellan, tumblrPhotoset) {
 		$(document).foundation();
 
 		$(document).ready(function() {

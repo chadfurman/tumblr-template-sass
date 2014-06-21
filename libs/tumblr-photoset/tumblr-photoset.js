@@ -29,7 +29,7 @@
 		 *  2 on the second, and 1 image on the last row.means be 3 rows, 3 images in the first
 		 *  row, 2 in the second, 1 in the third resulting in a total of 6 images
 		 */
-		var photoset = albumPhotoset($(this));
-		albumPhotoset.render();
+		albumPhotoset.init($(this));
+    albumPhotoset.render();
 	};
 }));

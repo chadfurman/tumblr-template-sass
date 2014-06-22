@@ -22,7 +22,8 @@
     "tumblrPhotoset": "./theme/libs/tumblr-photoset/tumblr-photoset.js",
     "tumblrPhotoset.albumPhotoset": "./theme/libs/tumblr-photoset/tumblr-photoset.album-photoset.js",
     "tumblrPhotoset.albumPhotoset.highres": "./theme/libs/tumblr-photoset/tumblr-photoset.album-photoset.highres.js",
-    "tumblrPhotoset.lightbox": "./theme/libs/tumblr-photoset/tumblr-photoset.lightbox.js"
+    "tumblrPhotoset.lightbox": "./theme/libs/tumblr-photoset/tumblr-photoset.lightbox.js",
+    "infiniteScroll": "./theme/libs/infinite-scroll/infinite-scroll.js"
   },
   "browserify-shim": {
     "jquery": "jQuery",
@@ -36,6 +37,9 @@
         "jquery:jQuery",
         "foundation:foundation"
       ]
+    },
+    "infiniteScroll": {
+      "depends": "jquery"
     }
   },
   "browserify": {

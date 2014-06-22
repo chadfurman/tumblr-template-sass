@@ -7,5 +7,7 @@
 		{block:AskEnabled}
 			<li data-magellan-arrival="submitter"><a href="/submit">{AskLabel}</a></li>
 		{/block:AskEnabled}
+		<li data-magellan-arrival="submitter"><a href="/archive">Archive</a></li>
+
 	</ul>
 </nav>

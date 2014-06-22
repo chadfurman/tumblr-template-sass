@@ -1,11 +1,12 @@
-require( ["jquery", "foundation", "foundation.magellan", "tumblrPhotoset"],
-	function($, foundation, foundationMagellan, tumblrPhotoset) {
-		$(document).foundation();
+var $ = require('jquery');
+require('foundation');
+require('foundation.magellan');
+require('tumblrPhotoset');
 
-		$(document).ready(function() {
-			$('.photo-slideshow').each(function() {
-				$(this).tumblrPhotoset();
-			});
-		});
-	}
-);
+$(document).foundation();
+
+$(document).ready(function() {
+  $('.photo-slideshow').each(function() {
+    $(this).tumblrPhotoset();
+  });
+});

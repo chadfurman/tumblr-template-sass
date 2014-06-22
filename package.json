@@ -8,14 +8,35 @@
     "grunt-contrib-compass": "^0.8.0",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-contrib-requirejs": "~0.4.4"
+    "grunt-contrib-requirejs": "~0.4.4",
+    "browserify-shim": "^3.5.0"
+  },
+  "dependencies": {
+    "normalize.css": "~3.0.1"
   },
   "description": "tumblr-template-sass ====================",
-  "main": "Gruntfile.js",
-  "dependencies": {
-    "grunt": "~0.4.4",
-    "grunt-preprocess": "~4.0.0",
-    "normalize.css": "~3.0.1"
+  "main": "theme/js/main.js",
+  "browser": {
+    "foundation": "./theme/libs/bower_components/foundation/js/foundation/foundation.js",
+    "foundation.magellan": "./theme/libs/bower_components/foundation/js/foundation/foundation.magellan.js",
+    "tumblrPhotoset": "./theme/libs/tumblr-photoset/tumblr-photoset.js",
+    "tumblrPhotoset.albumPhotoset": "./theme/libs/tumblr-photoset/tumblr-photoset.album-photoset.js",
+    "tumblrPhotoset.highres": "./theme/libs/tumblr-photoset/tumblr-photoset.highres.js",
+    "tumblrPhotoset.lightbox": "./theme/libs/tumblr-photoset/tumblr-photoset.lightbox.js"
+  },
+  "browserify-shim": {
+    "jquery": "jQuery",
+    "foundation": {
+      "depends": ["jquery"]
+    },
+    "foundation.magellan": {
+      "depends": ["jquery", "foundation"]
+    }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

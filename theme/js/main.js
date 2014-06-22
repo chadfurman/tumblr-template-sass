@@ -15,5 +15,9 @@ $(document).ready(function() {
     nextSelector : ".next-page",
     itemSelector : ".post",
     bufferPx     : 400
+  }, function (newElementsArray) {
+    $('.photo-slideshow', newElementsArray).each(function() {
+      $(this).tumblrPhotoset();
+    });
   });
 });

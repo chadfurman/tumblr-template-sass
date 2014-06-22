@@ -15,7 +15,7 @@
     "normalize.css": "~3.0.1"
   },
   "description": "tumblr-template-sass ====================",
-  "main": "theme/js/main.js",
+  "main": "./theme/js/main.js",
   "browser": {
     "foundation": "./theme/libs/bower_components/foundation/js/foundation/foundation.js",
     "foundation.magellan": "./theme/libs/bower_components/foundation/js/foundation/foundation.magellan.js",
@@ -27,10 +27,15 @@
   "browserify-shim": {
     "jquery": "jQuery",
     "foundation": {
-      "depends": ["jquery"]
+      "depends": [
+        "jquery:jQuery"
+      ]
     },
     "foundation.magellan": {
-      "depends": ["jquery", "foundation"]
+      "depends": [
+        "jquery:jQuery",
+        "foundation:foundation"
+      ]
     }
   },
   "browserify": {

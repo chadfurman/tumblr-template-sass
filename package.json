@@ -21,7 +21,7 @@
     "foundation.magellan": "./theme/libs/bower_components/foundation/js/foundation/foundation.magellan.js",
     "tumblrPhotoset": "./theme/libs/tumblr-photoset/tumblr-photoset.js",
     "tumblrPhotoset.albumPhotoset": "./theme/libs/tumblr-photoset/tumblr-photoset.album-photoset.js",
-    "tumblrPhotoset.highres": "./theme/libs/tumblr-photoset/tumblr-photoset.highres.js",
+    "tumblrPhotoset.albumPhotoset.highres": "./theme/libs/tumblr-photoset/tumblr-photoset.album-photoset.highres.js",
     "tumblrPhotoset.lightbox": "./theme/libs/tumblr-photoset/tumblr-photoset.lightbox.js"
   },
   "browserify-shim": {

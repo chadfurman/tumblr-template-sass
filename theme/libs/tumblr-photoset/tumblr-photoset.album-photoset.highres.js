@@ -6,12 +6,14 @@
  * Licensed under the MIT license
  */
 
+var $ = require('jquery');
 var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
-console.log('binding pre-render event');
+
 albumPhotoset.registerEventHandler('pre-render', function(albumPhotoset) {
   albumPhotoset.$photosetImages.each(function() {
-    if (highRes = this.data('highres')) {
-      this.attr('src', highRes);
+    $this = $(this);
+    if (highRes = $this.data('highres')) {
+      $this.attr('src', highRes);
     }
   })
 })

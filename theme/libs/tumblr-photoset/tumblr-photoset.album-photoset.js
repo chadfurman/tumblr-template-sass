@@ -13,6 +13,7 @@
  * Licensed under the MIT license
  */
 var $ = require('jquery');
+
 var albumPhotoset = {
   /**
    * Callbacks
@@ -37,7 +38,6 @@ var albumPhotoset = {
    * @param callback
    */
   registerEventHandler: function (event, callback) {
-    cosole.debug('registering ' + event + ' callback', callback);
     if (this.callbacks.hasOwnProperty(event)) {
       this.callbacks.event.push(callback);
     } else {
@@ -51,7 +51,6 @@ var albumPhotoset = {
    * @param string event
    */
   triggerEvent: function (event) {
-    console.log('triggered event ' + event);
     if (! this.callbacks.hasOwnProperty(event)) {
       return;
     }

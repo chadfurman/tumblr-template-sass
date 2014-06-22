@@ -12,7 +12,7 @@
  * Inspired by: https://github.com/PixelUnion/Extended-Tumblr-Photoset
  * Licensed under the MIT license
  */
-
+var $ = require('jquery');
 var albumPhotoset = {
   /**
    * Callbacks
@@ -51,7 +51,7 @@ var albumPhotoset = {
    * @param string event
    */
   triggerEvent: function (event) {
-    cosole.log('triggered event ' + event);
+    console.log('triggered event ' + event);
     if (! this.callbacks.hasOwnProperty(event)) {
       return;
     }

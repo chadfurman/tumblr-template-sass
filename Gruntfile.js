@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 					cssDir: 'theme/css',
 					imagesDir: 'theme/img',
 					javascriptsDir: 'theme/js',
-					importPath: 'libs/bower_components/foundation/scss',
+					importPath: 'theme/libs/bower_components/foundation/scss',
 					outputStyle: 'expanded'
 				}
 			}
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 		  scripts: {
-			files: ['theme/js/*.js', 'libs/tumblr-photoset/*.js'],
+			files: ['theme/js/*.js', 'theme/libs/tumblr-photoset/*.js'],
 			tasks: ['requirejs'],
 			options: {
 			  spawn: false

@@ -6,7 +6,7 @@
  * Licensed under the MIT license
  */
 
-var albumPhotoset = require('albumPhotoset');
+var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 console.log('binding pre-render event');
 albumPhotoset.registerEventHandler('pre-render', function(albumPhotoset) {
   albumPhotoset.$photosetImages.each(function() {

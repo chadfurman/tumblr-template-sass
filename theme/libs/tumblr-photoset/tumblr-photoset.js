@@ -5,11 +5,9 @@
  * Licensed under the MIT license
  */
 var $ = require('jquery');
-require('tumblrPhotoset.albumPhotoset');
+var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 
 $.fn.tumblrPhotoset = function() {
-
-  var photoset = new albumPhotoset;
-  photoset.init($(this));
-  photoset.render();
+  albumPhotoset.init($(this));
+  albumPhotoset.render();
 };

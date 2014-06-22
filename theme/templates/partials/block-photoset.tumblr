@@ -11,6 +11,9 @@
 						data-width="{PhotoWidth-HighRes}"
 						data-height="{PhotoHeight-HighRes}"
 						class="photo {block:Exif}exif-yes{/block:Exif}"
+						{block:Tags}
+							data-tags="{Tags}"
+						{/block:Tags}
 						{block:Exif}
 							{block:Camera}data-camera="{Camera}"{/block:Camera}
 							{block:ISO}data-iso="{ISO}"{/block:ISO}

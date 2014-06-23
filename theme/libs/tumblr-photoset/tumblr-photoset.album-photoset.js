@@ -26,9 +26,11 @@ var albumPhotoset = {
    * @param $photoset
    */
   init: function ($photoset) {
+    this.triggerEvent('pre-init');
     this.layout = JSON.stringify($photoset.data('layout')).split('');
     this.$photosetImages = $photoset.find('img.photo');
     this.$photoset = $photoset;
+    this.triggerEvent('post-init');
   },
 
   /**
@@ -72,7 +74,6 @@ var albumPhotoset = {
     this.triggerEvent('pre-render');
     for (var rowCounter = 0; rowCounter < this.layout.length; rowCounter++) { // each row
 
-      this.triggerEvent('pre-row');
       // numImagesInRow is the current row's image count
       var numImagesInRow = parseInt(this.layout[rowCounter]);
 
@@ -99,6 +100,8 @@ var albumPhotoset = {
       // determine where we start in the array of images for the next row
       imagePositionPointer += numImagesInRow;
       this.$photoset.append($row);
+
+      this.triggerEvent('post-render');
     } // end row loop
   } // end render()
 };

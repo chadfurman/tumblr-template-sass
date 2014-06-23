@@ -5,6 +5,7 @@
 
 	<!-- Insert Theme Assets (theme.css and theme.js) -->
 	<link rel="stylesheet" type="text/css" href="">
+	<script type="text/javascript" src=""></script>
 
 	<link rel="shortcut icon" href="{Favicon}">
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
@@ -67,6 +68,5 @@
 			</div> <!-- end .content -->
 		</div> <!-- end .content-wrapper -->
 	</div> <!-- end .container -->
-	<script src=""></script>
 </body>
 </html>

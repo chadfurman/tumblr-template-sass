@@ -2,14 +2,13 @@
   "name": "gaming-thrones",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-preprocess": "^4.0.0",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-compass": "^0.8.0",
-    "grunt-contrib-concat": "^0.4.0",
-    "grunt-contrib-watch": "^0.6.1",
     "browserify-shim": "^3.5.0",
-    "grunt-browserify": "^2.1.0"
+    "gulp-preprocess": "^1.1.1",
+    "gulp-compass": "^1.1.9",
+    "gulp-watch": "^0.6.8",
+    "npm": "^1.4.16",
+    "install": "^0.1.7",
+    "gulp-browserify": "^0.5.0"
   },
   "dependencies": {
     "normalize.css": "~3.0.1"

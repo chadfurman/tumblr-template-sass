@@ -40,7 +40,7 @@ var albumPhotoset = {
    */
   registerEventHandler: function (event, callback) {
     if (this.callbacks.hasOwnProperty(event)) {
-      this.callbacks.event.push(callback);
+      this.callbacks[event].push(callback);
     } else {
       this.callbacks[event] = [callback];
     }

@@ -10,6 +10,7 @@ $(document).ready(function() {
   $('.photo-slideshow').each(function() {
     $(this).tumblrPhotoset();
   });
+
   $('.posts').infinitescroll({
     navSelector  : ".pagination",
     nextSelector : ".next-page",

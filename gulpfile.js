@@ -25,6 +25,7 @@ gulp.task('html', function() {
 gulp.task('styles', function() {
   gulp.src('theme/sass/*.scss')
     .pipe(compass({
+      debug: true,
       config_file: 'config.rb',
       css: 'build',
       sass: 'theme/sass',

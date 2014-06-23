@@ -10,7 +10,6 @@
  *  row, 2 in the second, 1 in the third resulting in a total of 6 images
  *
  * Inspired by: https://github.com/PixelUnion/Extended-Tumblr-Photoset
- * Licensed under the MIT license
  */
 var $ = require('jquery');
 

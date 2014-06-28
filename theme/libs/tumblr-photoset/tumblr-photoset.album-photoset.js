@@ -59,7 +59,7 @@ var albumPhotoset = {
     callbacks = this.callbacks[event];
     for (var callbackCounter = 0; callbackCounter < callbacks.length; callbackCounter++) {
       var callback = callbacks[callbackCounter];
-      callback(this);
+      callback(this, Array.prototype.slice.call(arguments, 1)); // pass array of event arguments to callback
     }
   },
 
@@ -82,12 +82,14 @@ var albumPhotoset = {
 
 
       // build out and append to our row each image item
-      for (var rowImageCounter = imagePositionPointer;
-           rowImageCounter < (numImagesInRow + imagePositionPointer);
+      var rowImagesSlice = this.$photosetImages.slice(imagePositionPointer, numImagesInRow + imagePositionPointer);
+      for (var rowImageCounter = 0;
+           rowImageCounter < numImagesInRow;
            rowImageCounter++
         ) { // each row image
-        $image = $('<li></li>');
-        $image.append(this.$photosetImages[rowImageCounter]);
+        var $image = $('<li></li>');
+        var image = rowImagesSlice[rowImageCounter];
+        $image.append(image);
 
         // @todo implement hover
         // .on("mouseenter", function() { $(this).find('.rollover').css("visibility", "visible"); } )
@@ -97,11 +99,11 @@ var albumPhotoset = {
         $row.append($image);
       }
 
+      this.triggerEvent('row-ready', $row);
+
       // determine where we start in the array of images for the next row
       imagePositionPointer += numImagesInRow;
       this.$photoset.append($row);
-
-      this.triggerEvent('post-render');
     } // end row loop
   } // end render()
 };

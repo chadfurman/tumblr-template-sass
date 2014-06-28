@@ -7,6 +7,7 @@ var $ = require('jquery');
 var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 require('tumblrPhotoset.albumPhotoset.highres');
 require('tumblrPhotoset.albumPhotoset.lightbox');
+require('tumblrPhotoset.albumPhotoset.rollover');
 
 $.fn.tumblrPhotoset = function() {
   albumPhotoset.init($(this));

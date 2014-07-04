@@ -8,7 +8,8 @@
     "gulp-watch": "^0.6.8",
     "npm": "^1.4.16",
     "install": "^0.1.7",
-    "gulp-browserify": "^0.5.0"
+    "gulp-browserify": "^0.5.0",
+    "gulp-plumber": "^0.6.3"
   },
   "dependencies": {
     "normalize.css": "~3.0.1"

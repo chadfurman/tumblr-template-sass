@@ -3,6 +3,7 @@ var browserify = require('browserify');
 var preprocess = require('gulp-preprocess');
 var compass    = require('gulp-compass');
 var watch      = require('gulp-watch');
+var plumber    = require('gulp-plumber');
 var source     = require('vinyl-source-stream');
 
 gulp.task('scripts', function() {

@@ -54,6 +54,15 @@
   list-style: none;
   text-indent: none;
   .tag {
-    display: inline;
+    display: inline-block;
+    margin-right: 1.2em;
+    a {
+      display: inline;
+      color: $secondary-color;
+      &:hover {
+        color: lighten($secondary-color, 25%);
+      }
+    }
   }
+
 }

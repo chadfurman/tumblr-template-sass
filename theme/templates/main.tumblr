@@ -36,9 +36,11 @@
 		<div class="content-wrapper">
 			<div class="content">
 
-				<div class="description">
-					{Description}
-				</div>
+				{block:IndexPage}
+					<div class="description">
+						{Description}
+					</div>
+				{/block:IndexPage}
 				<div class="posts">
 					{block:Posts}
 						<!-- Begin post types -->

@@ -18,3 +18,8 @@ Note that all assets are compiled into build/theme.tumblr, build/theme.js, and b
 
  - copy the contents of build/theme.tumblr to the theme's HTML editor
  - upload and insert both theme.js and theme.css as static assets
+
+
+## Notice
+Gulp's HTML task will automatically populate your clipboard when it recompiles HTML documents (for easy paste into tumblr).
+Currently, there is no way to disable this feature.  Please, be prepared.

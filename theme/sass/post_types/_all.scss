@@ -33,14 +33,8 @@
   display: inline-block;
 }
 
-.date-posted {
-  display: inline-block;
-}
-
 .meta-buttons {
-  display: inline-block;
-  position: absolute;
-  right: 0;
+  float: right;
   width: 150px;
 }
 
@@ -54,4 +48,12 @@
 
 .like-button {
   display: inline-block;
+}
+
+.tags {
+  list-style: none;
+  text-indent: none;
+  .tag {
+    display: inline;
+  }
 }

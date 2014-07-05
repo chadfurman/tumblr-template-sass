@@ -41,7 +41,10 @@ gulp.task('watch', watchTask);
 
 gulp.task('default', ['scripts', 'html', 'styles', 'watch']);
 
-function watchTask() {
+function watchTask(errorMsg) {
+  if (errorMsg) {
+    console.log(errorMsg);
+  }
   gulp.watch('theme/sass/**/*.scss', ['styles']);
   gulp.watch('theme/templates/**/*.tumblr', ['html']);
   gulp.watch(['theme/js/**/*.js', 'theme/libs/**/*.js'], ['scripts']);

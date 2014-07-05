@@ -35,13 +35,14 @@
 
 			<div class="content-wrapper">
 				<div class="content">
-					<!-- @include partials/block-search.tumblr -->
-
 					{block:IndexPage}
 						<div class="description">
 							{Description}
 						</div>
 					{/block:IndexPage}
+
+					<!-- @include partials/block-search.tumblr -->
+
 					<div class="posts">
 						{block:Posts}
 							<!-- Begin post types -->
@@ -62,9 +63,9 @@
 						{/block:Posts}
 						<div class="pagination">
 							{block:PreviousPage}
-							<a class="previous-page" href="{PreviousPage}">&#171; Previous</a>
+								<a class="previous-page" href="{PreviousPage}">&#171; Previous</a>
 							{/block:PreviousPage}{block:NextPage}
-							<a class="next-page" href="{NextPage}">Next &#187;</a>
+								<a class="next-page" href="{NextPage}">Next &#187;</a>
 							{/block:NextPage}
 						</div>
 					</div> <!-- end .posts-->

@@ -1,74 +1,75 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-	<!-- @include partials/title.tumblr -->
+	<head>
+		<!-- @include partials/title.tumblr -->
 
-	<!-- Insert Theme Assets (theme.css and theme.js) -->
-	<link rel="stylesheet" type="text/css" href="">
-	<script type="text/javascript" src=""></script>
+		<!-- Insert Theme Assets (theme.css and theme.js) -->
+		<link rel="stylesheet" type="text/css" href="">
+		<script type="text/javascript" src=""></script>
 
-	<link rel="shortcut icon" href="{Favicon}">
-	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
-	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=750">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=750">
 
-	{block:HasTags}
-	<meta name="keywords" content="{block:Tags} {/block:Tags}" />
-	{/block:HasTags}
+		{block:HasTags}
+		<meta name="keywords" content="{block:Tags} {/block:Tags}" />
+		{/block:HasTags}
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js"></script>
 
-	<!-- @include partials/meta-open-graph.tumblr -->
-	<!-- @include partials/meta-customizer.tumblr -->
-</head>
-<body>
-	<div class="container">
-		<div class="header">
-			<div class="logo">
-				<a href="http://{name}.tumblr.com/"><img src="{image:Header}" /></a>
+		<!-- @include partials/meta-open-graph.tumblr -->
+		<!-- @include partials/meta-customizer.tumblr -->
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<div class="logo">
+					<a href="http://{name}.tumblr.com/"><img src="{image:Header}" /></a>
+				</div>
 			</div>
-		</div>
 
-		<!-- @include partials/nav.tumblr -->
+			<!-- @include partials/nav.tumblr -->
 
-		<div class="content-wrapper">
-			<div class="content">
+			<div class="content-wrapper">
+				<div class="content">
+					<!-- @include partials/block-search.tumblr -->
 
-				{block:IndexPage}
-					<div class="description">
-						{Description}
-					</div>
-				{/block:IndexPage}
-				<div class="posts">
-					{block:Posts}
-						<!-- Begin post types -->
-
-						<!-- @include partials/block-text.tumblr -->
-						<!-- @include partials/block-photo.tumblr -->
-						<!-- @include partials/block-panorama.tumblr -->
-						<!-- @include partials/block-photoset.tumblr -->
-						<!-- @include partials/block-quote.tumblr -->
-						<!-- @include partials/block-link.tumblr -->
-						<!-- @include partials/block-chat.tumblr -->
-						<!-- @include partials/block-video.tumblr -->
-						<!-- @include partials/block-audio.tumblr -->
-						<!-- End post types -->
-						<div class="back-top">
-							<a href="#top">{lang:Back to top}</a>
+					{block:IndexPage}
+						<div class="description">
+							{Description}
 						</div>
-					{/block:Posts}
-					<div class="pagination">
-						{block:PreviousPage}
-						<a class="previous-page" href="{PreviousPage}">&#171; Previous</a>
-						{/block:PreviousPage}{block:NextPage}
-						<a class="next-page" href="{NextPage}">Next &#187;</a>
-						{/block:NextPage}
-					</div>
-				</div> <!-- end .posts-->
-			</div> <!-- end .content -->
-		</div> <!-- end .content-wrapper -->
-	</div> <!-- end .container -->
-</body>
+					{/block:IndexPage}
+					<div class="posts">
+						{block:Posts}
+							<!-- Begin post types -->
+
+							<!-- @include partials/block-text.tumblr -->
+							<!-- @include partials/block-photo.tumblr -->
+							<!-- @include partials/block-panorama.tumblr -->
+							<!-- @include partials/block-photoset.tumblr -->
+							<!-- @include partials/block-quote.tumblr -->
+							<!-- @include partials/block-link.tumblr -->
+							<!-- @include partials/block-chat.tumblr -->
+							<!-- @include partials/block-video.tumblr -->
+							<!-- @include partials/block-audio.tumblr -->
+							<!-- End post types -->
+							<div class="back-top">
+								<a href="#top">{lang:Back to top}</a>
+							</div>
+						{/block:Posts}
+						<div class="pagination">
+							{block:PreviousPage}
+							<a class="previous-page" href="{PreviousPage}">&#171; Previous</a>
+							{/block:PreviousPage}{block:NextPage}
+							<a class="next-page" href="{NextPage}">Next &#187;</a>
+							{/block:NextPage}
+						</div>
+					</div> <!-- end .posts-->
+				</div> <!-- end .content -->
+			</div> <!-- end .content-wrapper -->
+		</div> <!-- end .container -->
+	</body>
 </html>

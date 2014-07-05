@@ -4,9 +4,9 @@ require('foundation.magellan');
 require('tumblrPhotoset');
 require('infiniteScroll');
 
-$(document).foundation();
 
 $(document).ready(function() {
+  $(document).foundation();
   $('.photo-slideshow').each(function() {
     $(this).tumblrPhotoset();
   });

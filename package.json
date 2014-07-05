@@ -28,20 +28,9 @@
   },
   "browserify-shim": {
     "jquery": "jQuery",
-    "foundation": {
-      "depends": [
-        "jquery:jQuery"
-      ]
-    },
-    "foundation.magellan": {
-      "depends": [
-        "jquery:jQuery",
-        "foundation:foundation"
-      ]
-    },
-    "infiniteScroll": {
-      "depends": "jquery"
-    }
+    "foundation": { "depends": [ "jquery" ] },
+    "foundation.magellan": { "depends": [ "jquery", "foundation:Foundation" ] },
+    "infiniteScroll": { "depends": "jquery" }
   },
   "browserify": {
     "transform": [

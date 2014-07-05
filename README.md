@@ -3,6 +3,8 @@ tumblr-template-sass
 
 Tumblr template using SASS, Compass, Grunt, and Bower.
 
+<a href="http://gaming-thrones.tumblr.com">Demo</a>
+
 ## INSTALLATION
 Run these commands in a terminal
  - git clone https://github.com/shadesoflight/tumblr-template-sass

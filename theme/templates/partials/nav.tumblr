@@ -1,13 +1,35 @@
 <nav data-magellan-expedition="fixed" class="primary-nav">
-	<ul>
-			<li data-magellan-arrival="submitter"><a href="/">Home</a></li>
-		{block:SubmissionsEnabled}
-			<li data-magellan-arrival="submitter"><a href="/submit">{SubmitLabel}</a></li>
-		{/block:SubmissionsEnabled}
-		{block:AskEnabled}
-			<li data-magellan-arrival="submitter"><a href="/submit">{AskLabel}</a></li>
-		{/block:AskEnabled}
-		<li data-magellan-arrival="submitter"><a href="/archive">Archive</a></li>
+	<div class="row content">
 
-	</ul>
+		<div class="medium-8 columns">
+			<ul class="nav-list">
+				<li data-magellan-arrival="home" class="nav-item"><a href="/">Home</a></li>
+				{block:SubmissionsEnabled}
+					<li data-magellan-arrival="submit" class="nav-item"><a href="/submit">{SubmitLabel}</a></li>
+				{/block:SubmissionsEnabled}
+				{block:AskEnabled}
+					<li data-magellan-arrival="ask" class="nav-item"><a href="/submit">{AskLabel}</a></li>
+				{/block:AskEnabled}
+				{block:IfArchiveEnabled}
+					<li data-magellan-arrival="archive" class="nav-item"><a href="/archive">{lang:Archive}</a></li>
+				{/block:IfArchiveEnabled}
+			</ul>
+		</div>
+
+		<div class="medium-4 columns">
+			<div class="nav-search">
+				<form action="/search" method="get">
+					<div class="row collapse">
+						<div class="small-9 columns">
+							<input type="text" id="search" name="q" value="{SearchQuery}"/>
+						</div>
+						<div class="small-3 columns">
+							<label for="search" class="postfix radius">Search</label>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
 </nav>

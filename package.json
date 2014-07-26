@@ -9,7 +9,7 @@
     "npm": "^1.4.16",
     "install": "^0.1.7",
     "gulp-browserify": "^0.5.0",
-    "gulp-clipboard": "^0.1.1"
+    "gulp-clipboard": "^0.1.1",
   },
   "dependencies": {
     "normalize.css": "~3.0.1"
@@ -28,9 +28,20 @@
   },
   "browserify-shim": {
     "jquery": "jQuery",
-    "foundation": { "depends": [ "jquery" ] },
-    "foundation.magellan": { "depends": [ "jquery", "foundation:Foundation" ] },
-    "infiniteScroll": { "depends": "jquery" }
+    "foundation": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
+    "foundation.magellan": {
+      "depends": [
+        "jquery:jQuery",
+        "foundation:foundation"
+      ]
+    },
+    "infiniteScroll": {
+      "depends": "jquery"
+    }
   },
   "browserify": {
     "transform": [

@@ -1,12 +1,12 @@
-var gulp       = require('gulp');
+var gulp = require('gulp');
 var browserify = require('browserify');
 var preprocess = require('gulp-preprocess');
-var compass    = require('gulp-compass');
-var watch      = require('gulp-watch');
-var clipboard  = require('gulp-clipboard');
-var source     = require('vinyl-source-stream');
+var compass = require('gulp-compass');
+var watch = require('gulp-watch');
+var clipboard = require('gulp-clipboard');
+var source = require('vinyl-source-stream');
 
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
     return browserify('./theme/js/main.js')
         .bundle()
         .on('error', watchScripts)
@@ -16,25 +16,25 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('html', function() {
-  gulp.src('theme/templates/main.tumblr')
-    .pipe(preprocess()) //To set environment variables in-line
-    .on('error', watchHtml)
-    .pipe(clipboard())
-    .pipe(gulp.dest('build/theme.tumblr'));
+gulp.task('html', function () {
+    gulp.src('theme/templates/main.tumblr')
+        .pipe(preprocess()) //To set environment variables in-line
+        .on('error', watchHtml)
+        .pipe(clipboard())
+        .pipe(gulp.dest('build/theme.tumblr'));
 });
 
-gulp.task('styles', function() {
-  gulp.src('theme/sass/*.scss')
-    .pipe(compass({
-      debug: true,
-      config_file: 'config.rb',
-      css: 'build',
-      sass: 'theme/sass',
-      import_path: 'theme/libs/bower_components/foundation/scss'
-    }))
-    .on('error', watchStyles)
-    .pipe(gulp.dest('build/'));
+gulp.task('styles', function () {
+    gulp.src('theme/sass/*.scss')
+        .pipe(compass({
+            debug: true,
+            config_file: 'config.rb',
+            css: 'build',
+            sass: 'theme/sass',
+            import_path: 'theme/libs/bower_components/foundation/scss'
+        }))
+        .on('error', watchStyles)
+        .pipe(gulp.dest('build/'));
 });
 
 gulp.task('watch', watchTask);
@@ -42,21 +42,26 @@ gulp.task('watch', watchTask);
 gulp.task('default', ['scripts', 'html', 'styles', 'watch']);
 
 function watchTask(errorMsg) {
-  if (errorMsg) {
-    console.log(errorMsg);
-  }
-  watchStyles();
-  watchHtml();
-  watchScripts();
-
+    watchStyles(errorMsg);
+    watchHtml(errorMsg);
+    watchScripts(errorMsg);
 }
 
-function watchStyles() {
-  gulp.watch('theme/sass/**/*.scss', ['styles']);
+function watchStyles(errorMsg) {
+    gulp.watch('theme/sass/**/*.scss', ['styles']);
+    logError(errorMsg);
 }
-function watchHtml() {
-  gulp.watch('theme/templates/**/*.tumblr', ['html']);
+function watchHtml(errorMsg) {
+    gulp.watch('theme/templates/**/*.tumblr', ['html']);
+    logError(errorMsg);
 }
-function watchScripts() {
-  gulp.watch(['theme/js/**/*.js', 'theme/libs/**/*.js'], ['scripts']);
+function watchScripts(errorMsg) {
+    gulp.watch(['theme/js/**/*.js', 'theme/libs/**/*.js'], ['scripts']);
+    logError(errorMsg);
+}
+
+function logError(errorMsg) {
+    if (errorMsg) {
+        console.log(errorMsg);
+    }
 }

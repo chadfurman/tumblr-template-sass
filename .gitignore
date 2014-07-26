@@ -1,5 +1,5 @@
 node_modules/
-libs/bower_components/
+theme/libs/bower_components/
 theme/css/
 theme.js
 theme.css

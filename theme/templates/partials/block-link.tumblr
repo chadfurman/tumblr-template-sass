@@ -1,18 +1,12 @@
 {block:Link}
 	<div class="post link">
-		<div class="header">
-			{block:Title}
-				<h2 class="title">
-					<a href="{Permalink}">{Title}</a>
-				</h2>
-			{/block:Title}
-		</div>
+		<!-- @include post-header.tumblr -->
 		<a href="{URL}" class="link" {Target}>{Name}</a>
 
 		{block:Description}
 			<div class="description">{Description}</div>
 		{/block:Description}
 
-		<!-- @include post-meta.tumblr -->
+		<!-- @include post-footer.tumblr -->
 	</div>
 {/block:Link}

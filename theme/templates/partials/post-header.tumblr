@@ -1,0 +1,10 @@
+<div class="header">
+	{block:Title}
+		<h2 class="title">
+			<a href="{Permalink}">{Title}</a>
+		</h2>
+	{/block:Title}
+	<div class="date-posted">
+		<a href="{Permalink}">{lang:Posted on Month DayOfMonth Year with NoteCount notes}</a>
+	</div>
+</div>

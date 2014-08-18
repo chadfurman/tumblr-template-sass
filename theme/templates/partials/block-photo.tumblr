@@ -1,10 +1,10 @@
 {block:Photo}
 	<div class="post photo">
+		<!-- @include post-header.tumblr -->
 		<img class="primary-photo" src="{PhotoURL-500}" alt="{PhotoAlt}"/>
 		{block:Caption}
 			<div class="caption">{Caption}</div>
 		{/block:Caption}
-
-		<!-- @include post-meta.tumblr -->
+		<!-- @include post-footer.tumblr -->
 	</div>
 {/block:Photo}

@@ -1,13 +1,6 @@
 {block:Chat}
 	<div class="post chat">
-		<div class="header">
-			{block:Title}
-				<h2 class="title">
-					<a href="{Permalink}">{Title}</a>
-				</h2>
-			{/block:Title}
-		</div>
-
+		<!-- @include post-header.tumblr -->
 		<ul class="chat">
 			{block:Lines}
 				<li class="{Alt} user_{UserNumber}">
@@ -17,6 +10,6 @@
 				</li>
 			{/block:Lines}
 		</ul>
-		<!-- @include post-meta.tumblr -->
+		<!-- @include post-footer.tumblr -->
 	</div>
 {/block:Chat}

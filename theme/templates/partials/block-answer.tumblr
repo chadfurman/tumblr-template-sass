@@ -1,12 +1,12 @@
 {block:Answer}
 	<div class="post answer">
-			<div class="question">
-				<img src="{AskerPortraitURL-64}"> {Asker}: {Question}
-			</div>
-			<div class="answer">
-				{Answer}
-			</div>
+		<!-- @include post-header.tumblr -->
+		<div class="question">
+			<img src="{AskerPortraitURL-64}"> {Asker}: {Question}
 		</div>
-		<!-- @include post-meta.tumblr -->
+		<div class="answer">
+			{Answer}
+		</div>
+		<!-- @include post-footer.tumblr -->
 	</div>
 {/block:Answer}

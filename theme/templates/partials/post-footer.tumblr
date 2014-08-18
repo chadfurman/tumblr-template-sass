@@ -24,29 +24,17 @@
 			</ul>
 		{/block:HasTags}
 
-		{block:RebloggedFrom}
-			<div class="reblogged">
-				{lang:reblogged from ReblogParentName 2}
-			</div>
-		{/block:RebloggedFrom}
-
-		{block:ContentSource}
-			<div class="content-source">
-				{lang:Source}<a href="{SourceUrl}" target="_blank">{SourceTitle}</a>
-			</div>
-
-			<div class="notes">
-				<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-			</div>
-		{/block:ContentSource}
-
-		<div class="date-posted">
-			<a href="{Permalink}">{lang:Posted on Month DayOfMonth Year with NoteCount notes}</a>
-		</div>
-
 		{block:PermalinkPage}
 			{PostNotes}
 		{/block:PermalinkPage}
 	</div>
+	{block:ContentSource}
+		<div class="content-source">
+			{lang:Source} <a href="{SourceUrl}" target="_blank">{SourceTitle}</a>
+		</div>
+		<div class="notes">
+			<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+		</div>
+	{/block:ContentSource}
 	<div class="divbar"></div>
 {/block:Date}

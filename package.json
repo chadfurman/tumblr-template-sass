@@ -9,7 +9,7 @@
     "npm": "^1.4.16",
     "install": "^0.1.7",
     "gulp-browserify": "^0.5.0",
-    "gulp-clipboard": "^0.1.1",
+    "gulp-clipboard": "^0.1.1"
   },
   "dependencies": {
     "normalize.css": "~3.0.1"

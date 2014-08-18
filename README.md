@@ -7,14 +7,14 @@ Tumblr template using SASS, Compass, Grunt, and Bower.
 
 ## INSTALLATION
 ```bash
- $ npm install -g bower  # bower required
- $ npm install -g gulp   # gulp required
- $ gem install compass   # compass required
- $ git clone https://github.com/shadesoflight/tumblr-template-sass
- $ cd tumblr-template-sass
- $ npm install
- $ bower install
- $ gulp
+ npm install -g bower  # bower required
+ npm install -g gulp   # gulp required
+ gem install compass   # compass required
+ git clone https://github.com/shadesoflight/tumblr-template-sass
+ cd tumblr-template-sass
+ npm install
+ bower install
+ gulp
 ```
 
 Gulp will end with a watch task, recompiling the templates and sass files when you edit them.

@@ -1,6 +1,8 @@
 node_modules/
 theme/libs/bower_components/
 theme/css/
+build/
+.sass-cache
 theme.js
 theme.css
 theme.tumblr

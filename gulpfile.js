@@ -9,7 +9,7 @@ var source = require('vinyl-source-stream');
 gulp.task('scripts', function () {
     return browserify('./theme/js/main.js')
         .bundle()
-        .on('error', watchScripts)
+        .on('error', watchScripts) // restart watch task on error
         //Pass desired output filename to vinyl-source-stream
         .pipe(source('./build/theme.js'))
         // Start piping stream to tasks!
@@ -18,8 +18,8 @@ gulp.task('scripts', function () {
 
 gulp.task('html', function () {
     gulp.src('theme/templates/main.tumblr')
-        .pipe(preprocess()) //To set environment variables in-line
-        .on('error', watchHtml)
+        .pipe(preprocess())
+        .on('error', watchHtml) // restart watch task on error
         .pipe(clipboard())
         .pipe(gulp.dest('build/theme.tumblr'));
 });

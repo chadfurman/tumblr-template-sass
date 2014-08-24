@@ -1,10 +1,12 @@
 /**
  * Usage: gulp [--nowatch] [--clipboard]
  */
+var defaultTasks = ['scripts', 'html', 'styles', 'watch'];
 
 var argv = require('yargs').argv;
 var gulp = require('gulp');
 var gulpif = require('gulp-if');
+var rename = require('gulp-rename');
 var browserify = require('browserify');
 var preprocess = require('gulp-preprocess');
 var compass = require('gulp-compass');
@@ -27,7 +29,8 @@ gulp.task('html', function () {
         .pipe(preprocess())
         .on('error', watchHtml) // restart watch task on error
         .pipe(gulpif(argv.clipboard, clipboard()))
-        .pipe(gulp.dest('build/theme.tumblr'));
+	    .pipe(rename('theme.tumblr'))
+        .pipe(gulp.dest('build/'));
 });
 
 gulp.task('styles', function () {
@@ -45,26 +48,48 @@ gulp.task('styles', function () {
 
 gulp.task('watch', watchTask);
 
-gulp.task('default', ['scripts', 'html', 'styles', 'watch']);
+if (argv.nowatch) {
+	defaultTasks = defaultTasks.filter(function (value) { return value != 'watch' });
+}
+
+gulp.task('default', defaultTasks);
 
 
 /** Helper Functions **/
 function watchTask(errorMsg) {
+	if (argv.nowatch) {
+		return;
+	}
+
     watchStyles(errorMsg);
     watchHtml(errorMsg);
     watchScripts(errorMsg);
 }
 
 function watchStyles(errorMsg) {
-    gulpif(!argv.nowatch, gulp.watch('theme/sass/**/*.scss', ['styles']));
+	if (argv.nowatch) {
+		return;
+	}
+
+    gulp.watch('theme/sass/**/*.scss', ['styles']);
     logError(errorMsg);
 }
+
 function watchHtml(errorMsg) {
-    gulpif(!argv.nowatch, gulp.watch('theme/templates/**/*.tumblr', ['html']));
+	if (argv.nowatch) {
+		return;
+	}
+
+    gulp.watch('theme/templates/**/*.tumblr', ['html']);
     logError(errorMsg);
 }
+
 function watchScripts(errorMsg) {
-    gulpif(!argv.nowatch, gulp.watch(['theme/js/**/*.js', 'theme/libs/**/*.js'], ['scripts']));
+	if (argv.nowatch) {
+		return;
+	}
+
+    gulp.watch(['theme/js/**/*.js', 'theme/libs/**/*.js'], ['scripts']);
     logError(errorMsg);
 }
 

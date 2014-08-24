@@ -1,74 +1,78 @@
 .post {
-  border-bottom: 1px solid #888;
-  padding: 2em 1em;
-  position: relative;
+	border-bottom: 1px solid #888;
+	padding: 2em 1em;
+	position: relative;
 
-  img {
-	  display: block;
-	  margin: auto;
-	  width: 80%;
-  }
+	img {
+		display: block;
+		margin: auto;
+		width: 80%;
+	}
+
+	.postmeta img {
+		width: auto;
+	}
 }
 
 .post-meta {
-  border-top: 1px solid #aaa;
-  margin-top: 1em;
-  padding-top: 1em;
+	border-top: 1px solid #aaa;
+	margin-top: 1em;
+	padding-top: 1em;
 
-  > div {
-    margin:0.5em 0;
-  }
+	> div {
+		margin: 0.5em 0;
+	}
 }
 
 .note {
-  list-style: none;
+	list-style: none;
 }
 
 .note .action {
-  margin-left: .3em;
+	margin-left: .3em;
 }
 
 .note-count {
-  width: 100px;
+	width: 100px;
 }
 
 .reblogged {
 }
 
 .author {
-  display: inline-block;
+	display: inline-block;
 }
 
 .meta-buttons {
-  float: right;
-  width: 150px;
+	float: right;
+	width: 150px;
 }
 
 .note-count {
-  display: inline-block;
+	display: inline-block;
 }
 
 .reblog-button {
-  display: inline-block;
+	display: inline-block;
 }
 
 .like-button {
-  display: inline-block;
+	display: inline-block;
 }
 
 .tags {
-  list-style: none;
-  text-indent: none;
-  .tag {
-    display: inline-block;
-    margin-right: 1.2em;
-    a {
-      display: inline;
-      color: $secondary-color;
-      &:hover {
-        color: lighten($secondary-color, 25%);
-      }
-    }
-  }
+	list-style: none;
+	text-indent: none;
+	.tag {
+		display: inline-block;
+		margin-right: 1.2em;
+		a {
+			display: inline;
+			color: $secondary-color;
+			&:hover {
+				color: lighten($secondary-color, 25%);
+			}
+		}
+	}
 
 }

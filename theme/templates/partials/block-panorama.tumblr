@@ -1,12 +1,6 @@
 {block:Panorama}
-	<div class="post panorama">
-		<!-- @include post-header.tumblr -->
-		{LinkOpenTag}
-			<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-		{LinkCloseTag}
-		{block:Caption}
-			<div class="caption">{Caption}</div>
-		{/block:Caption}
-		<!-- @include post-footer.tumblr -->
-	</div>
+	{LinkOpenTag}
+		<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+	{LinkCloseTag}
+	<!-- @include post-caption.tumblr -->
 {/block:Panorama}

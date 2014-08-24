@@ -1,10 +1,7 @@
 {block:Quote}
-	<div class="post quote">
-		<div class="body">{Quote}</div>
+	<blockquote class="body">{Quote}</blockquote>
 
-		{block:Source}
-			<div class="source">-- by {Source}</div>
-		{/block:Source}
-		<!-- @include post-meta.tumblr -->
-	</div>
+	{block:Source}
+		<div class="source">-- by {Source}</div>
+	{/block:Source}
 {/block:Quote}

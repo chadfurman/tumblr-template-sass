@@ -1,5 +1,10 @@
-{block:Date} <!-- hidden on non-post pages -->
 	<div class="post-meta">
+
+		{block:Date}
+			<div class="date-posted">
+				<a href="{Permalink}">{lang:Posted on Month DayOfMonth Year}</a>
+			</div>
+		{/block:Date}
 
 		<div class="meta-buttons">
 			<div class="note-count">
@@ -14,6 +19,14 @@
 				{LikeButton size="13" color="black"}
 			</div>
 		</div>
+
+		<div class="clearfix"></div>
+
+		{block:RebloggedFrom}
+			<div class="meta-reblog">
+				Reblogged from <a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}" class="avatar"> {ReblogParentName}</a>
+			</div>
+		{/block:RebloggedFrom}
 
 		{block:HasTags}
 			{lang:Tagged}
@@ -30,4 +43,4 @@
 			{PostNotes}
 		{/block:PermalinkPage}
 	</div>
-{/block:Date}
+</div>

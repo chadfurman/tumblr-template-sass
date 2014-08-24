@@ -1,8 +1,5 @@
-{block:ReblogedFrom}
-<div class="post reblogs">
-	<!-- @include post-header.tumblr -->
-	<a href="{ReblogParentURL}">Reblog from: {ReblogParentTitle} by {ReblogParentName}</a>
-	<a href="{ReblogParentURL}">Reblog from: {ReblogParentTitle} by {ReblogParentName}</a>
-	<!-- @include post-footer.tumblr -->
-</div>
+{block:RebloggedFrom}
+	<div class="body">
+		{Body}
+	</div>
 {/block:RebloggedFrom}

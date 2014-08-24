@@ -1,9 +1,5 @@
 {block:Video}
-	<div class="post video">
-		{Video-500}
-		{block:Caption}
-			<div class="caption">{Caption}</div>
-		{/block:Caption}
-		<!-- @include post-meta.tumblr -->
-	</div>
+	{Video-500}
+
+	<!-- @include block-caption.tumblr -->
 {/block:Video}

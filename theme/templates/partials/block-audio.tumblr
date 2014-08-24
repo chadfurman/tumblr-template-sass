@@ -1,10 +1,4 @@
 {block:Audio}
-	<div class="post audio">
-		<!-- @include post-header.tumblr -->
 		{AudioEmbed}
-		{block:Caption}
-			<div class="caption">{Caption}</div>
-		{/block:Caption}
-		<!-- @include post-footer.tumblr -->
-	</div>
+		<!-- @include block-caption.tumblr -->
 {/block:Audio}

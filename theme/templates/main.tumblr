@@ -45,18 +45,22 @@
 
 					<div class="posts">
 						{block:Posts}
-							<!-- Begin post types -->
+							<!-- @include partials/post-header.tumblr -->
 
-							<!-- @include partials/block-text.tumblr -->
-							<!-- @include partials/block-photo.tumblr -->
+							<!-- Begin post types -->
+							<!-- @include partials/block-answer.tumblr -->
+							<!-- @include partials/block-audio.tumblr -->
+							<!-- @include partials/block-chat.tumblr -->
+							<!-- @include partials/block-link.tumblr -->
 							<!-- @include partials/block-panorama.tumblr -->
+							<!-- @include partials/block-photo.tumblr -->
 							<!-- @include partials/block-photoset.tumblr -->
 							<!-- @include partials/block-quote.tumblr -->
-							<!-- @include partials/block-link.tumblr -->
-							<!-- @include partials/block-chat.tumblr -->
+							<!-- @include partials/block-text.tumblr -->
 							<!-- @include partials/block-video.tumblr -->
-							<!-- @include partials/block-audio.tumblr -->
 							<!-- End post types -->
+
+							<!-- @include partials/post-footer.tumblr -->
 							<div class="back-top">
 								<a href="#top">{lang:Back to top}</a>
 							</div>

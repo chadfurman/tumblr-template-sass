@@ -1,25 +1,13 @@
 {block:Text}
-	<div class="post text">
-		<div class="header">
-			{block:Title}
-				<h2 class="title">
-					<a href="{Permalink}">{Title}</a>
-				</h2>
-			{/block:Title}
-		</div>
-
-		<div class="body">
-			{Body}
-		</div>
-
-		{block:More}
-			<div class="readmore">
-				<a href="{permalink}">
-					{lang:Read more} >>
-				</a>
-			</div>
-		{/block:More}
-
-		<!-- @include post-meta.tumblr -->
+	<div class="body">
+		{Body}
 	</div>
+
+	{block:More}
+		<div class="readmore">
+			<a href="{permalink}">
+				{lang:Read more} >>
+			</a>
+		</div>
+	{/block:More}
 {/block:Text}

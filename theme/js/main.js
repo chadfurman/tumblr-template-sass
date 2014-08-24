@@ -7,7 +7,7 @@ require('infiniteScroll');
 
 $(document).ready(function() {
   $(document).foundation();
-  $('.photo-slideshow').each(function() {
+  $('.tumblr-photoset').each(function() {
     $(this).tumblrPhotoset();
   });
 
@@ -17,7 +17,7 @@ $(document).ready(function() {
     itemSelector : ".post",
     bufferPx     : 400
   }, function (newElementsArray) {
-    $('.photo-slideshow', newElementsArray).each(function() {
+    $('.tumblr-photoset', newElementsArray).each(function() {
       $(this).tumblrPhotoset();
     });
   });

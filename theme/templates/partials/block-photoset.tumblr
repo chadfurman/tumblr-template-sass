@@ -1,38 +1,31 @@
 {block:Photoset}
-	<div class="post photoset">
-		<div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
-			{block:Photos}
-				<div class="photo-wrapper">
-					<img alt="{PhotoAlt}"
-						src="{PhotoURL-500}"
-						width="{PhotoWidth-500}"
-						height="{PhotoHeight-500}"
-						data-highres="{PhotoURL-HighRes}"
-						data-width="{PhotoWidth-HighRes}"
-						data-height="{PhotoHeight-HighRes}"
-						class="photo {block:Exif}exif-yes{/block:Exif}"
-						{block:Tags}
-							data-tags="{Tags}"
-						{/block:Tags}
-						{block:Caption}
-							data-caption="{Caption}"
-						{/block:Caption}
-						{block:Exif}
-							{block:Camera}data-camera="{Camera}"{/block:Camera}
-							{block:ISO}data-iso="{ISO}"{/block:ISO}
-							{block:Aperture}data-aperture="{Aperture}"{/block:Aperture}
-							{block:Exposure}data-exposure="{Exposure}"{/block:Exposure}
-							{block:FocalLength}data-focal="{FocalLength}"{/block:FocalLength}
-						{/block:Exif}
-					>
-				</div>
-			{/block:Photos}
-		</div><!-- close SLIDESHOW -->
-		{block:Caption}
-			<div class="body caption">
-				{Caption}
+	<div class="photo-slideshow tumblr-photoset" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+		{block:Photos}
+			<div class="photo-wrapper">
+				<img alt="{PhotoAlt}"
+					src="{PhotoURL-500}"
+					width="{PhotoWidth-500}"
+					height="{PhotoHeight-500}"
+					data-highres="{PhotoURL-HighRes}"
+					data-width="{PhotoWidth-HighRes}"
+					data-height="{PhotoHeight-HighRes}"
+					class="photo {block:Exif}exif-yes{/block:Exif}"
+					{block:Tags}
+						data-tags="{Tags}"
+					{/block:Tags}
+					{block:Caption}
+						data-caption="{Caption}"
+					{/block:Caption}
+					{block:Exif}
+						{block:Camera}data-camera="{Camera}"{/block:Camera}
+						{block:ISO}data-iso="{ISO}"{/block:ISO}
+						{block:Aperture}data-aperture="{Aperture}"{/block:Aperture}
+						{block:Exposure}data-exposure="{Exposure}"{/block:Exposure}
+						{block:FocalLength}data-focal="{FocalLength}"{/block:FocalLength}
+					{/block:Exif}
+				>
 			</div>
-		{/block:Caption}
-		<!-- @include post-meta.tumblr -->
-	</div>
+		{/block:Photos}
+	</div><!-- close SLIDESHOW -->
+	<!-- @include block-caption.tumblr -->
 {/block:Photoset}

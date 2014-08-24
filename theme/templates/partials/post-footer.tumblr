@@ -1,5 +1,6 @@
 {block:Date} <!-- hidden on non-post pages -->
 	<div class="post-meta">
+
 		<div class="meta-buttons">
 			<div class="note-count">
 				{block:NoteCount}
@@ -13,6 +14,7 @@
 				{LikeButton size="13" color="black"}
 			</div>
 		</div>
+
 		{block:HasTags}
 			{lang:Tagged}
 			<ul class="tags">
@@ -28,13 +30,4 @@
 			{PostNotes}
 		{/block:PermalinkPage}
 	</div>
-	{block:ContentSource}
-		<div class="content-source">
-			{lang:Source} <a href="{SourceUrl}" target="_blank">{SourceTitle}</a>
-		</div>
-		<div class="notes">
-			<a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-		</div>
-	{/block:ContentSource}
-	<div class="divbar"></div>
 {/block:Date}

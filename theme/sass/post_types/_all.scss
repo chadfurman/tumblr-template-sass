@@ -7,12 +7,12 @@
 		display: block;
 		margin: auto;
 		width: 80%;
-	}
 
-	.postmeta img {
-		width: auto;
-		display: inline-block;
-		margin: inherit;
+		&.avatar {
+			width: auto;
+			display: inline-block;
+			margin: inherit;
+		}
 	}
 }
 

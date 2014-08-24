@@ -1,4 +1,10 @@
+/**
+ * Usage: gulp [--nowatch] [--clipboard]
+ */
+
+var argv = require('yargs').argv;
 var gulp = require('gulp');
+var gulpif = require('gulp-if');
 var browserify = require('browserify');
 var preprocess = require('gulp-preprocess');
 var compass = require('gulp-compass');
@@ -20,7 +26,7 @@ gulp.task('html', function () {
     gulp.src('theme/templates/main.tumblr')
         .pipe(preprocess())
         .on('error', watchHtml) // restart watch task on error
-        .pipe(clipboard())
+        .pipe(gulpif(argv.clipboard, clipboard()))
         .pipe(gulp.dest('build/theme.tumblr'));
 });
 
@@ -41,6 +47,8 @@ gulp.task('watch', watchTask);
 
 gulp.task('default', ['scripts', 'html', 'styles', 'watch']);
 
+
+/** Helper Functions **/
 function watchTask(errorMsg) {
     watchStyles(errorMsg);
     watchHtml(errorMsg);
@@ -48,15 +56,15 @@ function watchTask(errorMsg) {
 }
 
 function watchStyles(errorMsg) {
-    gulp.watch('theme/sass/**/*.scss', ['styles']);
+    gulpif(!argv.nowatch, gulp.watch('theme/sass/**/*.scss', ['styles']));
     logError(errorMsg);
 }
 function watchHtml(errorMsg) {
-    gulp.watch('theme/templates/**/*.tumblr', ['html']);
+    gulpif(!argv.nowatch, gulp.watch('theme/templates/**/*.tumblr', ['html']));
     logError(errorMsg);
 }
 function watchScripts(errorMsg) {
-    gulp.watch(['theme/js/**/*.js', 'theme/libs/**/*.js'], ['scripts']);
+    gulpif(!argv.nowatch, gulp.watch(['theme/js/**/*.js', 'theme/libs/**/*.js'], ['scripts']));
     logError(errorMsg);
 }
 

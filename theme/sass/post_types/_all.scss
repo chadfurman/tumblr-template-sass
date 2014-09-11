@@ -8,6 +8,11 @@
 		margin: auto;
 		width: 80%;
 
+		&.bucket {
+			width: 64px;
+			margin: 1em;
+		}
+
 		&.avatar {
 			width: auto;
 			display: inline-block;

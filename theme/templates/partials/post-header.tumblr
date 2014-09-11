@@ -13,10 +13,12 @@
 {block:Video}video{/block:Video}
 ">
 	<div class="header">
-
-		{block:Title}
+		{block:PostTitle}
 			<h2 class="title">
-				<a href="{Permalink}">{Title}</a>
+				<a href="{Permalink}">
+					{PostTitle}
+				</a>
 			</h2>
-		{/block:Title}
+		{/block:PostTitle}
+		<img src="http://static.tumblr.com/rh4dbbq/IOYnbpr86/bucket.png" class="bucket medium-bucket">
 	</div>

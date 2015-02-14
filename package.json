@@ -23,7 +23,7 @@
   "description": "tumblr-template-sass ====================",
   "main": "./theme/js/main.js",
   "browser": {
-    "jquery": "./theme/libs/bower_components/jquery/dist/jquery.min.js",
+    "jquery": "./theme/libs/bower_components/jquery/dist/jquery.js",
     "foundation": "./theme/libs/bower_components/foundation/js/foundation/foundation.js",
     "foundation.magellan": "./theme/libs/bower_components/foundation/js/foundation/foundation.magellan.js",
     "tumblrPhotoset": "./theme/libs/tumblr-photoset/tumblr-photoset.js",

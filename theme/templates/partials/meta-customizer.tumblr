@@ -5,6 +5,20 @@
 <meta name="select:BackgroundRepeat" content="repeat-y" title="Y-Axis"/>
 <meta name="select:BackgroundRepeat" content="repeat" title="Both X-Axis and Y-Axis"/>
 
+<meta name="select:BackgroundPosition" content="left top" title="Left Top"/>
+<meta name="select:BackgroundPosition" content="left center" title="Left Center"/>
+<meta name="select:BackgroundPosition" content="left bottom" title="Left Bottom"/>
+<meta name="select:BackgroundPosition" content="right top" title="Right Top"/>
+<meta name="select:BackgroundPosition" content="right center" title="Right Center"/>
+<meta name="select:BackgroundPosition" content="right bottom" title="Right Bottom"/>
+<meta name="select:BackgroundPosition" content="center top" title="Center Top"/>
+<meta name="select:BackgroundPosition" content="center center" title="Center Center"/>
+<meta name="select:BackgroundPosition" content="center bottom" title="Center Bottom"/>
+
+<meta name="select:BackgroundAttachment" content="scroll" title="Scroll with Element"/>
+<meta name="select:BackgroundAttachment" content="local" title="Scroll with Content"/>
+<meta name="select:BackgroundAttachment" content="fixed" title="Fixed"/>
+
 <meta name="color:Header" content="#ffffff"/>
 <meta name="image:Header" content=""/>
 
@@ -23,25 +37,27 @@
 	/** Customizer Styles in here **/
 	body
 	{
-		background-image: url('{image:Background}');
-		background-color: {color:Background};
-		background-repeat: {select:BackgroundRepeat};
-		font-family: {font:Body Font};
-		color: {color:Text};
+		background-image: url('{image:Background}') !important;
+		background-color: {color:Background} !important;
+		background-repeat: {select:BackgroundRepeat} !important;
+		background-position: {select:BackgroundPosition} !important;
+		background-attachment: {select:BackgroundAttachment} !important;
+		font-family: {font:Body Font} !important;
+		color: {color:Text} !important;
 	}
 
 	.divbar {
-		background-color:{color:Text};
+		background-color:{color:Text} !important;
 	}
 
 	::selection
 	{
-	background: {color:Selection Color};
+	background: {color:Selection Color} !important;
 	}
 
 	::-moz-selection
 	{
-	background: {color:Selection Color};
+	background: {color:Selection Color} !important;
 	}
 
 </style>

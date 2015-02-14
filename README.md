@@ -1,15 +1,28 @@
 tumblr-template-sass
 ====================
 
-Tumblr template using SASS, Compass, Grunt, and Bower.
+_If all you want is the pre-compiled HTML and CSS, look in the build directory_
+
+Tumblr template using SASS, Compass, Gulp, and Bower.
 
 <a href="http://gaming-thrones.tumblr.com">Demo</a>
 
 ## INSTALLATION
+### Global Assets
+I assume you have installed node, npm (node package manager), and gem (RubyGem -- ruby's package manager).
+If not, please install each of them.
+
+http://nodejs.org/
+https://www.npmjs.com/
+https://rubygems.org/
+
+### Necessary packages
 ```bash
  npm install -g bower  # bower required
- npm install -g gulp   # gulp required
  gem install compass   # compass required
+```
+
+### Clone, setup, and gulp
  git clone https://github.com/shadesoflight/tumblr-template-sass
  cd tumblr-template-sass
  npm install

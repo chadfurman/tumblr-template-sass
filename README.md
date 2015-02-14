@@ -1,6 +1,5 @@
 
-_If all you want is the pre-compiled HTML and CSS, look for the theme.tumblr file in the 'dist' folder:_
-https://github.com/shadesoflight/tumblr-template-sass/tree/master/dist/theme.tumblr 
+_Access the raw template to copy/paste here:_ https://raw.githubusercontent.com/shadesoflight/tumblr-template-sass/master/dist/theme.tumblr
 
 #tumblr-template-sass
 ====================

@@ -1,7 +1,7 @@
 Please backup your existing template before using this alpha version.
 
 #tumblr-template-sass
---------------------
+++++++++++++++++++++
 
 Tumblr template using SASS, Compass, Gulp, and Bower.
 

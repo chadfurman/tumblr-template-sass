@@ -1,4 +1,4 @@
-
+Please backup your existing template before using this alpha version.
 _Access the raw template to copy/paste here:_ https://raw.githubusercontent.com/shadesoflight/tumblr-template-sass/master/dist/theme.tumblr
 
 #tumblr-template-sass

@@ -3,7 +3,7 @@
 	<head>
 		<!-- @include partials/title.tumblr -->
 
-		<!-- Insert Theme Assets (theme.css and theme.js) -->
+		<!-- @include partials/meta-open-graph.tumblr -->
 		<link rel="stylesheet" type="text/css" href="">
 		<script type="text/javascript" src=""></script>
 
@@ -22,6 +22,14 @@
 
 		<!-- @include partials/meta-open-graph.tumblr -->
 		<!-- @include partials/meta-customizer.tumblr -->
+
+		<style>
+            <!-- @include ../../build/theme.css -->
+		</style>
+		<script>
+            <!-- @include ../../build/theme.js -->
+		</script>
+
 	</head>
 	<body>
 		<div class="container">

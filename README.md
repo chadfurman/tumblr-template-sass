@@ -23,6 +23,7 @@ https://rubygems.org/
 ```
 
 ### Clone, setup, and gulp
+```bash
  git clone https://github.com/shadesoflight/tumblr-template-sass
  cd tumblr-template-sass
  npm install

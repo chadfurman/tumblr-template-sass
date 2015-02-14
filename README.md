@@ -1,7 +1,9 @@
-tumblr-template-sass
-====================
 
-_If all you want is the pre-compiled HTML and CSS, look in the build directory_
+_If all you want is the pre-compiled HTML and CSS, look for the theme.tumblr file in the 'dist' folder:_
+https://github.com/shadesoflight/tumblr-template-sass/tree/master/dist/theme.tumblr 
+
+#tumblr-template-sass
+====================
 
 Tumblr template using SASS, Compass, Gulp, and Bower.
 

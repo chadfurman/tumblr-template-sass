@@ -2,6 +2,8 @@ Please backup your existing template before using this alpha version.
 
 Get Template Code Here: https://raw.githubusercontent.com/shadesoflight/tumblr-template-sass/master/dist/theme.tumblr
 
+Example at: http://chadthefurman.tumblr.com
+
 #tumblr-template-sass
 
 Tumblr template using SASS, Compass, Gulp, and Bower.

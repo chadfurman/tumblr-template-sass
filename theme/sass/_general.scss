@@ -5,3 +5,7 @@ a, a:active, a:visited {
 a:hover {
   color: lighten($body-font-color, .25);
 }
+
+small {
+	font-size: smaller;
+}

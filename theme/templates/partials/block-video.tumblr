@@ -1,5 +1,7 @@
 {block:Video}
-	{Video-500}
+    <div class="youtube_video">
+        {Video-500}
+    </div>
 
 	<!-- @include block-caption.tumblr -->
 {/block:Video}

@@ -12,6 +12,7 @@
 {block:Text}text{/block:Text}
 {block:Video}video{/block:Video}
 ">
+	<img src="http://static.tumblr.com/rh4dbbq/IOYnbpr86/bucket.png" class="bucket medium-bucket">
 	<div class="header">
 		{block:PostTitle}
 			<h2 class="title">
@@ -20,5 +21,4 @@
 				</a>
 			</h2>
 		{/block:PostTitle}
-		<img src="http://static.tumblr.com/rh4dbbq/IOYnbpr86/bucket.png" class="bucket medium-bucket">
 	</div>

@@ -1,17 +1,17 @@
 .quote .body:before,
 .quote .body:after {
-	content: "\"";
+    content: "\"";
 }
 
 .quote .body {
-	font-size: 1em;
-	padding: 0 1em;
-	font-family: serif;
+    font-size: 1em;
+    padding: 0 1em;
+    font-family: serif;
 }
 
 .quote .source {
-	text-align: right;
-	margin-right: 4em;
-	margin-top: 1em;
+    text-align: right;
+    margin-right: 4em;
+    margin-top: 1em;
 }
 

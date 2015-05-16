@@ -1,4 +1,3 @@
-
 /**
  * Tumblr Photoset (jQuery)
  *
@@ -8,11 +7,11 @@
 var $ = require('jquery');
 var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 
-albumPhotoset.registerEventHandler('pre-render', function(albumPhotoset) {
-  albumPhotoset.$photosetImages.each(function() {
-    $this = $(this);
-    if (highRes = $this.data('highres')) {
-      $this.attr('src', highRes);
-    }
-  })
+albumPhotoset.registerEventHandler('pre-render', function (albumPhotoset) {
+	albumPhotoset.$photosetImages.each(function () {
+		$this = $(this);
+		if (highRes = $this.data('highres')) {
+			$this.attr('src', highRes);
+		}
+	})
 })

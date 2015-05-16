@@ -9,7 +9,7 @@ require('tumblrPhotoset.albumPhotoset.highres');
 require('tumblrPhotoset.albumPhotoset.lightbox');
 require('tumblrPhotoset.albumPhotoset.rollover');
 
-$.fn.tumblrPhotoset = function() {
-  albumPhotoset.init($(this));
-  albumPhotoset.render();
+$.fn.tumblrPhotoset = function () {
+	albumPhotoset.init($(this));
+	albumPhotoset.render();
 };

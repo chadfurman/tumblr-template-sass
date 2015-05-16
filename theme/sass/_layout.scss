@@ -1,30 +1,30 @@
 .container {
-  @include grid-row;
-  max-width: none;
+    @include grid-row;
+    max-width: none;
 }
 
 .header {
-  @include grid-row;
-  max-width: none;
+    @include grid-row;
+    max-width: none;
 }
 
 .logo {
-  @include grid-column(12, false, true);
-  img {
-    margin: auto;
-    display: block;
-  }
+    @include grid-column(12, false, true);
+    img {
+        margin: auto;
+        display: block;
+    }
 }
 
 .content-wrapper {
-  @include grid-row(nest-collapse);
+    @include grid-row(nest-collapse);
 }
 
 .content {
-  @include grid-column(8, false, true);
-  background: rgba($primary-color, 0.8);
+    @include grid-column(8, false, true);
+    background: rgba($primary-color, 0.8);
 }
 
 .description {
-  padding-top: 1em;
+    padding-top: 1em;
 }

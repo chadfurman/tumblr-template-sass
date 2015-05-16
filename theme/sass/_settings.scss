@@ -18,36 +18,41 @@ $em-base: 16px !default;
 
 // It strips the unit of measure and returns it
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+    @return $num / ($num * 0 + 1);
 }
 
 // Converts "px" to "em" using the ($)em-base
-@function convert-to-em($value, $base-value: $em-base)  {
-  $value: strip-unit($value) / strip-unit($base-value) * 1em;
-  @if ($value == 0em) { $value: 0; } // Turn 0em into 0
-  @return $value;
+@function convert-to-em($value, $base-value: $em-base) {
+    $value: strip-unit($value) / strip-unit($base-value) * 1em;
+    @if ($value == 0em) {
+        $value: 0;
+    }
+    // Turn 0em into 0
+    @return $value;
 }
 
 // Working in ems is annoying. Think in pixels by using this handy function, em-calc(#)
 // Just enter the number, no need to mention "px"
 @function em-calc($values, $base-value: $em-base) {
-  $max: length($values); // Get the total number of parameters passed
+    $max: length($values); // Get the total number of parameters passed
 
-  // If there is only 1 parameter, then return it as an integer.
-  // This is done because a list can't be multiplied or divided even if it contains a single value
-  @if $max == 1 { @return convert-to-em(nth($values, 1), $base-value); }
+    // If there is only 1 parameter, then return it as an integer.
+    // This is done because a list can't be multiplied or divided even if it contains a single value
+    @if $max == 1 {
+        @return convert-to-em(nth($values, 1), $base-value);
+    }
 
-  $emValues: (); // This will eventually store the converted $values in a list
-  @for $i from 1 through $max {
-    $emValues: append($emValues, convert-to-em(nth($values, $i), $base-value));
-  }
-  @return $emValues;
+    $emValues: (); // This will eventually store the converted $values in a list
+    @for $i from 1 through $max {
+        $emValues: append($emValues, convert-to-em(nth($values, $i), $base-value));
+    }
+    @return $emValues;
 }
 
 //Retaining this for backward compatability
 
 @function emCalc($pxWidth) {
-  @return $pxWidth / $em-base * 1em;
+    @return $pxWidth / $em-base * 1em;
 }
 
 // Maybe you want to create rems with pixels
@@ -525,7 +530,6 @@ $success-color: #5da423;
 // We use this to control border radius
 
 // $alert-radius: $global-radius;
-
 
 //
 // Breadcrumb Variables

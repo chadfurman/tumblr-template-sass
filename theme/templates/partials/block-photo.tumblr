@@ -1,21 +1,27 @@
 {block:Photo}
 	<img class="primary-photo" src="{PhotoURL-500}" alt="{PhotoAlt}" id="photo_{PostID}"/>
 	<!-- @include block-caption.tumblr -->
-    <script class="inline_embed" type="text/javascript">
-        var domain = document.domain,
-        photo_{PostID} = [{
-            "width": "{PhotoWidth-HighRes}",
-            "height": "{PhotoHeight-HighRes}",
-            "low_res": "{PhotoURL-250}",
-            "high_res": "{PhotoURL-HighRes}"
-        }];
-        function event_is_alt_key(e) {
-            return ((!e && window.event && (window.event.metaKey || window.event.altKey)) || (e && (e.metaKey || e.altKey)));
-        };
-        document.getElementById('photo_{PostID}').onclick = function (e) {
-            if (event_is_alt_key(e)) return true;
-            window.parent.Tumblr.Lightbox.init(photo_{PostID});
-            return false;
-        }
-    </script>
+	<!--
+	<script class="inline_embed" type="text/javascript">
+		var domain = document.domain,
+		photo_{PostID} = [{
+			"width": "{PhotoWidth-HighRes}",
+			"height": "{PhotoHeight-HighRes}",
+			"low_res": "{PhotoURL-250}",
+			"high_res": "{PhotoURL-HighRes}"
+		}];
+
+		function event_is_alt_key(e) {
+			return ((!e && window.event && (window.event.metaKey || window.event.altKey)) || (e && (e.metaKey || e.altKey)));
+		};
+
+		document.getElementById('photo_{PostID}').onclick = function (e) {
+			if (event_is_alt_key(e)) return true;
+
+			window.parent.Tumblr.Lightbox.init(photo_{PostID});
+
+			return false;
+		}
+	</script>
+	-->
 {/block:Photo}

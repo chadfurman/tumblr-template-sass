@@ -6,17 +6,14 @@ Tumblr template using SASS, Compass, Gulp, and Bower.
 
 ## INSTALLATION
 ### Global Assets
-I assume you have installed node, npm (node package manager), and gem (RubyGem -- ruby's package manager).
-If not, please install each of them.
+I assume you have installed node & npm (node package manager):
 
-http://nodejs.org/
-https://www.npmjs.com/
-https://rubygems.org/
++ http://nodejs.org/
++ https://www.npmjs.com/
 
 ### Necessary packages
 ```bash
  npm install -g bower  # bower required
- gem install compass   # compass required
 ```
 
 ### Clone, setup, and gulp
@@ -29,6 +26,9 @@ https://rubygems.org/
 ```
 
 Gulp will end with a watch task, recompiling the templates and sass files when you edit them.
+
+*note, if the HTML task does not start, please restart your gulpfile*
+
 All assets are compiled into the build directory in the root of the cloned repository.
 
  - copy the contents of build/theme.tumblr to the theme's HTML editor

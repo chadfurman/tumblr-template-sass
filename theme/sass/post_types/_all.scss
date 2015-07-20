@@ -1,6 +1,6 @@
 .post {
     border-bottom: 1px solid #888;
-    padding: 2em 1em;
+    padding: 2em 1em 0.5em;
     position: relative;
 
     .post-body {
@@ -28,10 +28,9 @@
 .post-meta {
     border-top: 1px solid #aaa;
     margin-top: 1em;
-    padding-top: 1em;
 
     > div {
-        margin: 0.5em 0;
+        margin: 0.5em 0 0 0;
     }
 }
 

@@ -1,6 +1,6 @@
 .post {
     border-bottom: 1px solid #888;
-    padding: 2em 1em;
+    padding: 2em 1em 0.5em;
     position: relative;
 
     .post-body {
@@ -28,10 +28,9 @@
 .post-meta {
     border-top: 1px solid #aaa;
     margin-top: 1em;
-    padding-top: 1em;
 
     > div {
-        margin: 0.5em 0;
+        margin: 0.5em 0 0 0;
     }
 }
 
@@ -51,10 +50,6 @@
     margin-left: .3em;
 }
 
-.note-count {
-    width: 100px;
-}
-
 .reblogged {
 }
 
@@ -64,10 +59,11 @@
 
 .meta-buttons {
     float: right;
-    width: 150px;
+    width: 200px;
 }
 
 .note-count {
+    width: 150px;
     display: inline-block;
 }
 
@@ -82,6 +78,7 @@
 .tags {
     list-style: none;
     text-indent: none;
+    display: inline;
     .tag {
         display: inline-block;
         margin-right: 1.2em;

@@ -27,9 +27,8 @@ I assume you have installed node & npm (node package manager):
 
 Gulp will end with a watch task, recompiling the templates and sass files when you edit them.
 
-*note, if the HTML task does not start, please restart your gulpfile*
+*note, if the HTML task does not start, please restart the process*
 
 All assets are compiled into the build directory in the root of the cloned repository.
 
- - copy the contents of build/theme.tumblr to the theme's HTML editor
- - upload and insert both theme.js and theme.css as static assets
+A concatenated dist/theme.tumblr file is created, which contains the code to paste into your theme editor.  To have this file copied onto your clipboard automatically, use `gulp --clipboard`

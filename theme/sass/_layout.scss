@@ -1,15 +1,12 @@
 .container {
-    @include grid-row;
     max-width: none;
 }
 
 .header {
-    @include grid-row;
     max-width: none;
 }
 
 .logo {
-    @include grid-column(12, false, true);
     img {
         margin: auto;
         display: block;
@@ -17,11 +14,9 @@
 }
 
 .content-wrapper {
-    @include grid-row(nest-collapse);
 }
 
 .content {
-    @include grid-column(8, false, true);
     background: rgba($primary-color, 0.8);
 }
 

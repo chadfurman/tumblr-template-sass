@@ -1,6 +1,3 @@
-var $ = require('jquery');
-require('foundation');
-require('foundation.magellan');
 require('tumblrPhotoset');
 require('infiniteScroll');
 

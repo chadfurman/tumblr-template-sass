@@ -17,42 +17,17 @@
     "vinyl-source-stream": "~1.0.0"
   },
   "dependencies": {
+    "material-design-lite": "^1.0.1",
     "normalize.css": "~3.0.1"
   },
   "description": "tumblr-template-sass ====================",
   "main": "./theme/js/main.js",
   "browser": {
-    "jquery": "./theme/libs/bower_components/jquery/dist/jquery.js",
-    "foundation": "./theme/libs/bower_components/foundation/js/foundation/foundation.js",
-    "foundation.magellan": "./theme/libs/bower_components/foundation/js/foundation/foundation.magellan.js",
     "tumblrPhotoset": "./theme/libs/tumblr-photoset/tumblr-photoset.js",
     "tumblrPhotoset.albumPhotoset": "./theme/libs/tumblr-photoset/tumblr-photoset.album-photoset.js",
     "tumblrPhotoset.albumPhotoset.highres": "./theme/libs/tumblr-photoset/tumblr-photoset.album-photoset.highres.js",
     "tumblrPhotoset.albumPhotoset.lightbox": "./theme/libs/tumblr-photoset/tumblr-photoset.album-photoset.lightbox.js",
     "tumblrPhotoset.albumPhotoset.rollover": "./theme/libs/tumblr-photoset/tumblr-photoset.album-photoset.rollover.js",
-    "infiniteScroll": "./theme/libs/infinite-scroll/infinite-scroll.js"
-  },
-  "browserify-shim": {
-    "jquery": "jQuery",
-    "foundation": {
-      "depends": [
-        "jquery:jQuery"
-      ]
-    },
-    "foundation.magellan": {
-      "depends": [
-        "jquery:jQuery",
-        "foundation:foundation"
-      ]
-    },
-    "infiniteScroll": {
-      "depends": "jquery"
-    }
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

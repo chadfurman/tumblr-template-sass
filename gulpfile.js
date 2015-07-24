@@ -11,6 +11,7 @@ var rename = require('gulp-rename');
 var browserify = require('browserify');
 var preprocess = require('gulp-preprocess');
 var compass = require('gulp-compass');
+var concat = require('gulp-concat');
 var watch = require('gulp-watch');
 var clipboard = require('gulp-clipboard');
 var source = require('vinyl-source-stream');
@@ -66,10 +67,10 @@ function compileStyles()
         .pipe(compass({
             config_file: 'config.rb',
             css: 'build',
-            sass: 'theme/sass',
-            import_path: 'theme/libs/bower_components/foundation/scss'
+            sass: 'theme/sass'
         }))
         .on('error', watchStyles)
+        .pipe(concat('node_modules/material-design-lite/material.min.css'))
         .pipe(gulp.dest('build/'));
 
     return styles;

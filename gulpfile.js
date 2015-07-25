@@ -14,7 +14,7 @@ var compass = require('gulp-compass');
 var concat = require('gulp-concat');
 var watch = require('gulp-watch');
 var clipboard = require('gulp-clipboard');
-var source = require('vinyl-source-stream');
+var source = require('vinyl-source-buffer');
 var addsrc = require('gulp-add-src');
 
 gulp.task('scripts', function () {
@@ -68,11 +68,10 @@ function compileStyles()
         .pipe(compass({
             config_file: 'config.rb',
             css: 'build',
-            sass: 'theme/sass'
+            sass: 'theme/sass',
+            import_path: 'node_modules'
         }))
         .on('error', watchStyles)
-        .pipe(addsrc('node_modules/material-design-lite/material.min.css'))
-        .pipe(concat('theme.css'))
         .pipe(gulp.dest('build/'));
 
     return styles;
@@ -91,7 +90,9 @@ function compileScripts()
         .bundle()
         .on('error', watchScripts) // restart watch task on error
         //Pass desired output filename to vinyl-source-stream
-        .pipe(source('./build/theme.js'))
+        .pipe(source('theme.js'))
+        .pipe(addsrc('./node_modules/material-design-lite/material.min.js'))
+        .pipe(concat('./build/theme.js'))
         .pipe(gulp.dest("./"));
 
     return scripts;
@@ -112,9 +113,9 @@ function watchTask(errorMsg) {
 		return;
 	}
 
+    watchHtml(errorMsg);
     watchStyles(errorMsg);
     watchScripts(errorMsg);
-    watchHtml(errorMsg);
 }
 
 /**

@@ -1,35 +1,6 @@
-<nav class="primary-nav" data-magellan-expedition="fixed">
-	<div class="row nav-content">
-
-		<div class="medium-8 columns">
-			<ul class="nav-list">
-				<li data-magellan-arrival="home" class="nav-item"><a href="/">Home</a></li>
-				{block:SubmissionsEnabled}
-				<li data-magellan-arrival="submit" class="nav-item"><a href="/submit">{SubmitLabel}</a></li>
-				{/block:SubmissionsEnabled}
-				{block:AskEnabled}
-				<li data-magellan-arrival="ask" class="nav-item"><a href="/submit">{AskLabel}</a></li>
-				{/block:AskEnabled}
-				{block:IfArchiveEnabled}
-				<li data-magellan-arrival="archive" class="nav-item"><a href="/archive">{lang:Archive}</a></li>
-				{/block:IfArchiveEnabled}
-			</ul>
-		</div>
-
-		<div class="medium-4 columns">
-			<div class="nav-search">
-				<form action="/search" method="get">
-					<div class="row collapse">
-						<div class="small-7 medium-9 columns">
-							<input type="text" id="search" name="q" value="{SearchQuery}" placeholder="{lang:Search keywords}"/>
-						</div>
-						<div class="small-5 medium-3 columns">
-							<input type="submit" class="postfix radius" value="{lang:Search}"/>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-
-	</div>
+<nav class="mdl-navigation">
+	<a class="mdl-navigation__link" href="">Link</a>
+	<a class="mdl-navigation__link" href="">Link</a>
+	<a class="mdl-navigation__link" href="">Link</a>
+	<a class="mdl-navigation__link" href="">Link</a>
 </nav>

@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "material-design-lite": "^1.0.1",
-    "normalize.css": "~3.0.1"
+    "normalize.css": "~3.0.1",
+    "vinyl-source-buffer": "0.0.2"
   },
   "description": "tumblr-template-sass ====================",
   "main": "./theme/js/main.js",

@@ -15,6 +15,7 @@ var concat = require('gulp-concat');
 var watch = require('gulp-watch');
 var clipboard = require('gulp-clipboard');
 var source = require('vinyl-source-stream');
+var addsrc = require('gulp-add-src');
 
 gulp.task('scripts', function () {
     return compileScripts();
@@ -70,7 +71,8 @@ function compileStyles()
             sass: 'theme/sass'
         }))
         .on('error', watchStyles)
-        .pipe(concat('node_modules/material-design-lite/material.min.css'))
+        .pipe(addsrc('node_modules/material-design-lite/material.min.css'))
+        .pipe(concat('theme.css'))
         .pipe(gulp.dest('build/'));
 
     return styles;

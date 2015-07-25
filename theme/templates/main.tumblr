@@ -34,107 +34,66 @@
 </head>
 <body>
 <a name="top">
-	<!-- Uses a header that contracts as the page scrolls down. -->
-	<div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button">
-		<header class="mdl-layout__header mdl-layout__header--waterfall">
-			<!-- Top row, always visible -->
-			<div class="mdl-layout__header-row">
-				<!-- Title -->
-				<span class="mdl-layout-title">Title</span>
-				<div class="mdl-layout-spacer"></div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                  mdl-textfield--floating-label mdl-textfield--align-right">
-					<label class="mdl-button mdl-js-button mdl-button--icon"
-					       for="waterfall-exp">
-						<i class="material-icons">search</i>
-					</label>
-					<div class="mdl-textfield__expandable-holder">
-						<input class="mdl-textfield__input" type="text" name="sample"
-						       id="waterfall-exp" />
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+		 mdl-layout--overlay-drawer-button">
+		<div class="mdl-layout__drawer">
+			<span class="mdl-layout-title">Title</span>
+			<!-- @include partials/nav.tumblr -->
+		</div>
+		<main class="mdl-layout__content">
+			<div class="header">
+				<div class="logo">
+					<a href="http://{name}.tumblr.com/"><img src="http://static.tumblr.com/652e5f19256b84b73d7c106ba9098a05/rh4dbbq/vzJnrbq6y/tumblr_static_3ahlyjp0zu04sowg8k8c4scc8.jpg"/></a>
+				</div>
+			</div>
+
+			<div class="content-wrapper">
+				<div class="content">
+					{block:IndexPage}
+					<div class="description">
+						{Description}
+					</div>
+					{/block:IndexPage}
+
+					<!-- @include partials/block-search.tumblr -->
+
+					<div class="posts">
+						{block:Posts}
+						<!-- @include partials/post-header.tumblr -->
+
+						<div class="post-body">
+							<!-- Begin post types -->
+							<!-- @include partials/block-answer.tumblr -->
+							<!-- @include partials/block-audio.tumblr -->
+							<!-- @include partials/block-chat.tumblr -->
+							<!-- @include partials/block-link.tumblr -->
+							<!-- @include partials/block-panorama.tumblr -->
+							<!-- @include partials/block-photo.tumblr -->
+							<!-- @include partials/block-photoset.tumblr -->
+							<!-- @include partials/block-quote.tumblr -->
+							<!-- @include partials/block-text.tumblr -->
+							<!-- @include partials/block-video.tumblr -->
+							<!-- End post types -->
+						</div>
+
+						<!-- @include partials/post-footer.tumblr -->
+						{/block:Posts}
+						<div class="pagination">
+							{block:PreviousPage}
+							<a class="previous-page" href="{PreviousPage}">&#171; Previous</a>
+							{/block:PreviousPage}{block:NextPage}
+							<a class="next-page" href="{NextPage}">Next &#187;</a>
+							{/block:NextPage}
+						</div>
+						<div class="back-top">
+							<a href="#top">
+								<img src="https://cloud.githubusercontent.com/assets/7832132/7455105/8c1875fc-f247-11e4-8d03-db91fdd3f4dc.png" alt="TOP">
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Bottom row, not visible on scroll -->
-			<div class="mdl-layout__header-row">
-				<div class="mdl-layout-spacer"></div>
-				<!-- Navigation -->
-				<nav class="waterfall-demo-header-nav mdl-navigation">
-					<a class="mdl-navigation__link" href="">Link</a>
-					<a class="mdl-navigation__link" href="">Link</a>
-					<a class="mdl-navigation__link" href="">Link</a>
-					<a class="mdl-navigation__link" href="">Link</a>
-				</nav>
-			</div>
-		</header>
-		<div class="mdl-layout__drawer">
-			<span class="mdl-layout-title">Title</span>
-			<nav class="mdl-navigation">
-				<a class="mdl-navigation__link" href="">Link</a>
-				<a class="mdl-navigation__link" href="">Link</a>
-				<a class="mdl-navigation__link" href="">Link</a>
-				<a class="mdl-navigation__link" href="">Link</a>
-			</nav>
-		</div>
-		<main class="mdl-layout__content">
-<div class="container">
-	<div class="header">
-		<div class="logo">
-			<a href="http://{name}.tumblr.com/"><img src="{image:Header}"/></a>
-		</div>
+		</main>
 	</div>
-
-	<!-- @include partials/nav.tumblr -->
-
-	<div class="content-wrapper">
-		<div class="content">
-			{block:IndexPage}
-			<div class="description">
-				{Description}
-			</div>
-			{/block:IndexPage}
-
-			<!-- @include partials/block-search.tumblr -->
-
-			<div class="posts">
-				{block:Posts}
-				<!-- @include partials/post-header.tumblr -->
-
-				<div class="post-body">
-					<!-- Begin post types -->
-					<!-- @include partials/block-answer.tumblr -->
-					<!-- @include partials/block-audio.tumblr -->
-					<!-- @include partials/block-chat.tumblr -->
-					<!-- @include partials/block-link.tumblr -->
-					<!-- @include partials/block-panorama.tumblr -->
-					<!-- @include partials/block-photo.tumblr -->
-					<!-- @include partials/block-photoset.tumblr -->
-					<!-- @include partials/block-quote.tumblr -->
-					<!-- @include partials/block-text.tumblr -->
-					<!-- @include partials/block-video.tumblr -->
-					<!-- End post types -->
-				</div>
-
-				<!-- @include partials/post-footer.tumblr -->
-				{/block:Posts}
-				<div class="pagination">
-					{block:PreviousPage}
-					<a class="previous-page" href="{PreviousPage}">&#171; Previous</a>
-					{/block:PreviousPage}{block:NextPage}
-					<a class="next-page" href="{NextPage}">Next &#187;</a>
-					{/block:NextPage}
-				</div>
-				<div class="back-top">
-					<a href="#top">
-						<img src="https://cloud.githubusercontent.com/assets/7832132/7455105/8c1875fc-f247-11e4-8d03-db91fdd3f4dc.png" alt="TOP">
-					</a>
-				</div>
-			</div>
-			<!-- end .posts-->
-		</div>
-		<!-- end .content -->
-	</div>
-	<!-- end .content-wrapper -->
-</div>
-<!-- end .container -->
 </body>
 </html>

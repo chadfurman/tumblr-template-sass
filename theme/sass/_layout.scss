@@ -1,29 +1,3 @@
-.container {
-    max-width: none;
-}
-
-.header {
-    max-width: none;
-}
-
-.logo {
-    img {
-        margin: auto;
-        display: block;
-    }
-}
-
-.content-wrapper {
-}
-
-.content {
-    background: rgba($primary-color, 0.8);
-}
-
-.description {
-    padding-top: 1em;
-}
-
-.bucket {
-    position: absolute;
+.waterfall-demo-header-nav .mdl-navigation__link:last-of-type  {
+  padding-right: 0;
 }

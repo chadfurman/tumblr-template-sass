@@ -3,7 +3,39 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /** Global variables imported before everything else */
-@import "app";
+// Variables and mixins
+@import "material-design-lite/src/variables";
+@import "material-design-lite/src/mixins";
+
+// Resets and dependencies
+@import "material-design-lite/src/resets/resets";
+@import "material-design-lite/src/typography/typography";
+
+// Components
+@import "material-design-lite/src/palette/palette";
+@import "material-design-lite/src/ripple/ripple";
+@import "material-design-lite/src/animation/animation";
+@import "material-design-lite/src/badge/badge";
+@import "material-design-lite/src/button/button";
+@import "material-design-lite/src/card/card";
+@import "material-design-lite/src/checkbox/checkbox";
+@import "material-design-lite/src/data-table/data-table";
+@import "material-design-lite/src/footer/mega_footer";
+@import "material-design-lite/src/footer/mini_footer";
+@import "material-design-lite/src/icon-toggle/icon-toggle";
+@import "material-design-lite/src/menu/menu";
+@import "material-design-lite/src/progress/progress";
+@import "material-design-lite/src/layout/layout";
+@import "material-design-lite/src/radio/radio";
+@import "material-design-lite/src/spinner/spinner";
+@import "material-design-lite/src/switch/switch";
+@import "material-design-lite/src/tabs/tabs";
+@import "material-design-lite/src/textfield/textfield";
+@import "material-design-lite/src/tooltip/tooltip";
+@import "material-design-lite/src/shadow/shadow";
+@import "material-design-lite/src/grid/grid";
+
+@import "settings";
 @import "layout";
 @import "nav";
 @import "posts";

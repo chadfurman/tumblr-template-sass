@@ -3,10 +3,12 @@
 		<div class="mdl-card__actions mdl-card--border">
 			{block:Date}
 				<div class="post-meta">
-
-					<div class="date-posted mdl-button mdl-js-button">
-						<a href="{Permalink}">{lang:Posted on Month DayOfMonth Year}</a>
+					{block:RebloggedFrom}
+					<div class="meta-reblog">
+						Reblogged from <a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}" class="avatar"> {ReblogParentName}</a>
 					</div>
+					{/block:RebloggedFrom}
+
 
 					<div class="meta-buttons">
 						<div class="note-count mdl-button mdl-js-button">
@@ -23,12 +25,6 @@
 					</div>
 
 					<div class="clearfix"></div>
-
-					{block:RebloggedFrom}
-					<div class="meta-reblog">
-						Reblogged from <a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}" class="avatar"> {ReblogParentName}</a>
-					</div>
-					{/block:RebloggedFrom}
 
 					{block:HasTags}
 						{lang:Tagged}

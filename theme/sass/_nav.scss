@@ -1,3 +1,7 @@
+.mdl-navigation {
+  padding-top: 5px;
+}
+
 .mdl-navigation__link.mdl-js-ripple-effect {
   position: relative;
 }
@@ -8,4 +12,9 @@
 
 .mdl-navigation ul {
   padding-left: 0;
+  margin: 0;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+  padding: 5px 40px;
 }

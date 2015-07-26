@@ -10,6 +10,9 @@
 				<a class="mdl-navigation__link mdl-js-button mdl-js-ripple-effect" href="/submit">{SubmitLabel}</a>
 			</li>
 		{/block:SubmissionsEnabled}
+		<li>
+			<a class="mdl-navigation__link mdl-js-button mdl-js-ripple-effect" href="/archive">Archive</a>
+		</li>
 		{block:HasPages}
 			{block:Pages}
 				<li>
@@ -17,5 +20,6 @@
 				</li>
 			{/block:Pages}
 		{/block:HasPages}
+
 	</ul>
 </nav>

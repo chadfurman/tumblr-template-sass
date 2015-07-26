@@ -30,6 +30,7 @@ var albumPhotoset = {
 			return photo.nodeName === 'IMG';
 		});
 		this.photoset = photoset;
+		this.photosetTags = photoset.getAttribute('data-tags').split(' ');
 		this.triggerEvent('post-init');
 		this.render();
 	},
@@ -76,9 +77,13 @@ var albumPhotoset = {
 		for (var rowCounter = 0; rowCounter < this.layout.length; rowCounter++) {
 			// numImagesInRow is the current row's image count
 			var numImagesInRow = parseInt(this.layout[rowCounter]),
-				images = '',
 				row = document.createElement('UL'),
-				rowItem = null;
+				rowItem = null,
+				image = null;
+
+			if (! numImagesInRow) {
+				continue;
+			}
 
 			// build out and append to our row each image item
 			var rowImagesSlice = this.photosetImages.slice(imagePositionPointer, numImagesInRow + imagePositionPointer);
@@ -86,14 +91,16 @@ var albumPhotoset = {
 				 rowImageCounter < numImagesInRow;
 				 rowImageCounter++
 			) { // each row image
-				rowItem = document.createElement('LI').appendChild(rowImagesSlice[rowImageCounter]);
+				rowItem = document.createElement('LI');
+				image = rowImagesSlice[rowImageCounter];
+				image.style.width = 100 / numImagesInRow;
+				image.style.height = image.getAttribute('data-height');
+				rowItem.appendChild(image);
 				row.appendChild(rowItem);
 			}
 
-			row.setAttribute('class', 'medium-block-grid-' + numImagesInRow)
 			document.getElementById(this.photoset.getAttribute('id')).appendChild(row);
 
-			debugger;
 			this.triggerEvent('row-ready', row);
 
 			// determine where we start in the array of images for the next row

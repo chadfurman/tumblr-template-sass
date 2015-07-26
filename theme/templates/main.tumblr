@@ -38,8 +38,10 @@
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
 		 mdl-layout--overlay-drawer-button">
 		<div class="mdl-layout__drawer">
-			<span class="mdl-layout-title">Title</span>
+			<a href="{BlogURL}" title="{Title}"><img class="blog-avatar" src="{PortraitURL-64}" alt="{Title}"></a>
 			<!-- @include partials/nav.tumblr -->
+			<iframe width="350" height="500" id="prettycloud" class="tagcloud" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" scrolling="no" src="http://post-theory.com/pretty-cloud/frame/gaming-thrones/c5194e" ></iframe>
+			<a class="mdl-navigation__link" href="#top">Top</a>
 		</div>
 		<main class="mdl-layout__content">
 			<div class="header">

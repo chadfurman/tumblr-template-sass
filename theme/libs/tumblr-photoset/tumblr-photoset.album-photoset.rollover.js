@@ -7,30 +7,59 @@
 
 var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 
-albumPhotoset.registerEventHandler('row-ready', function (albumPhotosetInstance, row) {
-	row = row[0];
-	var baseImages = row.getElementsByTagName('IMG'),
-		rolloverImages = [];
+albumPhotoset.registerEventHandler('pre-render', function (albumPhotosetInstance) {
+	var images = albumPhotosetInstance.photosetImages.slice(),
+		baseImages = Array.prototype.slice.call(images),
+		captionFound = false;
 
-	console.log('baseImages:', baseImages);
-	for (var imageCounter = 0; imageCounter < baseImages.length; imageCounter++ ) {
-		var image = baseImages[imageCounter];
-		console.log('image:', image, image.getAttribute('data-caption'));
-		if (image.getAttribute('data-caption').match(/#rollover/)) {
+	for (var imageCounter = 1; imageCounter < baseImages.length; imageCounter++ ) {
+		var image = baseImages[imageCounter],
+			caption = '';
+
+		caption = image.getAttribute('data-caption');
+		if (caption && caption.match(/#rollover/)) {
+			albumPhotosetInstance.tagRollover = false;
+			captionFound = true;
+
 			var baseImage = baseImages[imageCounter - 1],
 				rolloverImageSrc = image.getAttribute('src'),
-				baseImageSrc = image.getAttribute('src');
-			console.log('rolloverSrc', rolloverImageSrc);
-			console.log('baseSrc', baseImageSrc);
+				baseImageSrc = baseImage.getAttribute('src');
 
 			baseImage.addEventListener('mouseover', function () { this.src = rolloverImageSrc; });
 			baseImage.addEventListener('mouseout', function () { this.src = baseImageSrc; });
 
 			baseImages.splice(imageCounter, 1);
+			image.parentElement.removeChild(image);
 			imageCounter--;
 		}
 	}
-	console.log('rollovers:', rolloverImages); // TODO: mod even
-	console.log('bases:', baseImages); // TODO: mod even
+
+	if (captionFound) {
+		albumPhotosetInstance.photosetImages = baseImages;
+	}
+});
+
+albumPhotoset.registerEventHandler('row-ready', function (albumPhotosetInstance, row) {
+	if (albumPhotosetInstance.tagRollover == false || albumPhotosetInstance.photosetTags.indexOf('#rollover') === -1) {
+		albumPhotosetInstance.tagRollover == false
+		return;
+	}
+
+	row = row[0];
+	var baseImages = Array.prototype.slice.call(row.getElementsByTagName('IMG'));
+
+	for (var imageCounter = 1; imageCounter < baseImages.length; imageCounter += 2 ) {
+		var baseImage = baseImages[imageCounter - 1],
+			rolloverImage = baseImages[imageCounter],
+			rolloverImageSrc = rolloverImage.getAttribute('src'),
+			baseImageSrc = baseImage.getAttribute('src');
+
+		baseImage.addEventListener('mouseover', function () { this.src = rolloverImageSrc; });
+		baseImage.addEventListener('mouseout', function () { this.src = baseImageSrc; });
+
+		baseImages.splice(imageCounter, 1);
+		rolloverImage.parentElement.removeChild(rolloverImage);
+		imageCounter--;
+	}
 });
 console.log('rollover registered');

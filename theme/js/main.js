@@ -1,21 +1,11 @@
-//require('tumblrPhotoset');
+tumblrPhotoset = require('tumblrPhotoset');
+console.log('Tumblr Photoset activated');
 //require('infiniteScroll');
 //
-//
-//$(document).ready(function () {
-//	$(document).foundation();
-//	$('.tumblr-photoset').each(function () {
-//		$(this).tumblrPhotoset();
-//	});
-//
-//	$('.posts').infinitescroll({
-//		navSelector: ".pagination",
-//		nextSelector: ".next-page",
-//		itemSelector: ".post",
-//		bufferPx: 400
-//	}, function (newElementsArray) {
-//		$('.tumblr-photoset', newElementsArray).each(function () {
-//			$(this).tumblrPhotoset();
-//		});
-//	});
-//});
+var content = document.getElementById('content');
+var photosets = content.getElementsByClassName('tumblr-photoset');
+console.log('photosets', photosets);
+for (var photosetIndex = 0; photosetIndex < photosets.length; photosetIndex++) {
+	var photoset = photosets[photosetIndex];
+	tumblrPhotoset(photoset);
+}

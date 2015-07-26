@@ -23,3 +23,9 @@
 				</h2>
 			</div>
 		{/block:PostTitle}
+
+		{block:Date}
+			<div class="date-posted mdl-button mdl-js-button">
+				<a href="{Permalink}">{lang:Posted on Month DayOfMonth Year}</a>
+			</div>
+		{/block:Date}

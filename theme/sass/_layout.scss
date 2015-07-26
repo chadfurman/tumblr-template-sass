@@ -20,7 +20,7 @@ body {
 
 .blog-avatar {
   display: block;
-  margin: auto;
+  margin: 2em auto 1em;
 }
 
 .header img {
@@ -31,4 +31,16 @@ body {
 
 .tagcloud {
   margin: auto;
+}
+
+.description {
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.description p:first-child {
+  margin-top: 0;
 }

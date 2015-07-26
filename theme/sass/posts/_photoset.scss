@@ -1,9 +1,11 @@
-.photo-wrapper {
-    display: none;
+.photoset-row {
+  margin: 0;
 }
 
-.photo-slideshow {
-    [class*="block-grid-"] > li {
-        padding: 1.25rem 0.625rem 0;
-    }
+.photoset-row li {
+  display: inline;
+}
+
+.photo-wrapper {
+    display: none;
 }

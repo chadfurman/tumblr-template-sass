@@ -1,46 +1,51 @@
-	<div class="post-meta">
 
-		{block:Date}
-			<div class="date-posted">
-				<a href="{Permalink}">{lang:Posted on Month DayOfMonth Year}</a>
-			</div>
-		{/block:Date}
 
-		<div class="meta-buttons">
-			<div class="note-count">
-				{block:NoteCount}
-					<a href="{Permalink}">{NoteCountWithLabel}</a>
-				{/block:NoteCount}
-			</div>
-			<div class="reblog-button">
-				{ReblogButton size="13" color="black"}
-			</div>
-			<div class="like-button">
-				{LikeButton size="13" color="black"}
-			</div>
+		<div class="mdl-card__actions mdl-card--border">
+			{block:Date}
+				<div class="post-meta">
+
+					<div class="date-posted mdl-button mdl-js-button">
+						<a href="{Permalink}">{lang:Posted on Month DayOfMonth Year}</a>
+					</div>
+
+					<div class="meta-buttons">
+						<div class="note-count mdl-button mdl-js-button">
+							{block:NoteCount}
+							<a href="{Permalink}">{NoteCountWithLabel}</a>
+							{/block:NoteCount}
+						</div>
+						<div class="mdl-button mdl-button--raised mdl-button--icon mdl-js-button">
+							{ReblogButton color="black"}
+						</div>
+						<div class="mdl-button mdl-button--raised mdl-button--icon mdl-js-button">
+							{LikeButton color="black"}
+						</div>
+					</div>
+
+					<div class="clearfix"></div>
+
+					{block:RebloggedFrom}
+					<div class="meta-reblog">
+						Reblogged from <a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}" class="avatar"> {ReblogParentName}</a>
+					</div>
+					{/block:RebloggedFrom}
+
+					{block:HasTags}
+						{lang:Tagged}
+						<ul class="tags">
+							{block:Tags}
+							<li class="tag">
+								<a href="{tagurl}">#{Tag}</a>
+							</li>
+							{/block:Tags}
+						</ul>
+					{/block:HasTags}
+
+					{block:PermalinkPage}
+						{PostNotes}
+					{/block:PermalinkPage}
+				</div>
+			{/block:Date}
 		</div>
-
-		<div class="clearfix"></div>
-
-		{block:RebloggedFrom}
-			<div class="meta-reblog">
-				Reblogged from <a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}" class="avatar"> {ReblogParentName}</a>
-			</div>
-		{/block:RebloggedFrom}
-
-		{block:HasTags}
-			{lang:Tagged}
-			<ul class="tags">
-				{block:Tags}
-					<li class="tag">
-						<a href="{tagurl}">#{Tag}</a>
-					</li>
-				{/block:Tags}
-			</ul>
-		{/block:HasTags}
-
-		{block:PermalinkPage}
-			{PostNotes}
-		{/block:PermalinkPage}
 	</div>
 </div>

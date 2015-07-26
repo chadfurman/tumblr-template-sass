@@ -1,9 +1,14 @@
 a, a:active, a:visited {
-    color: $link-color;
+    color: $text-link-color;
+    text-decoration: none;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+  color: $text-link-color;
 }
 
 a:hover {
-    color: lighten($link-color, .25);
+    color: lighten($text-link-color, .25);
 }
 
 small {

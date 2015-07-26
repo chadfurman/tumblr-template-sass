@@ -15,7 +15,11 @@ body {
 }
 
 .mdl-layout__drawer-button {
+  background: $color-primary;
+  border-radius: 50%;
+  margin: 1em;
   position: fixed;
+  z-index: 10;
 }
 
 .blog-avatar {

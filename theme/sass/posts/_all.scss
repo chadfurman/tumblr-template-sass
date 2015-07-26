@@ -34,7 +34,7 @@
 }
 
 .date-posted {
-    float: left;
+  text-align: left;
 }
 
 .clearfix {
@@ -58,6 +58,7 @@
 
 .meta-buttons {
     float: right;
+    margin-top: 0;
 }
 
 .note-count {
@@ -104,4 +105,8 @@
 }
 .mdl-js-button:active {
   background: rgba(255,255,255,0.8);
+}
+
+.meta-reblog {
+  float: left;
 }

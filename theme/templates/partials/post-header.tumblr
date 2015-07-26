@@ -12,13 +12,14 @@
 {block:Text}text{/block:Text}
 {block:Video}video{/block:Video}
 ">
-	<img src="http://static.tumblr.com/rh4dbbq/IOYnbpr86/bucket.png" class="bucket medium-bucket">
-	<div class="header">
+	<img src="{PortraitUrl-64}" class="bucket medium-bucket">
+	<div class="mdl-card mdl-shadow--2dp demo-card-wide">
 		{block:PostTitle}
-			<h2 class="title">
-				<a href="{Permalink}">
-					{PostTitle}
-				</a>
-			</h2>
+			<div class="mdl-card__title">
+				<h2 class="mdl-card__title-text">
+					<a href="{Permalink}">
+						{PostTitle}
+					</a>
+				</h2>
+			</div>
 		{/block:PostTitle}
-	</div>

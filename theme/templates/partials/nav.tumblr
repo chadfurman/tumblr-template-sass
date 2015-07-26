@@ -1,6 +1,21 @@
 <nav class="mdl-navigation">
-	<a class="mdl-navigation__link" href="">Link</a>
-	<a class="mdl-navigation__link" href="">Link</a>
-	<a class="mdl-navigation__link" href="">Link</a>
-	<a class="mdl-navigation__link" href="">Link</a>
+	<ul>
+		{block:AskEnabled}
+			<li>
+				<a class="mdl-navigation__link mdl-js-button mdl-js-ripple-effect" href="/ask">{AskLabel}</a>
+			</li>
+		{/block:AskEnabled}
+		{block:SubmissionsEnabled}
+			<li>
+				<a class="mdl-navigation__link mdl-js-button mdl-js-ripple-effect" href="/submit">{SubmitLabel}</a>
+			</li>
+		{/block:SubmissionsEnabled}
+		{block:HasPages}
+			{block:Pages}
+				<li>
+					<a class="mdl-navigation__link mdl-js-button mdl-js-ripple-effect" href="{URL}">{Label}</a>
+				</li>
+			{/block:Pages}
+		{/block:HasPages}
+	</ul>
 </nav>

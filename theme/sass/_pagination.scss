@@ -1,5 +1,15 @@
 .pagination {
-  margin: auto;
-  width:50%;
+  background-color: rgba(255,255,255,0.8);
+}
+
+.next-page {
+  text-align: right;
+}
+
+.previous-page {
+  text-align: left;
+}
+
+.current-page {
   text-align: center;
 }

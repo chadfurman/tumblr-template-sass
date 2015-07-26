@@ -4,14 +4,14 @@
  * Inspired by: https://github.com/PixelUnion/Extended-Tumblr-Photoset
  */
 
-var $ = require('jquery');
 var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 
 albumPhotoset.registerEventHandler('pre-render', function (albumPhotoset) {
-	albumPhotoset.$photosetImages.each(function () {
-		$this = $(this);
-		if (highRes = $this.data('highres')) {
-			$this.attr('src', highRes);
+	var images = albumPhotoset.photosetImages,
+		highRes;
+	for (var i = 0; i < images.length; i++) {
+		if (highRes = images[i].getAttribute('data-highres')) {
+			images[i].setAttribute('src', highRes);
 		}
-	})
-})
+	}
+});

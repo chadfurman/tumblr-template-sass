@@ -53,46 +53,51 @@
 			<div class="content-wrapper">
 				<div class="content">
 					{block:IndexPage}
-					<div class="description">
-						{Description}
-					</div>
+						<div class="description">
+							{Description}
+						</div>
 					{/block:IndexPage}
 
 					<!-- @include partials/block-search.tumblr -->
 
 					<div class="posts">
 						{block:Posts}
-						<!-- @include partials/post-header.tumblr -->
+							<!-- @include partials/post-header.tumblr -->
 
-						<div class="post-body">
-							<!-- Begin post types -->
-							<!-- @include partials/block-answer.tumblr -->
-							<!-- @include partials/block-audio.tumblr -->
-							<!-- @include partials/block-chat.tumblr -->
-							<!-- @include partials/block-link.tumblr -->
-							<!-- @include partials/block-panorama.tumblr -->
-							<!-- @include partials/block-photo.tumblr -->
-							<!-- @include partials/block-photoset.tumblr -->
-							<!-- @include partials/block-quote.tumblr -->
-							<!-- @include partials/block-text.tumblr -->
-							<!-- @include partials/block-video.tumblr -->
-							<!-- End post types -->
-						</div>
+							<div class="mdl-card__supporting-text">
+								<!-- Begin post types -->
+								<!-- @include partials/block-answer.tumblr -->
+								<!-- @include partials/block-audio.tumblr -->
+								<!-- @include partials/block-chat.tumblr -->
+								<!-- @include partials/block-link.tumblr -->
+								<!-- @include partials/block-panorama.tumblr -->
+								<!-- @include partials/block-photo.tumblr -->
+								<!-- @include partials/block-photoset.tumblr -->
+								<!-- @include partials/block-quote.tumblr -->
+								<!-- @include partials/block-text.tumblr -->
+								<!-- @include partials/block-video.tumblr -->
+								<!-- End post types -->
+							</div>
 
-						<!-- @include partials/post-footer.tumblr -->
+							<!-- @include partials/post-footer.tumblr -->
 						{/block:Posts}
-						<div class="pagination">
-							{block:PreviousPage}
-							<a class="previous-page" href="{PreviousPage}">&#171; Previous</a>
-							{/block:PreviousPage}{block:NextPage}
-							<a class="next-page" href="{NextPage}">Next &#187;</a>
-							{/block:NextPage}
+						{block:IndexPage}
+						<div class="pagination mdl-shadow--2dp mdl-grid">
+							<div class="previous-page mdl-cell mdl-cell--4-col">
+								{block:PreviousPage}
+									<a href="{PreviousPage}">&#171; Previous</a>
+								{/block:PreviousPage}
+							</div>
+							<div class="current-page mdl-cell mdl-cell--4-col">
+								Page {CurrentPage} of {TotalPages}
+							</div>
+							<div class="next-page mdl-cell mdl-cell--4-col">
+								{block:NextPage}
+									<a href="{NextPage}">Next &#187;</a>
+								{/block:NextPage}
+							</div>
 						</div>
-						<div class="back-top">
-							<a href="#top">
-								<img src="https://cloud.githubusercontent.com/assets/7832132/7455105/8c1875fc-f247-11e4-8d03-db91fdd3f4dc.png" alt="TOP">
-							</a>
-						</div>
+						{/block:IndexPage}
 					</div>
 				</div>
 			</div>

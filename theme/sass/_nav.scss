@@ -1,40 +1,11 @@
-.primary-nav {
-    background-color: rgba(darken($primary-color, .25), .8);
-    line-height: 2em;
-    z-index: 10;
-    width: 100%;
+.mdl-navigation__link.mdl-js-ripple-effect {
+  position: relative;
 }
 
-.nav-content {
-    .columns {
-        padding-left: 0;
-        padding-right: 0;
-    }
+.mdl-navigation li {
+  list-style: none;
 }
 
-.nav-list {
-    margin: auto;
-    line-height: 2.2em;
-
-    .nav-item {
-        margin-left: 0;
-        padding-right: 1em;
-
-        a {
-            color: $body-font-color;
-            &:hover {
-                color: lighten($body-font-color, 25%);
-            }
-        }
-    }
-}
-
-.nav-search {
-    form {
-        margin: 0;
-
-        input {
-            margin: 0;
-        }
-    }
+.mdl-navigation ul {
+  padding-left: 0;
 }

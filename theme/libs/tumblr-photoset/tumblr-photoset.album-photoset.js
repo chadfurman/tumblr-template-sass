@@ -2,8 +2,6 @@
  * Album Photoset
  * Object responsible for building and outputting a photo album.
  *
- * @param {jQuery object} $photoset
- *  photoset dom object.  i.e. $('.photoset') or $(this) inside of tumblrPhotoset extension
  * @property {string} layout   Numeric representation of image to row mapping
  *  i.e. if "321" were the layout, 3 would be the number of images on the first row,
  *  2 on the second, and 1 image on the last row.means be 3 rows, 3 images in the first
@@ -11,8 +9,6 @@
  *
  * Inspired by: https://github.com/PixelUnion/Extended-Tumblr-Photoset
  */
-var $ = require('jquery');
-
 var albumPhotoset = {
 	/**
 	 * Callbacks
@@ -25,12 +21,17 @@ var albumPhotoset = {
 	 * Setup our album photoset
 	 * @param $photoset
 	 */
-	init: function ($photoset) {
+	init: function (photoset) {
 		this.triggerEvent('pre-init');
-		this.layout = JSON.stringify($photoset.data('layout')).split('');
-		this.$photosetImages = $photoset.find('img.photo');
-		this.$photoset = $photoset;
+		this.layout = JSON.stringify(photoset.getAttribute('data-layout')).split('');
+		this.layout.splice(0,1);
+		var photos = photoset.getElementsByClassName('photo');
+		this.photosetImages = Array.prototype.filter.call(photos, function (photo) {
+			return photo.nodeName === 'IMG';
+		});
+		this.photoset = photoset;
 		this.triggerEvent('post-init');
+		this.render();
 	},
 
 	/**
@@ -56,7 +57,7 @@ var albumPhotoset = {
 			return;
 		}
 
-		callbacks = this.callbacks[event];
+		var callbacks = this.callbacks[event];
 		for (var callbackCounter = 0; callbackCounter < callbacks.length; callbackCounter++) {
 			var callback = callbacks[callbackCounter];
 			callback(this, Array.prototype.slice.call(arguments, 1)); // pass array of event arguments to callback
@@ -72,39 +73,33 @@ var albumPhotoset = {
 		var imagePositionPointer = 0;
 
 		this.triggerEvent('pre-render');
-		for (var rowCounter = 0; rowCounter < this.layout.length; rowCounter++) { // each row
-
+		for (var rowCounter = 0; rowCounter < this.layout.length; rowCounter++) {
 			// numImagesInRow is the current row's image count
-			var numImagesInRow = parseInt(this.layout[rowCounter]);
-
-			// row is the jcreate the row dom
-			var $row = $('<ul class="medium-block-grid-' + numImagesInRow + '"></ul>');
-
+			var numImagesInRow = parseInt(this.layout[rowCounter]),
+				images = '',
+				row = document.createElement('UL'),
+				rowItem = null;
 
 			// build out and append to our row each image item
-			var rowImagesSlice = this.$photosetImages.slice(imagePositionPointer, numImagesInRow + imagePositionPointer);
+			var rowImagesSlice = this.photosetImages.slice(imagePositionPointer, numImagesInRow + imagePositionPointer);
 			for (var rowImageCounter = 0;
 				 rowImageCounter < numImagesInRow;
 				 rowImageCounter++
 			) { // each row image
-				var $image = $('<li></li>');
-				var image = rowImagesSlice[rowImageCounter];
-				$image.append(image);
-
-				// @todo implement hover
-				// .on("mouseenter", function() { $(this).find('.rollover').css("visibility", "visible"); } )
-				// .on("mouseleave", function() { $(this).find('.rollover').css("visibility", "hidden"); } );
-				// if hover enabled, every other image is the onMouseOver for the image prior
-				// if no hover, simply add each image to the row dom
-				$row.append($image);
+				rowItem = document.createElement('LI').appendChild(rowImagesSlice[rowImageCounter]);
+				row.appendChild(rowItem);
 			}
 
-			this.triggerEvent('row-ready', $row);
+			row.setAttribute('class', 'medium-block-grid-' + numImagesInRow)
+			document.getElementById(this.photoset.getAttribute('id')).appendChild(row);
+
+			debugger;
+			this.triggerEvent('row-ready', row);
 
 			// determine where we start in the array of images for the next row
 			imagePositionPointer += numImagesInRow;
-			this.$photoset.append($row);
 		} // end row loop
+		this.triggerEvent('post-render', this.photoset);
 	} // end render()
 };
 module.exports = albumPhotoset;

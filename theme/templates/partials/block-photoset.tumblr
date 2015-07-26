@@ -1,5 +1,5 @@
 {block:Photoset}
-	<div class="photo-slideshow tumblr-photoset" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+	<div class="photo-slideshow tumblr-photoset" id="photoset_{PostID}" data-layout="{PhotosetLayout}" data-tags="{block:Tags} #{Tag}{/block:Tags}">
 		{block:Photos}
 			<div class="photo-wrapper">
 				<img alt="{PhotoAlt}"
@@ -7,12 +7,12 @@
 					width="{PhotoWidth-500}"
 					height="{PhotoHeight-500}"
 					data-highres="{PhotoURL-HighRes}"
-					data-width="{PhotoWidth-HighRes}"
-					data-height="{PhotoHeight-HighRes}"
+					data-highres-width="{PhotoWidth-HighRes}"
+					data-highres-height="{PhotoHeight-HighRes}"
+					data-width="{PhotoWidth-500}"
+					data-height="{PhotoHeight-500}"
 					class="photo {block:Exif}exif-yes{/block:Exif}"
-					{block:Tags}
-						data-tags="{Tags}"
-					{/block:Tags}
+					data-tags="{block:Tags} {Tag}{/block:Tags}"
 					{block:Caption}
 						data-caption="{Caption}"
 					{/block:Caption}

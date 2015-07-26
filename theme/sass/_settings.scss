@@ -1,4 +1,18 @@
-$link-color: #A41914;
-$primary-color: #f5f5f5;
-$secondary-color: #616161;
-$body-font-color: #212121;
+$color-primary: #f5f5f5;
+$color-secondary: #616161;
+$text-link-color: #A41914;
+$text-color-primary: #000000;
+
+$layout-drawer-bg-color: rgba($color-primary,0.75);
+$layout-drawer-border-color: unquote("rgb(#{$palette-grey-300})");
+$layout-drawer-width: $layout-drawer-wide;
+$layout-text-color: unquote("rgb(#{$palette-grey-800})");
+$layout-drawer-navigation-color: #757575;
+$layout-drawer-navigation-link-active-background: unquote("rgb(#{$color-primary})");
+$layout-drawer-navigation-link-active-color: unquote("rgb(#{$color-secondary})");
+
+$card-background-color: rgba($color-primary, 0.75);
+$card-supporting-text-text-color: $text-color-primary;
+$card-width: 80%;
+
+$ripple-bg-color: #ffffff;

@@ -4,8 +4,6 @@
 	<!-- @include partials/title.tumblr -->
 
 	<!-- @include partials/meta-open-graph.tumblr -->
-	<link rel="stylesheet" type="text/css" href="">
-	<script type="text/javascript" src=""></script>
 
 	<link rel="shortcut icon" href="{Favicon}">
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
@@ -20,14 +18,16 @@
 	<meta name="keywords" content="{block:Tags} {/block:Tags}"/>
 	{/block:HasTags}
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js"></script>
-
-	<!-- @include partials/meta-open-graph.tumblr -->
-	<!-- @include partials/meta-customizer.tumblr -->
-
 	<style>
 		<!-- @include ../../build/theme.css -->
 	</style>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js"></script>
+
+	<!-- @include partials/meta-open-graph.tumblr -->
+	<!-- @include partials/meta-customizer.tumblr -->
 </head>
 <body>
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer

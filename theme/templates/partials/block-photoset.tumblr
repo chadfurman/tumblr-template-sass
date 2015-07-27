@@ -4,8 +4,6 @@
 			<div class="photo-wrapper">
 				<img alt="{PhotoAlt}"
 					src="{PhotoURL-500}"
-					width="{PhotoWidth-500}"
-					height="{PhotoHeight-500}"
 					data-highres="{PhotoURL-HighRes}"
 					data-highres-width="{PhotoWidth-HighRes}"
 					data-highres-height="{PhotoHeight-HighRes}"

@@ -1,3 +1,11 @@
+body {
+  background-image: url('http://static.tumblr.com/3be5f01d65a1abac955e2a4058e3fbca/rh4dbbq/nfsnrbqal/tumblr_static_alqbg7sgt48oo0sokowgc0k4w.jpg');
+}
+
+.clearfix {
+  clear: both;
+}
+
 a, a:active, a:visited {
     color: $text-link-color;
     text-decoration: none;

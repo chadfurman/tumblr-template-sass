@@ -1,0 +1,51 @@
+.pagination
+{
+  margin: auto;
+}
+
+.posts {
+  .mdl-card {
+    margin: auto;
+    width: 80%;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+
+    &.bucket {
+      margin: 0 1em 1em;
+      position: absolute;
+      width: 5%;
+    }
+
+    &.avatar {
+      display: inline-block;
+      margin: inherit;
+      width: auto;
+    }
+  }
+}
+
+.header img {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+@media (max-width: $grid-tablet-breakpoint) {
+  .posts {
+    .bucket {
+      display: none;
+    }
+
+    .mdl-card {
+      width: 100%;
+    }
+
+    .mdl-card__supporting-text {
+      padding: 0;
+      width: 100%;
+    }
+  }
+}

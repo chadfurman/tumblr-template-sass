@@ -1,0 +1,54 @@
+.post-meta {
+  margin: .5em;
+
+  > div {
+    margin: 0.5em 0 0 0;
+  }
+}
+
+.date-posted {
+  text-align: left;
+}
+
+.note {
+  list-style: none;
+}
+
+.note .action {
+  margin-left: .3em;
+}
+
+.reblogged {
+}
+
+.author {
+  display: inline-block;
+}
+
+.meta-buttons {
+  float: right;
+  margin-top: 0;
+}
+
+.note-count {
+  width: 150px;
+  display: inline-block;
+}
+
+.tags {
+  list-style: none;
+  text-indent: none;
+  display: inline;
+
+  .tag {
+    display: inline-block;
+    margin-right: 1.2em;
+    a {
+      display: inline;
+      color: $color-secondary;
+      &:hover {
+        color: lighten($color-secondary, 25%);
+      }
+    }
+  }
+}

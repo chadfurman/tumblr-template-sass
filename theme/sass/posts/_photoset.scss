@@ -1,11 +1,15 @@
-.photoset-row {
-  margin: 0;
-}
-
-.photoset-row li {
-  display: inline;
-}
-
 .photo-wrapper {
     display: none;
+}
+
+.photo-slideshow {
+  ul {
+    margin: 0;
+
+    li {
+      width: 100%;
+      display: inline-block;
+      list-style-type: none;
+    }
+  }
 }

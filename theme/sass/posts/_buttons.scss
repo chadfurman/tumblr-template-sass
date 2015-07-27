@@ -1,0 +1,22 @@
+.like_button {
+  margin-top: 4px
+}
+
+.reblog_button {
+  margin-left: 8px;
+}
+
+.mdl-js-button {
+  background: rgba(255,255,255,0.2);
+}
+
+.mdl-js-button:hover {
+  background: rgba(255,255,255,0.5);
+}
+.mdl-js-button:active {
+  background: rgba(255,255,255,0.8);
+}
+
+.meta-reblog {
+  float: left;
+}

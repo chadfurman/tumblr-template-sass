@@ -5,12 +5,13 @@
 /** Global variables imported before everything else */
 // Variables and mixins
 @import "material-design-lite/src/variables";
-@import "settings";
 @import "material-design-lite/src/mixins";
 
 // Resets and dependencies
 @import "material-design-lite/src/resets/resets";
 @import "material-design-lite/src/typography/typography";
+
+@import "settings"; //overrides
 
 // Components
 @import "material-design-lite/src/palette/palette";
@@ -36,7 +37,8 @@
 @import "material-design-lite/src/shadow/shadow";
 @import "material-design-lite/src/grid/grid";
 
-@import "layout";
+@import "content";
+@import "sidebar";
 @import "nav";
 @import "posts";
 @import "pages";

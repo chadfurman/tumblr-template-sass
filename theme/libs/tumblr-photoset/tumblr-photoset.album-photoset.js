@@ -23,15 +23,24 @@ var albumPhotoset = {
 	 */
 	init: function (photoset) {
 		this.triggerEvent('pre-init');
-		this.layout = JSON.stringify(photoset.getAttribute('data-layout')).split('');
-		this.layout.splice(0,1);
+
+		this.photosetTags = photoset.getAttribute('data-tags').split(' ');
+
+		this.layout = [];
+		var layoutArray = JSON.stringify(photoset.getAttribute('data-layout')).split('');
+		layoutArray.splice(0,1);
+		for (var rowIndex = 0; rowIndex < layoutArray.length; rowIndex++) {
+			this.layout.push(parseInt(layoutArray[rowIndex]));
+		}
+
 		var photos = photoset.getElementsByClassName('photo');
 		this.photosetImages = Array.prototype.filter.call(photos, function (photo) {
 			return photo.nodeName === 'IMG';
 		});
 		this.photoset = photoset;
-		this.photosetTags = photoset.getAttribute('data-tags').split(' ');
+
 		this.triggerEvent('post-init');
+
 		this.render();
 	},
 
@@ -76,10 +85,12 @@ var albumPhotoset = {
 		this.triggerEvent('pre-render');
 		for (var rowCounter = 0; rowCounter < this.layout.length; rowCounter++) {
 			// numImagesInRow is the current row's image count
-			var numImagesInRow = parseInt(this.layout[rowCounter]),
+			var numImagesInRow = this.layout[rowCounter],
 				row = document.createElement('UL'),
 				rowItem = null,
 				image = null;
+
+			document.getElementById(this.photoset.getAttribute('id')).appendChild(row);
 
 			if (! numImagesInRow) {
 				continue;
@@ -92,14 +103,14 @@ var albumPhotoset = {
 				 rowImageCounter++
 			) { // each row image
 				rowItem = document.createElement('LI');
-				image = rowImagesSlice[rowImageCounter];
-				image.style.width = 100 / numImagesInRow;
-				image.style.height = image.getAttribute('data-height');
-				rowItem.appendChild(image);
 				row.appendChild(rowItem);
-			}
+				image = rowImagesSlice[rowImageCounter];
+				rowItem.appendChild(image);
 
-			document.getElementById(this.photoset.getAttribute('id')).appendChild(row);
+				rowItem.style.width = (100 / numImagesInRow) + '%';
+				image.style.width = '100%';
+				image.addEventListener('load', function () { this.height = this.height; });
+			}
 
 			this.triggerEvent('row-ready', row);
 

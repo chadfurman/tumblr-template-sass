@@ -10,11 +10,14 @@ var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 albumPhotoset.registerEventHandler('pre-render', function (albumPhotosetInstance) {
 	var images = albumPhotosetInstance.photosetImages.slice(),
 		baseImages = Array.prototype.slice.call(images),
+		rowCounter = 0,
 		captionFound = false;
 
 	for (var imageCounter = 1; imageCounter < baseImages.length; imageCounter++ ) {
 		var image = baseImages[imageCounter],
 			caption = '';
+
+		if (imageCounter > albumPhotosetInstance.layout[rowCounter]) rowCounter++;
 
 		caption = image.getAttribute('data-caption');
 		if (caption && caption.match(/#rollover/)) {
@@ -31,6 +34,7 @@ albumPhotoset.registerEventHandler('pre-render', function (albumPhotosetInstance
 			baseImages.splice(imageCounter, 1);
 			image.parentElement.removeChild(image);
 			imageCounter--;
+			albumPhotosetInstance.layout[rowCounter]--;
 		}
 	}
 
@@ -46,9 +50,12 @@ albumPhotoset.registerEventHandler('row-ready', function (albumPhotosetInstance,
 	}
 
 	row = row[0];
-	var baseImages = Array.prototype.slice.call(row.getElementsByTagName('IMG'));
+	var baseImages = Array.prototype.slice.call(row.getElementsByTagName('IMG')),
+		rowCounter = 0;
 
 	for (var imageCounter = 1; imageCounter < baseImages.length; imageCounter += 2 ) {
+		if (imageCounter > albumPhotosetInstance.layout[rowCounter]) rowCounter++;
+
 		var baseImage = baseImages[imageCounter - 1],
 			rolloverImage = baseImages[imageCounter],
 			rolloverImageSrc = rolloverImage.getAttribute('src'),
@@ -60,6 +67,7 @@ albumPhotoset.registerEventHandler('row-ready', function (albumPhotosetInstance,
 		baseImages.splice(imageCounter, 1);
 		rolloverImage.parentElement.removeChild(rolloverImage);
 		imageCounter--;
+		albumPhotosetInstance.layout[rowCounter]--;
 	}
 });
 console.log('rollover registered');

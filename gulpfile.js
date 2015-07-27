@@ -91,7 +91,6 @@ function compileScripts()
         .on('error', watchScripts) // restart watch task on error
         //Pass desired output filename to vinyl-source-stream
         .pipe(source('theme.js'))
-        .pipe(addsrc('./node_modules/material-design-lite/material.min.js'))
         .pipe(concat('./build/theme.js'))
         .pipe(gulp.dest("./"));
 

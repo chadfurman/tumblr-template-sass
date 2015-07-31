@@ -12,7 +12,7 @@
 {block:Text}text{/block:Text}
 {block:Video}video{/block:Video}
 ">
-	<img src="{PortraitUrl-64}" class="bucket medium-bucket">
+	<img class="profile-picture profile-picture-64" src="{PortraitUrl-64}">
 	<div class="mdl-card mdl-shadow--2dp demo-card-wide">
 		{block:PostTitle}
 			<div class="mdl-card__title">

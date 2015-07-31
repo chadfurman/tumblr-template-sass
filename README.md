@@ -1,4 +1,4 @@
-Please backup your existing template before using this [alpha version](https://raw.githubusercontent.com/ShadeLotus/tumblr-template-sass/master/dist/theme.tumblr).
+Please backup your existing template before using this alpha version.
 
 ![Landing Page](https://raw.githubusercontent.com/ShadeLotus/tumblr-template-sass/master/screenshots/landing_page.png)
 ![Index Page Scrolled](https://raw.githubusercontent.com/ShadeLotus/tumblr-template-sass/master/screenshots/index_page_scrolled.png)
@@ -25,10 +25,12 @@ I assume you have installed node & npm (node package manager):
  cd tumblr-template-sass
  npm install
  bower install
- gulp
+ gulp styles
+ gulp scripts
+ gulp html --clipboard
 ```
 
-Gulp will end with a watch task, recompiling the templates and sass files when you edit them.
+Gulp will build the theme and put it on your clipboard to paste into your blog
 
 *note, if the HTML task does not start, please restart the process*
 

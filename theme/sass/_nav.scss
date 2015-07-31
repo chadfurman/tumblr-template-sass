@@ -6,13 +6,19 @@
   position: relative;
 }
 
-.mdl-navigation li {
-  list-style: none;
+.mdl-navigation {
+  li {
+    list-style: none;
+  }
+
+  ul {
+    padding-left: 0;
+    margin: 0;
+  }
 }
 
-.mdl-navigation ul {
-  padding-left: 0;
-  margin: 0;
+.mdl-navigation__link {
+  font-size: $custom-font-size-base;
 }
 
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {

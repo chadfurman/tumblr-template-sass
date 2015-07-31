@@ -45,6 +45,10 @@
 
 @media (max-width: $grid-tablet-breakpoint) {
   .posts {
+    img {
+      height: auto;
+    }
+
     .bucket {
       display: none;
     }

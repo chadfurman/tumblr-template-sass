@@ -29,5 +29,9 @@ p {
   margin-bottom: 0;
   font-size: $custom-font-size-base;
 }
+
+blockquote:before,
+blockquote:after {
+  content: none;
 }
 

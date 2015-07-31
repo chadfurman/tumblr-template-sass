@@ -5,11 +5,17 @@
 .photo-slideshow {
   ul {
     margin: 0;
+    padding: 0;
 
     li {
-      width: 100%;
       display: inline-block;
       list-style-type: none;
     }
+  }
+}
+
+@media (max-width: $grid-tablet-breakpoint) {
+  .photo-slideshow ul li {
+    width: 100% !important;
   }
 }

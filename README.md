@@ -1,5 +1,8 @@
 Please backup your existing template before using this alpha version.
 
+(Landing Page)[https://raw.githubusercontent.com/ShadeLotus/tumblr-template-sass/master/screenshots/landing_page.png]
+(Index Page Scrolled)[https://raw.githubusercontent.com/ShadeLotus/tumblr-template-sass/master/screenshots/index_page_scrolled.png]
+
 #tumblr-template-sass
 
 Tumblr template using SASS, Compass, Gulp, and Bower.

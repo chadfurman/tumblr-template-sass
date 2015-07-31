@@ -21,6 +21,22 @@
   }
 }
 
+.profile-picture {
+  position: relative;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+}
+
+.posts {
+  .profile-picture {
+    margin: 0 1em 1em;
+    position: absolute;
+    width: 5%;
+  }
+}
+
 .header img {
   display: block;
   margin: auto;

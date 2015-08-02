@@ -7,9 +7,9 @@ body {
 }
 
 a, a:active, a:visited {
-    color: $text-link-color;
-    text-decoration: none;
-    font-size: $custom-font-size-base;
+  color: $text-link-color;
+  font-size: $custom-font-size-base;
+  text-decoration: none;
 }
 
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
@@ -17,21 +17,28 @@ a, a:active, a:visited {
 }
 
 a:hover {
-    color: lighten($text-link-color, .25);
+  color: lighten($text-link-color, .25);
 }
 
 small {
-    font-size: inherit;
+  font-size: inherit;
 }
 
 p {
-  margin-top: 1.25rem;
-  margin-bottom: 0;
+  margin-bottom: 1.25rem;
+  margin-top: 0;
   font-size: $custom-font-size-base;
 }
 
-blockquote:before,
-blockquote:after {
-  content: none;
+blockquote {
+  margin-top: 0;
+  text-align: left;
+
+  &:before, &:after {
+    content: none;
+  }
 }
 
+li {
+  text-align: left;
+}

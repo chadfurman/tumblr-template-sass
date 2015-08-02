@@ -71,18 +71,15 @@
 						{/block:Posts}
 						{block:IndexPage}
 						<div class="pagination mdl-shadow--2dp mdl-grid">
+
 							<div class="previous-page mdl-cell mdl-cell--4-col">
-								{block:PreviousPage}
-									<a href="{PreviousPage}">&#171; Newer</a>
-								{/block:PreviousPage}
+								<a href="{block:PreviousPage}{PreviousPage}{/block:PreviousPage}" class="{block:PreviousPage}enabled{/block:PreviousPage}">&#171; Newer</a>
 							</div>
 							<div class="current-page mdl-cell mdl-cell--4-col">
 								Page {CurrentPage} of {TotalPages}
 							</div>
 							<div class="next-page mdl-cell mdl-cell--4-col">
-								{block:NextPage}
-									<a href="{NextPage}">Older &#187;</a>
-								{/block:NextPage}
+								<a href="{block:NextPage}{NextPage}{/block:NextPage}" class="{block:NextPage}enabled{/block:NextPage}">Older &#187;</a>
 							</div>
 						</div>
 						{/block:IndexPage}

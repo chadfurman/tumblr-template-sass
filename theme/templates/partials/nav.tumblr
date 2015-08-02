@@ -20,6 +20,5 @@
 				</li>
 			{/block:Pages}
 		{/block:HasPages}
-
 	</ul>
 </nav>

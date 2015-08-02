@@ -3,11 +3,19 @@
 }
 
 .next-page {
-  text-align: right;
+  text-align: left;
+
+  a {
+    @include enableable();
+  }
 }
 
 .previous-page {
-  text-align: left;
+  text-align: right;
+
+  a {
+    @include enableable();
+  }
 }
 
 .current-page {

@@ -1,0 +1,11 @@
+@mixin enableable() {
+  pointer-events: none;
+  cursor: pointer;
+  color: $disabled-item-text-color;
+
+  &.enabled {
+    color: $text-link-color;
+    cursor: auto;
+    pointer-events: auto;
+  }
+}

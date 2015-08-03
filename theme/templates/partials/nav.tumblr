@@ -20,5 +20,11 @@
 				</li>
 			{/block:Pages}
 		{/block:HasPages}
+		<li>
+			<a href="#" class="mdl-navigation__link search-link" onClick="document.getElementById('search-form').submit()">Search</a>
+			<form action="/search" method="get" id="search-form">
+				<input class="search-box" type="text" id="search-box" name="q" value="{SearchQuery}"/>
+			</form>
+		</li>
 	</ul>
 </nav>

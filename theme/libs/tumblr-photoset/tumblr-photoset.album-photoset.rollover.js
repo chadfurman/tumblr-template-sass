@@ -7,67 +7,71 @@
 
 var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 
-albumPhotoset.registerEventHandler('pre-render', function (albumPhotosetInstance) {
-	var images = albumPhotosetInstance.photosetImages.slice(),
-		baseImages = Array.prototype.slice.call(images),
-		rowCounter = 0,
-		captionFound = false;
+albumPhotoset.registerEventHandler('pre-render', function (photoset) {
+	var baseImages = photoset.photosetImages;
 
-	for (var imageCounter = 1; imageCounter < baseImages.length; imageCounter++ ) {
-		var image = baseImages[imageCounter],
-			caption = '';
-
-		if (imageCounter > albumPhotosetInstance.layout[rowCounter]) rowCounter++;
-
-		caption = image.getAttribute('data-caption');
-		if (caption && caption.match(/#rollover/)) {
-			albumPhotosetInstance.tagRollover = false;
-			captionFound = true;
-
-			var baseImage = baseImages[imageCounter - 1],
-				rolloverImageSrc = image.getAttribute('src'),
-				baseImageSrc = baseImage.getAttribute('src');
-
-			baseImage.addEventListener('mouseover', function () { this.src = rolloverImageSrc; });
-			baseImage.addEventListener('mouseout', function () { this.src = baseImageSrc; });
-
-			baseImages.splice(imageCounter, 1);
-			image.parentElement.removeChild(image);
-			imageCounter--;
-			albumPhotosetInstance.layout[rowCounter]--;
+	photoset.imageIterator(function (imageCounter, rowCounter) {
+		if (imageCounter == photoset.getStartOfRow(rowCounter)) {
+			return; // skip the first image in the row
 		}
-	}
 
-	if (captionFound) {
-		albumPhotosetInstance.photosetImages = baseImages;
-	}
+		var image = baseImages[imageCounter],
+			caption = image.getAttribute('data-caption');
+
+		// check the image for a caption
+		if (caption && caption.match(/rollover/)) {
+			// if a caption matches, disable tag-based rollover
+			photoset.tagRollover = false;
+
+			applyRolloverToImageNumberInPhotoset(imageCounter, photoset);
+			return true;
+		}
+	});
 });
 
-albumPhotoset.registerEventHandler('row-ready', function (albumPhotosetInstance, row) {
-	if (albumPhotosetInstance.tagRollover == false || albumPhotosetInstance.photosetTags.indexOf('#rollover') === -1) {
-		albumPhotosetInstance.tagRollover == false
+albumPhotoset.registerEventHandler('pre-render', function (photoset) {
+	// check for tag, also check to see if tagRollover has been disabled
+	if (photoset.tagRollover == false || photoset.photosetTags.indexOf('#rollover') === -1) {
 		return;
 	}
 
-	row = row[0];
-	var baseImages = Array.prototype.slice.call(row.getElementsByTagName('IMG')),
-		rowCounter = 0;
+	photoset.imageIterator(function (imageCounter, rowCounter) {
+		var startOfRow = photoset.getStartOfRow(rowCounter);
+		var positionInRow = imageCounter - startOfRow;
 
-	for (var imageCounter = 1; imageCounter < baseImages.length; imageCounter += 2 ) {
-		if (imageCounter > albumPhotosetInstance.layout[rowCounter]) rowCounter++;
-
-		var baseImage = baseImages[imageCounter - 1],
-			rolloverImage = baseImages[imageCounter],
-			rolloverImageSrc = rolloverImage.getAttribute('src'),
-			baseImageSrc = baseImage.getAttribute('src');
-
-		baseImage.addEventListener('mouseover', function () { this.src = rolloverImageSrc; });
-		baseImage.addEventListener('mouseout', function () { this.src = baseImageSrc; });
-
-		baseImages.splice(imageCounter, 1);
-		rolloverImage.parentElement.removeChild(rolloverImage);
-		imageCounter--;
-		albumPhotosetInstance.layout[rowCounter]--;
-	}
+		if (positionInRow % 2) {
+			applyRolloverToImageNumberInPhotoset(imageCounter, photoset);
+			return true;
+		}
+	});
 });
-console.log('rollover registered');
+
+function applyRolloverToImageNumberInPhotoset(imageCounter, albumPhotosetInstance) {
+	// extract images
+	var baseImages = albumPhotosetInstance.photosetImages,
+		baseImage = baseImages[imageCounter - 1],
+		baseSrc = baseImage.getAttribute('src'),
+		rolloverImage = baseImages[imageCounter],
+		rolloverSrc = rolloverImage.getAttribute('src');
+
+	var removeBaseHeight = function() {
+		this.removeAttribute('height');
+	};
+
+	var setBaseHeight = function() {
+		this.height = baseHeight;
+	};
+
+	// register rollover
+	baseImage.addEventListener('mouseenter', function () {
+		this.src = rolloverSrc;
+		this.height = baseImage.height;
+		this.removeEventListener('load', removeBaseHeight);
+		this.addEventListener('load', setBaseHeight)
+	});
+	baseImage.addEventListener('mouseleave', function () {
+		this.src = baseSrc;
+		this.addEventListener('load', removeBaseHeight);
+		this.removeEventListener('load', setBaseHeight);
+	});
+}

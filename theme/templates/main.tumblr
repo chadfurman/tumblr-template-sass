@@ -49,6 +49,13 @@
 				<div class="content" id="content">
 
 					<div class="posts">
+						{block:NoSearchResults}
+						<!-- @include partials/post-header.tumblr -->
+							<div class="mdl-card__supporting-text no-search-results">
+								No search results were found.
+							</div>
+						<!-- @include partials/post-footer.tumblr -->
+						{/block:NoSearchResults}
 						{block:Posts}
 							<!-- @include partials/post-header.tumblr -->
 
@@ -70,8 +77,7 @@
 							<!-- @include partials/post-footer.tumblr -->
 						{/block:Posts}
 						{block:IndexPage}
-						<div class="pagination mdl-shadow--2dp mdl-grid">
-
+						<div class="pagination mdl-shadow--2dp mdl-grid {block:NoSearchResults}hidden{/block:NoSearchResults}">
 							<div class="previous-page mdl-cell mdl-cell--4-col">
 								<a href="{block:PreviousPage}{PreviousPage}{/block:PreviousPage}" class="{block:PreviousPage}enabled{/block:PreviousPage}">&#171; Newer</a>
 							</div>

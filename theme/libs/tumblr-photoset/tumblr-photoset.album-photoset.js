@@ -35,9 +35,11 @@ var albumPhotoset = {
 		}
 
 		var photos = photoset.getElementsByClassName('photo');
-		this.photosetImages = Array.prototype.filter.call(photos, function (photo) {
-			return photo.nodeName === 'IMG';
-		});
+		this.photosetImages = Array.prototype.slice.call( // Array.prototype.slice.call converts a NodeList to an Array
+			Array.prototype.filter.call(photos, function (photo) {
+				return photo.nodeName === 'IMG';
+			})
+		);
 		this.photoset = photoset;
 
 		this.triggerEvent('post-init');
@@ -110,7 +112,6 @@ var albumPhotoset = {
 
 				rowItem.style.width = (100 / numImagesInRow) + '%';
 				image.style.width = '100%';
-				image.addEventListener('load', function () { this.height = this.height; });
 			}
 
 			this.triggerEvent('row-ready', row);

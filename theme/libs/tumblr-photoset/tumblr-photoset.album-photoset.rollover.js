@@ -59,13 +59,13 @@ function applyRolloverToImageNumberInPhotoset(imageCounter, albumPhotosetInstanc
 	};
 
 	var setBaseHeight = function() {
-		this.height = baseHeight;
+		this.height = baseImage.height;
 	};
 
 	// register rollover
 	baseImage.addEventListener('mouseenter', function () {
 		this.src = rolloverSrc;
-		this.height = baseImage.height;
+		setBaseHeight();
 		this.removeEventListener('load', removeBaseHeight);
 		this.addEventListener('load', setBaseHeight)
 	});

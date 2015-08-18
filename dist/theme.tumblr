@@ -761,9 +761,7 @@
 					caption = image.getAttribute('data-caption');
 		
 				// check the image for a caption
-				console.log('caption: ' + caption);
 				if (caption && caption.match(/rollover/)) {
-					debugger;
 					// if a caption matches, disable tag-based rollover
 					photoset.tagRollover = false;
 		

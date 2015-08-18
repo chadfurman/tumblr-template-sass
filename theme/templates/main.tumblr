@@ -8,11 +8,12 @@
 	<link rel="shortcut icon" href="{Favicon}">
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" href="{RSS}">
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=750">
+
+	<!-- @include partials/meta-open-graph.tumblr -->
+	<!-- @include partials/meta-customizer.tumblr -->
 
 	{block:HasTags}
 	<meta name="keywords" content="{block:Tags} {/block:Tags}"/>
@@ -21,13 +22,11 @@
 	<style>
 		<!-- @include ../../build/theme.css -->
 	</style>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
 	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js"></script>
 
-	<!-- @include partials/meta-open-graph.tumblr -->
-	<!-- @include partials/meta-customizer.tumblr -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 </head>
 <body>
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer

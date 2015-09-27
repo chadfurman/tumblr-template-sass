@@ -1,6 +1,14 @@
 .post {
   padding: 2em 1em 0.5em;
   position: relative;
+
+  h2.mdl-card__title-text a {
+    font-size: 24pt;
+  }
+
+  p > img {
+    width: 100%;
+  }
 }
 
 @media (max-width: $grid-tablet-breakpoint) {

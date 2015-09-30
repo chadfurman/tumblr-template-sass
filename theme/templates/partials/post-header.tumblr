@@ -20,12 +20,12 @@
 			</div>
 		{/block:Date}
 
-		{block:PostTitle}
+		{block:Title}
 		<div class="mdl-card__title">
 			<h2 class="mdl-card__title-text">
 				<a href="{Permalink}">
-					{PostTitle}
+					{Title}
 				</a>
 			</h2>
 		</div>
-		{/block:PostTitle}
+		{/block:Title}

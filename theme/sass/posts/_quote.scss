@@ -3,15 +3,20 @@
     content: "\"";
 }
 
-.quote .body {
-    font-size: 2em;
-    padding: 0 1em;
-    font-family: serif;
-}
+.quote {
+    .body {
+        font-size: 2em;
+        padding: 0;
+        margin-left: 1em;
+        font-family: serif;
+    }
 
-.quote .source {
-    text-align: right;
-    margin-right: 4em;
-    margin-top: 1em;
+    .source {
+        text-align: right;
+        width: 80%;
+        font-size: 14pt;
+        margin-right: 4em;
+        margin-top: 1em;
+    }
 }
 

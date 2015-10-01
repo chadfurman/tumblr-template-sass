@@ -9,6 +9,18 @@
   p > img {
     width: 100%;
   }
+
+}
+
+.mdl-card__supporting-text {
+  img {
+    width: 80%;
+  }
+  .caption {
+    img {
+      width: auto;
+    }
+  }
 }
 
 @media (max-width: $grid-tablet-breakpoint) {

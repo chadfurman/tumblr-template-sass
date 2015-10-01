@@ -1,6 +1,6 @@
 {block:Answer}
 	<blockquote class="asker">
-		<img src="{AskerPortraitURL-64}" class="avatar"> {Asker} says:
+		<!--<img src="{AskerPortraitURL-64}" class="avatar"> {Asker} says:-->
 		<div class="question">
 			{Question}
 		</div>

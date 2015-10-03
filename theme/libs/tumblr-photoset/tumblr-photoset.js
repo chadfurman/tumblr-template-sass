@@ -6,7 +6,7 @@
 var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 console.log('albumPhotoset loaded');
 //require('tumblrPhotoset.albumPhotoset.highres');
-//require('tumblrPhotoset.albumPhotoset.lightbox');
+require('tumblrPhotoset.albumPhotoset.lightbox');
 require('tumblrPhotoset.albumPhotoset.rollover');
 
 /**

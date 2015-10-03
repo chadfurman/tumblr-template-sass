@@ -57,7 +57,7 @@ function compileHtml()
         .pipe(rename('theme.tumblr'))
         .pipe(gulp.dest('dist/'));
 
-    if (!(argv['noclipboard'])) console.log('Clipboard being prepared... wait for "Finished html"!');
+    if (!(argv['noclipboard'])) console.log('Clipboard being prepared... wait for "Finished \'html\'"!');
     return returnObj;
 }
 

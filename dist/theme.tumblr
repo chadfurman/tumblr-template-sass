@@ -394,16 +394,17 @@
 								{/block:Panorama}
 								{block:Photo}
 									<img class="primary-photo"
-										alt="{PhotoAlt}"
-										id="photo_{PostID}"
-										src="{PhotoURL-500}"
-										data-highres="{PhotoURL-HighRes}"
-										data-highres-width="{PhotoWidth-HighRes}"
-										data-highres-height="{PhotoHeight-HighRes}"
-										data-lowres="{PhotoURL-256}"
-										data-height="{PhotoHeight-500}"
-										data-width="{PhotoWidth-500}"
-										data-tags="{block:Tags} {Tag}{/block:Tags}"
+										 alt="{PhotoAlt}"
+										 id="photo_{PostID}"
+										 src="{PhotoURL-500}"
+										 data-highres="{PhotoURL-HighRes}"
+										 data-highres-width="{PhotoWidth-HighRes}"
+										 data-highres-height="{PhotoHeight-HighRes}"
+										 data-lowres="{PhotoURL-250}"
+										 data-lowres-width="{PhotoWidth-250}"
+										 data-lowres-height="{PhotoHeight-250}"
+										 data-width="{PhotoWidth-500}"
+										 data-height="{PhotoHeight-500}"
 										/>
 									{block:Caption}
 										<div class="caption">{Caption}</div>
@@ -413,37 +414,39 @@
 								{/block:Photo}
 								
 								{block:Photoset}
-									<div class="photo-slideshow tumblr-photoset" id="photoset_{PostID}" data-layout="{PhotosetLayout}" data-tags="{block:Tags} #{Tag}{/block:Tags}">
-										{block:Photos}
-											<div class="photo-wrapper">
-												<img alt="{PhotoAlt}"
-													src="{PhotoURL-500}"
-													data-highres="{PhotoURL-HighRes}"
-													data-highres-width="{PhotoWidth-HighRes}"
-													data-highres-height="{PhotoHeight-HighRes}"
-													data-lowres="{PhotoURL-HighRes}"
-													data-width="{PhotoWidth-500}"
-													data-height="{PhotoHeight-500}"
-													class="photo {block:Exif}exif-yes{/block:Exif}"
-													data-tags="{block:Tags} {Tag}{/block:Tags}"
-													{block:Caption}
-														data-caption="{Caption}"
-													{/block:Caption}
-													{block:Exif}
-														{block:Camera}data-camera="{Camera}"{/block:Camera}
-														{block:ISO}data-iso="{ISO}"{/block:ISO}
-														{block:Aperture}data-aperture="{Aperture}"{/block:Aperture}
-														{block:Exposure}data-exposure="{Exposure}"{/block:Exposure}
-														{block:FocalLength}data-focal="{FocalLength}"{/block:FocalLength}
-													{/block:Exif}
-												>
-											</div>
-										{/block:Photos}
-									</div><!-- close SLIDESHOW -->
-									{block:Caption}
-										<div class="caption">{Caption}</div>
-									{/block:Caption}
-									
+								<div class="photo-slideshow tumblr-photoset" id="photoset_{PostID}" data-layout="{PhotosetLayout}" data-tags="{block:Tags} #{Tag}{/block:Tags}">
+									{block:Photos}
+									<div class="photo-wrapper">
+										<img alt="{PhotoAlt}"
+											src="{PhotoURL-500}"
+											data-highres="{PhotoURL-HighRes}"
+											data-highres-width="{PhotoWidth-HighRes}"
+											data-highres-height="{PhotoHeight-HighRes}"
+											data-lowres="{PhotoURL-250}"
+											data-lowres-width="{PhotoWidth-250}"
+											data-lowres-height="{PhotoHeight-250}"
+											data-width="{PhotoWidth-500}"
+											data-height="{PhotoHeight-500}"
+											class="photo {block:Exif}exif-yes{/block:Exif}"
+											data-tags="{block:Tags} {Tag}{/block:Tags}"
+											{block:Caption}
+												data-caption="{Caption}"
+											{/block:Caption}
+											{block:Exif}
+											{block:Camera}data-camera="{Camera}"{/block:Camera}
+											{block:ISO}data-iso="{ISO}"{/block:ISO}
+											{block:Aperture}data-aperture="{Aperture}"{/block:Aperture}
+											{block:Exposure}data-exposure="{Exposure}"{/block:Exposure}
+											{block:FocalLength}data-focal="{FocalLength}"{/block:FocalLength}
+											{/block:Exif}
+											>
+									</div>
+									{/block:Photos}
+								</div><!-- close SLIDESHOW -->
+								{block:Caption}
+									<div class="caption">{Caption}</div>
+								{/block:Caption}
+								
 								{/block:Photoset}
 								
 								{block:Quote}

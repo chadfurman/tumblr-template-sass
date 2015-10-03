@@ -25,7 +25,8 @@ var albumPhotoset = {
 	init: function (photoset) {
 		this.triggerEvent('pre-init');
 
-		this.photosetTags = photoset.getAttribute('data-tags').split(' ');
+		var tags = photoset.getAttribute('data-tags');
+		this.photosetTags = (tags) ? tags.split(' ') : [];
 
 		this.layout = [];
 		var layoutArray = JSON.stringify(photoset.getAttribute('data-layout')).split('');

@@ -1,11 +1,28 @@
 {block:Answer}
-	<blockquote class="asker">
 		<!--<img src="{AskerPortraitURL-64}" class="avatar"> {Asker} says:-->
-		<div class="question">
+	<div class="answer__block">
+		<img class="answer__avatar" src="{AskerPortraitURL-64}">
+		<div class="answer__person">
+			{Asker} asked:
+		</div>
+		<div class="answer__body">
 			{Question}
 		</div>
-	</blockquote>
-	<div class="answer">
-		{Answer}
+		<div class="clearfix"></div>
+	</div>
+	{block:Answerer}
+		<div class="answer__block">
+			<img class="answer__avatar" src="{AnswererPortraitURL-64}">
+			<div class="answer__person">
+				{Answerer} answered:
+			</div>
+			<div class="answer__body">
+				{Answer}
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	{/block:Answerer}
+	<div class="replies">
+		{Replies}
 	</div>
 {/block:Answer}

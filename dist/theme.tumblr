@@ -393,34 +393,23 @@
 								/home/lotus/code/tumblr-template-sass/theme/templates/partials/post-caption.tumblr not found
 								{/block:Panorama}
 								{block:Photo}
-									<img class="primary-photo" src="{PhotoURL-500}" alt="{PhotoAlt}" id="photo_{PostID}"/>
+									<img class="primary-photo"
+										alt="{PhotoAlt}"
+										id="photo_{PostID}"
+										src="{PhotoURL-500}"
+										data-highres="{PhotoURL-HighRes}"
+										data-highres-width="{PhotoWidth-HighRes}"
+										data-highres-height="{PhotoHeight-HighRes}"
+										data-lowres="{PhotoURL-256}"
+										data-height="{PhotoHeight-500}"
+										data-width="{PhotoWidth-500}"
+										data-tags="{block:Tags} {Tag}{/block:Tags}"
+										/>
 									{block:Caption}
 										<div class="caption">{Caption}</div>
 									{/block:Caption}
 									
-									<!--
-									<script class="inline_embed" type="text/javascript">
-										var domain = document.domain,
-										photo_{PostID} = [{
-											"width": "{PhotoWidth-HighRes}",
-											"height": "{PhotoHeight-HighRes}",
-											"low_res": "{PhotoURL-250}",
-											"high_res": "{PhotoURL-HighRes}"
-										}];
 								
-										function event_is_alt_key(e) {
-											return ((!e && window.event && (window.event.metaKey || window.event.altKey)) || (e && (e.metaKey || e.altKey)));
-										};
-								
-										document.getElementById('photo_{PostID}').onclick = function (e) {
-											if (event_is_alt_key(e)) return true;
-								
-											window.parent.Tumblr.Lightbox.init(photo_{PostID});
-								
-											return false;
-										}
-									</script>
-									-->
 								{/block:Photo}
 								
 								{block:Photoset}
@@ -432,6 +421,7 @@
 													data-highres="{PhotoURL-HighRes}"
 													data-highres-width="{PhotoWidth-HighRes}"
 													data-highres-height="{PhotoHeight-HighRes}"
+													data-lowres="{PhotoURL-HighRes}"
 													data-width="{PhotoWidth-500}"
 													data-height="{PhotoHeight-500}"
 													class="photo {block:Exif}exif-yes{/block:Exif}"
@@ -562,12 +552,9 @@
 	<script>
 		(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 		tumblrPhotoset = require('tumblrPhotoset');
-		console.log('Tumblr Photoset activated');
-		//require('infiniteScroll');
-		//
+		
 		var content = document.getElementById('content');
 		var photosets = content.getElementsByClassName('tumblr-photoset');
-		console.log('photosets', photosets);
 		for (var photosetIndex = 0; photosetIndex < photosets.length; photosetIndex++) {
 			var photoset = photosets[photosetIndex];
 			tumblrPhotoset(photoset);

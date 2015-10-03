@@ -1,8 +1,8 @@
 /**
- * Usage: gulp [--nowatch] [--clipboard]
+ * Usage: gulp [--clipboard]
  */
 // note that HTML is not in the list because both scripts and styles call HTML when they're done
-var defaultTasks = ['scripts', 'styles', 'watch'];
+var defaultTasks = ['html'];
 
 var argv = require('yargs').argv;
 var gulp = require('gulp');
@@ -25,16 +25,11 @@ gulp.task('styles', function () {
     return compileStyles();
 });
 
-gulp.task('html', function () {
+gulp.task('html', ['scripts', 'styles'], function () {
     return compileHtml();
 });
 
-
 gulp.task('watch', watchTask);
-
-if (argv.nowatch) {
-	defaultTasks = defaultTasks.filter(function (value) { return value != 'watch' });
-}
 
 gulp.task('default', defaultTasks);
 
@@ -47,12 +42,15 @@ gulp.task('default', defaultTasks);
  */
 function compileHtml()
 {
-    return gulp.src('theme/templates/main.tumblr')
+    var returnObj = gulp.src('theme/templates/main.tumblr')
         .pipe(preprocess())
         .on('error', watchHtml) // restart watch task on error
         .pipe(gulpif(argv.clipboard, clipboard()))
         .pipe(rename('theme.tumblr'))
         .pipe(gulp.dest('dist/'));
+
+    watchTask();
+    return returnObj;
 }
 
 /**
@@ -91,7 +89,7 @@ function compileScripts()
         .on('error', watchScripts) // restart watch task on error
         //Pass desired output filename to vinyl-source-stream
         .pipe(source('theme.js'))
-        .pipe(concat('./build/theme.js'))
+        //.pipe(concat('./build/theme.js'))
         .pipe(gulp.dest("./"));
 
     return scripts;
@@ -108,10 +106,6 @@ function compileScripts()
  * @returns void
  */
 function watchTask(errorMsg) {
-	if (argv.nowatch) {
-		return;
-	}
-
     watchHtml(errorMsg);
     watchStyles(errorMsg);
     watchScripts(errorMsg);
@@ -125,11 +119,7 @@ function watchTask(errorMsg) {
  * @returns void
  */
 function watchStyles(errorMsg) {
-	if (argv.nowatch) {
-		return;
-	}
-
-    gulp.watch('theme/sass/**/*.scss', ['styles']);
+    //gulp.watch('theme/sass/**/*.scss', ['styles']);
     logError(errorMsg);
 }
 
@@ -141,10 +131,6 @@ function watchStyles(errorMsg) {
  * @returns void
  */
 function watchHtml(errorMsg) {
-	if (argv.nowatch) {
-		return;
-	}
-
     gulp.watch(['build/theme.js', 'build/theme.css', 'theme/templates/**/*.tumblr'], ['html']);
     logError(errorMsg);
 }
@@ -157,11 +143,7 @@ function watchHtml(errorMsg) {
  * @returns void
  */
 function watchScripts(errorMsg) {
-	if (argv.nowatch) {
-		return;
-	}
-
-    gulp.watch(['theme/js/**/*.js', 'theme/libs/**/*.js'], ['scripts']);
+    //gulp.watch(['theme/js/**/*.js', 'theme/libs/**/*.js'], ['scripts']);
     logError(errorMsg);
 }
 

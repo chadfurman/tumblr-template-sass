@@ -5,7 +5,7 @@
  *
  * define these attributes on the IMG tag:
 
- <img class="primary-photo"
+ <img class="photo"
  src="{PhotoURL-HighRes}"
  alt="{PhotoAlt}"
  data-width="{PhotoWidth-HighRes}"

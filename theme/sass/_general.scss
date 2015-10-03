@@ -37,6 +37,11 @@ blockquote {
   &:before, &:after {
     content: none;
   }
+
+  ul, ol {
+    font-size: 1em;
+    font-style: normal;
+  }
 }
 
 li {

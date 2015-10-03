@@ -23,7 +23,7 @@ albumPhotoset.registerEventHandler('post-init', function (albumPhotosetInstance)
 	var photosetImages = albumPhotosetInstance.photosetImages;
 	albumPhotosetInstance.lightboxImageArray[photosetId] = [];
 
-	for (var imageCounter = 1; imageCounter <= photosetImages.length; imageCounter++) {
+	for (var imageCounter = 0; imageCounter < photosetImages.length; imageCounter++) {
 		var image = photosetImages[imageCounter];
 		image.setAttribute('data-position', imageCounter);
 

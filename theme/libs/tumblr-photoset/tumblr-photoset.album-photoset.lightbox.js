@@ -19,8 +19,9 @@ var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 albumPhotoset.lightboxImageArray = {};
 
 albumPhotoset.registerEventHandler('post-init', function (albumPhotosetInstance) {
-	var photosetId = albumPhotosetInstance.photoset.attr('id');
+	var photosetId = albumPhotosetInstance.photoset.id;
 	var photosetImages = albumPhotosetInstance.photosetImages;
+	albumPhotosetInstance.lightboxImageArray[photosetId] = [];
 
 	for (var imageCounter = 1; imageCounter <= photosetImages.length; imageCounter++) {
 		var image = photosetImages[imageCounter];

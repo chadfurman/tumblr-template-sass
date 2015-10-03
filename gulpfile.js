@@ -2,7 +2,7 @@
  * Usage: gulp [--clipboard]
  */
 // note that HTML is not in the list because both scripts and styles call HTML when they're done
-var defaultTasks = ['html'];
+var defaultTasks = ['watch'];
 
 var argv = require('yargs').argv;
 var gulp = require('gulp');
@@ -17,19 +17,27 @@ var clipboard = require('gulp-clipboard');
 var source = require('vinyl-source-buffer');
 var addsrc = require('gulp-add-src');
 
+console.log('=====================================================================');
+console.log('           Tumblr Template Sass - Gulp compilation script            ');
+console.log('=====================================================================');
+console.log('Gulp will compile all assets into ./dist/theme.tumblr');
+console.log('The HTML with embedded CSS/JS will be copied to your clipboard');
+console.log('After making a change, edit your theme and "select all" then "paste"');
+console.log('=====================================================================');
+
 gulp.task('scripts', function () {
-    return compileScripts();
+  compileScripts();
 });
 
 gulp.task('styles', function () {
-    return compileStyles();
+  compileStyles();
 });
 
 gulp.task('html', ['scripts', 'styles'], function () {
-    return compileHtml();
+  compileHtml();
 });
 
-gulp.task('watch', watchTask);
+gulp.task('watch', ['html'], watchTask);
 
 gulp.task('default', defaultTasks);
 
@@ -42,15 +50,12 @@ gulp.task('default', defaultTasks);
  */
 function compileHtml()
 {
-    var returnObj = gulp.src('theme/templates/main.tumblr')
+    return gulp.src('theme/templates/main.tumblr')
         .pipe(preprocess())
-        .on('error', watchHtml) // restart watch task on error
+        .on('error', watchTask) // restart watch task on error
         .pipe(gulpif(argv.clipboard, clipboard()))
         .pipe(rename('theme.tumblr'))
         .pipe(gulp.dest('dist/'));
-
-    watchTask();
-    return returnObj;
 }
 
 /**
@@ -62,17 +67,15 @@ function compileHtml()
  */
 function compileStyles()
 {
-    var styles = gulp.src('theme/sass/*.scss')
+    return gulp.src('theme/sass/*.scss')
         .pipe(compass({
             config_file: 'config.rb',
             css: 'build',
             sass: 'theme/sass',
             import_path: 'node_modules'
         }))
-        .on('error', watchStyles)
+        .on('error', watchTask)
         .pipe(gulp.dest('build/'));
-
-    return styles;
 }
 
 /**
@@ -84,66 +87,26 @@ function compileStyles()
  */
 function compileScripts()
 {
-    var scripts = browserify('./theme/js/main.js')
+    return browserify('./theme/js/main.js')
         .bundle()
-        .on('error', watchScripts) // restart watch task on error
+        .on('error', watchTask) // restart watch task on error
         //Pass desired output filename to vinyl-source-stream
         .pipe(source('theme.js'))
         //.pipe(concat('./build/theme.js'))
         .pipe(gulp.dest("./"));
-
-    return scripts;
 }
 
-
-/** Setup watchers **/
-
 /**
- * Watch Task
+ * Watch
  *
- * Starts all watchers
+ * Re-compile styles, scripts, and HTML if anything changes
  *
  * @returns void
  */
 function watchTask(errorMsg) {
-    watchHtml(errorMsg);
-    watchStyles(errorMsg);
-    watchScripts(errorMsg);
-}
-
-/**
- * Watch Styles
- *
- * Setups up a watcher on the sass files
- *
- * @returns void
- */
-function watchStyles(errorMsg) {
-    //gulp.watch('theme/sass/**/*.scss', ['styles']);
-    logError(errorMsg);
-}
-
-/**
- * Watch HTML
- *
- * Sets up a watcher on the HTML template partials
- *
- * @returns void
- */
-function watchHtml(errorMsg) {
     gulp.watch(['build/theme.js', 'build/theme.css', 'theme/templates/**/*.tumblr'], ['html']);
-    logError(errorMsg);
-}
-
-/**
- * Watch Scripts
- *
- * Sets up a watcher on the javascript libraries etc.
- *
- * @returns void
- */
-function watchScripts(errorMsg) {
-    //gulp.watch(['theme/js/**/*.js', 'theme/libs/**/*.js'], ['scripts']);
+    gulp.watch(['theme/js/*.js', 'theme/js/**/*.js', 'theme/libs/**/*.js'], ['html']);
+    gulp.watch(['theme/sass/*.scss', 'theme/sass/**/*.scss'], ['html']);
     logError(errorMsg);
 }
 

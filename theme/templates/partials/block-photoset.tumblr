@@ -1,29 +1,32 @@
 {block:Photoset}
-	<div class="photo-slideshow tumblr-photoset" id="photoset_{PostID}" data-layout="{PhotosetLayout}" data-tags="{block:Tags} #{Tag}{/block:Tags}">
-		{block:Photos}
-			<div class="photo-wrapper">
-				<img alt="{PhotoAlt}"
-					src="{PhotoURL-500}"
-					data-highres="{PhotoURL-HighRes}"
-					data-highres-width="{PhotoWidth-HighRes}"
-					data-highres-height="{PhotoHeight-HighRes}"
-					data-width="{PhotoWidth-500}"
-					data-height="{PhotoHeight-500}"
-					class="photo {block:Exif}exif-yes{/block:Exif}"
-					data-tags="{block:Tags} {Tag}{/block:Tags}"
-					{block:Caption}
-						data-caption="{Caption}"
-					{/block:Caption}
-					{block:Exif}
-						{block:Camera}data-camera="{Camera}"{/block:Camera}
-						{block:ISO}data-iso="{ISO}"{/block:ISO}
-						{block:Aperture}data-aperture="{Aperture}"{/block:Aperture}
-						{block:Exposure}data-exposure="{Exposure}"{/block:Exposure}
-						{block:FocalLength}data-focal="{FocalLength}"{/block:FocalLength}
-					{/block:Exif}
-				>
-			</div>
-		{/block:Photos}
-	</div><!-- close SLIDESHOW -->
-	<!-- @include block-caption.tumblr -->
+<div class="photo-slideshow tumblr-photoset" id="photoset_{PostID}" data-layout="{PhotosetLayout}" data-tags="{block:Tags} #{Tag}{/block:Tags}">
+	{block:Photos}
+	<div class="photo-wrapper">
+		<img alt="{PhotoAlt}"
+			src="{PhotoURL-500}"
+			data-highres="{PhotoURL-HighRes}"
+			data-highres-width="{PhotoWidth-HighRes}"
+			data-highres-height="{PhotoHeight-HighRes}"
+			data-lowres="{PhotoURL-250}"
+			data-lowres-width="{PhotoWidth-250}"
+			data-lowres-height="{PhotoHeight-250}"
+			data-width="{PhotoWidth-500}"
+			data-height="{PhotoHeight-500}"
+			class="photo {block:Exif}exif-yes{/block:Exif}"
+			data-tags="{block:Tags} {Tag}{/block:Tags}"
+			{block:Caption}
+				data-caption="{Caption}"
+			{/block:Caption}
+			{block:Exif}
+			{block:Camera}data-camera="{Camera}"{/block:Camera}
+			{block:ISO}data-iso="{ISO}"{/block:ISO}
+			{block:Aperture}data-aperture="{Aperture}"{/block:Aperture}
+			{block:Exposure}data-exposure="{Exposure}"{/block:Exposure}
+			{block:FocalLength}data-focal="{FocalLength}"{/block:FocalLength}
+			{/block:Exif}
+			>
+	</div>
+	{/block:Photos}
+</div><!-- close SLIDESHOW -->
+<!-- @include block-caption.tumblr -->
 {/block:Photoset}

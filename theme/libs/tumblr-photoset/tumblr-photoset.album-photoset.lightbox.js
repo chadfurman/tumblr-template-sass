@@ -30,7 +30,7 @@ albumPhotoset.registerEventHandler('post-init', function (albumPhotosetInstance)
 		// extract properties for tumblr lightbox
 		var imageWidth = image.getAttribute('data-width');
 		var imageHeight = image.getAttribute('data-height');
-		var imageLowRes = image.getAttribute('data-src');
+		var imageLowRes = image.getAttribute('data-lowres');
 		var imageHighRes = image.getAttribute('data-highres');
 
 		// add image properties to lightbox array
@@ -42,7 +42,8 @@ albumPhotoset.registerEventHandler('post-init', function (albumPhotosetInstance)
 		});
 
 		image.addEventListener('click', function () {
-			Tumblr.Lightbox.init(albumPhotosetInstance.lightboxImageArray[photosetId], image.getAttribute('data-position'));
+			var imageArray = albumPhotosetInstance.lightboxImageArray[photosetId];
+			Tumblr.Lightbox.init(imageArray, imageArray.length);
 		});
 	}
 });

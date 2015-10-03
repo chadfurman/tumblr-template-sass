@@ -2,6 +2,17 @@
  * Tumblr Album Photoset Lightbox (jQuery)
  *
  * Inspired by: https://github.com/PixelUnion/Extended-Tumblr-Photoset
+ *
+ * define these attributes on the IMG tag:
+
+ <img class="primary-photo"
+ src="{PhotoURL-HighRes}"
+ alt="{PhotoAlt}"
+ data-width="{PhotoWidth-HighRes}"
+ data-height="{PhotoHeight-HighRes}"
+ data-lowres="{PhotoURL-256}"
+ data-highres="{PhotoURL-HighRes}"
+ />
  */
 
 var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
@@ -34,3 +45,4 @@ albumPhotoset.registerEventHandler('post-init', function (albumPhotosetInstance)
 		});
 	}
 });
+console.log('Tumblr Photoset Lightbox registered');

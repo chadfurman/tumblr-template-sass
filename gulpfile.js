@@ -1,11 +1,12 @@
 /**
- * Usage: gulp [--clipboard]
+ * Usage: gulp [--noclipboard]
  */
 // note that HTML is not in the list because both scripts and styles call HTML when they're done
 var defaultTasks = ['watch'];
 
 var argv = require('yargs').argv;
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var gulpif = require('gulp-if');
 var rename = require('gulp-rename');
 var browserify = require('browserify');
@@ -15,29 +16,28 @@ var concat = require('gulp-concat');
 var watch = require('gulp-watch');
 var clipboard = require('gulp-clipboard');
 var source = require('vinyl-source-buffer');
-var addsrc = require('gulp-add-src');
 
 console.log('=====================================================================');
 console.log('           Tumblr Template Sass - Gulp compilation script            ');
 console.log('=====================================================================');
 console.log('Gulp will compile all assets into ./dist/theme.tumblr');
-console.log('The HTML with embedded CSS/JS will be copied to your clipboard');
+console.log('The HTML with embedded CSS/JS will be copied to your clipboard (or use --noclipboard)');
 console.log('After making a change, edit your theme and "select all" then "paste"');
 console.log('=====================================================================');
 
 gulp.task('scripts', function () {
-  compileScripts();
+  return compileScripts();
 });
 
 gulp.task('styles', function () {
-  compileStyles();
+  return compileStyles();
 });
 
 gulp.task('html', ['scripts', 'styles'], function () {
-  compileHtml();
+  return compileHtml();
 });
 
-gulp.task('watch', ['html'], watchTask);
+gulp.task('watch', ['html', 'scripts', 'styles'], watchTask);
 
 gulp.task('default', defaultTasks);
 
@@ -50,12 +50,15 @@ gulp.task('default', defaultTasks);
  */
 function compileHtml()
 {
-    return gulp.src('theme/templates/main.tumblr')
+    var returnObj = gulp.src('theme/templates/main.tumblr')
         .pipe(preprocess())
-        .on('error', watchTask) // restart watch task on error
-        .pipe(gulpif(argv.clipboard, clipboard()))
+        .on('error', watchTask ) // restart watch task on error
+        .pipe(gulpif(!(argv['noclipboard']), clipboard()))
         .pipe(rename('theme.tumblr'))
         .pipe(gulp.dest('dist/'));
+
+    if (!(argv['noclipboard'])) console.log('Clipboard being prepared... wait for "Finished html"!');
+    return returnObj;
 }
 
 /**
@@ -69,7 +72,7 @@ function compileStyles()
 {
     return gulp.src('theme/sass/*.scss')
         .pipe(compass({
-            config_file: 'config.rb',
+            config_file: './config.rb',
             css: 'build',
             sass: 'theme/sass',
             import_path: 'node_modules'
@@ -92,7 +95,7 @@ function compileScripts()
         .on('error', watchTask) // restart watch task on error
         //Pass desired output filename to vinyl-source-stream
         .pipe(source('theme.js'))
-        //.pipe(concat('./build/theme.js'))
+        .pipe(concat('./build/theme.js'))
         .pipe(gulp.dest("./"));
 }
 
@@ -103,22 +106,31 @@ function compileScripts()
  *
  * @returns void
  */
-function watchTask(errorMsg) {
-    gulp.watch(['build/theme.js', 'build/theme.css', 'theme/templates/**/*.tumblr'], ['html']);
-    gulp.watch(['theme/js/*.js', 'theme/js/**/*.js', 'theme/libs/**/*.js'], ['html']);
-    gulp.watch(['theme/sass/*.scss', 'theme/sass/**/*.scss'], ['html']);
-    logError(errorMsg);
+function watchTask(error) {
+    handleError(error);
+    watchHtml();
+    watchScripts();
+    watchStyles();
 }
 
-/**
- * Log Error
- *
- * Simple console.log wrapper to avoid logging undefined messages
- *
- * @param string errorMsg the message to log
- */
-function logError(errorMsg) {
-    if (errorMsg) {
-        console.log(errorMsg);
-    }
+function watchHtml(error) {
+    handleError(error);
+    gulp.watch(['theme/templates/**/*.tumblr'], ['html']);
+}
+
+function watchScripts(error) {
+    handleError(error);
+    gulp.watch(['theme/js/*.js', 'theme/js/**/*.js', 'theme/libs/**/*.js'], ['html']);
+}
+
+function watchStyles(error) {
+    handleError(error);
+    gulp.watch(['theme/sass/*.scss', 'theme/sass/**/*.scss'], ['html']);
+}
+
+function handleError(error) {
+    var message = error;
+    if (typeof error === 'function' ) return;
+    if (typeof error === 'object' && error.hasOwnProperty('message')) message = error.message;
+    if (message !== undefined) console.log('Error: ' + message);
 }

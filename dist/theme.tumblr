@@ -563,7 +563,7 @@
 			tumblrPhotoset(photoset);
 		}
 		
-		},{"tumblrPhotoset":4}],2:[function(require,module,exports){
+		},{"tumblrPhotoset":5}],2:[function(require,module,exports){
 		/**
 		 * Album Photoset
 		 * Object responsible for building and outputting a photo album.
@@ -749,6 +749,61 @@
 		
 		},{}],3:[function(require,module,exports){
 		/**
+		 * Tumblr Album Photoset Lightbox (jQuery)
+		 *
+		 * Inspired by: https://github.com/PixelUnion/Extended-Tumblr-Photoset
+		 *
+		 * define these attributes on the IMG tag:
+		
+		 <img class="primary-photo"
+		 src="{PhotoURL-HighRes}"
+		 alt="{PhotoAlt}"
+		 data-width="{PhotoWidth-HighRes}"
+		 data-height="{PhotoHeight-HighRes}"
+		 data-lowres="{PhotoURL-256}"
+		 data-highres="{PhotoURL-HighRes}"
+		 />
+		 */
+		
+		var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
+		albumPhotoset.lightboxImageArray = {};
+		
+		albumPhotoset.registerEventHandler('post-init', function (albumPhotosetInstance) {
+			var photosetId = albumPhotosetInstance.photoset.id;
+			var photosetImages = albumPhotosetInstance.photosetImages;
+			albumPhotosetInstance.lightboxImageArray[photosetId] = [];
+		
+			for (var imageCounter = 0; imageCounter < photosetImages.length; imageCounter++) {
+				console.log('attaching lightbox to photoset ' + photosetId + ' image ' + imageCounter);
+				var image = photosetImages[imageCounter];
+				image.setAttribute('data-position', imageCounter);
+		
+				// extract properties for tumblr lightbox
+				var imageWidth = image.getAttribute('data-width');
+				var imageHeight = image.getAttribute('data-height');
+				var imageLowRes = image.getAttribute('data-lowres');
+				var imageHighRes = image.getAttribute('data-highres');
+		
+				// add image properties to lightbox array
+				albumPhotosetInstance.lightboxImageArray[photosetId].push({
+					width: imageWidth,
+					height: imageHeight,
+					low_res: imageLowRes,
+					high_res: imageHighRes
+				});
+		
+		
+				console.log('binding click event to image: ', image);
+				image.addEventListener('click', function () {
+					var imageArray = albumPhotosetInstance.lightboxImageArray[photosetId];
+					Tumblr.Lightbox.init(imageArray, imageArray.length);
+				});
+			}
+		});
+		console.log('Tumblr Photoset Lightbox registered');
+		
+		},{"tumblrPhotoset.albumPhotoset":2}],4:[function(require,module,exports){
+		/**
 		 *
 		 * Tumblr Album Photoset Lightbox
 		 *
@@ -826,7 +881,7 @@
 			});
 		}
 		
-		},{"tumblrPhotoset.albumPhotoset":2}],4:[function(require,module,exports){
+		},{"tumblrPhotoset.albumPhotoset":2}],5:[function(require,module,exports){
 		/**
 		 * Tumblr Photoset
 		 *
@@ -835,7 +890,7 @@
 		var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 		console.log('albumPhotoset loaded');
 		//require('tumblrPhotoset.albumPhotoset.highres');
-		//require('tumblrPhotoset.albumPhotoset.lightbox');
+		require('tumblrPhotoset.albumPhotoset.lightbox');
 		require('tumblrPhotoset.albumPhotoset.rollover');
 		
 		/**
@@ -847,7 +902,7 @@
 			albumPhotoset.init(photoset);
 		};
 		
-		},{"tumblrPhotoset.albumPhotoset":2,"tumblrPhotoset.albumPhotoset.rollover":3}]},{},[1]);
+		},{"tumblrPhotoset.albumPhotoset":2,"tumblrPhotoset.albumPhotoset.lightbox":3,"tumblrPhotoset.albumPhotoset.rollover":4}]},{},[1]);
 		
 	</script>
 

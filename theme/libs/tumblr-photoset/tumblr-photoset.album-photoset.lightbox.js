@@ -17,6 +17,7 @@
 
 var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
 albumPhotoset.lightboxImageArray = {};
+console.log('Tumblr Photoset Lightbox');
 
 albumPhotoset.registerEventHandler('post-init', function (albumPhotosetInstance) {
 	var photosetId = albumPhotosetInstance.photoset.id;
@@ -29,8 +30,8 @@ albumPhotoset.registerEventHandler('post-init', function (albumPhotosetInstance)
 		image.setAttribute('data-position', imageCounter);
 
 		// extract properties for tumblr lightbox
-		var imageWidth = image.getAttribute('data-width');
-		var imageHeight = image.getAttribute('data-height');
+		var imageWidth = image.getAttribute('data-highres-width');
+		var imageHeight = image.getAttribute('data-highres-height');
 		var imageLowRes = image.getAttribute('data-lowres');
 		var imageHighRes = image.getAttribute('data-highres');
 
@@ -50,4 +51,3 @@ albumPhotoset.registerEventHandler('post-init', function (albumPhotosetInstance)
 		});
 	}
 });
-console.log('Tumblr Photoset Lightbox registered');

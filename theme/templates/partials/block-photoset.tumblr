@@ -3,15 +3,15 @@
 	{block:Photos}
 	<div class="photo-wrapper">
 		<img alt="{PhotoAlt}"
-			src="{PhotoURL-500}"
+			src="{PhotoURL-HighRes}"
 			data-highres="{PhotoURL-HighRes}"
 			data-highres-width="{PhotoWidth-HighRes}"
 			data-highres-height="{PhotoHeight-HighRes}"
 			data-lowres="{PhotoURL-250}"
 			data-lowres-width="{PhotoWidth-250}"
 			data-lowres-height="{PhotoHeight-250}"
-			data-width="{PhotoWidth-500}"
-			data-height="{PhotoHeight-500}"
+			data-width="{PhotoWidth-HighRes}"
+			data-height="{PhotoHeight-HighRes}"
 			class="photo {block:Exif}exif-yes{/block:Exif}"
 			data-tags="{block:Tags} {Tag}{/block:Tags}"
 			{block:Caption}

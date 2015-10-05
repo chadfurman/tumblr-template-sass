@@ -29,7 +29,7 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 </head>
 <body>
-	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+	<div class="mdl-layout mdl-layout--fixed-drawer
 		 mdl-layout--overlay-drawer-button">
 		<div class="mdl-layout__drawer">
 			<a href="{BlogURL}" title="{Title}"><img src="{PortraitURL-128}" class="profile-picture profile-picture-128" alt="{Title}"></a>

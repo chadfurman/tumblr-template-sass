@@ -1,5 +1,5 @@
 .tagcloud {
-  margin: auto;
+  margin: 100px auto;
 }
 
 .description {
@@ -12,6 +12,11 @@
   p:first-child {
     margin-top: 0;
   }
+}
+
+.mdl-layout__drawer {
+  position: fixed;
+  overflow: hidden;
 }
 
 .mdl-layout {

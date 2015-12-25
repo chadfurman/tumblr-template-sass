@@ -4,7 +4,6 @@
  * Inspired by: https://github.com/PixelUnion/Extended-Tumblr-Photoset
  */
 var albumPhotoset = require('tumblrPhotoset.albumPhotoset');
-console.log('albumPhotoset loaded');
 //require('tumblrPhotoset.albumPhotoset.highres');
 require('tumblrPhotoset.albumPhotoset.lightbox');
 require('tumblrPhotoset.albumPhotoset.rollover');

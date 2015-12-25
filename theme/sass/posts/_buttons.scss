@@ -1,9 +1,9 @@
-.like_button {
-  margin-top: 4px
+.like_button iframe {
+  display: inline-block;
 }
 
 .reblog_button {
-  margin-left: 8px;
+  display: inline-block !important; /* We need important here becuase tumblr puts styles on the element? wtf. */
 }
 
 .mdl-js-button {

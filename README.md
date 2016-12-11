@@ -20,6 +20,7 @@ I assume you have installed node & npm (node package manager):
  npm install -g bower  # bower required
  gem install compass   # compass required
 ```
+*Note* When installing compass, be sure it's on your global path.  I had to symlink mine.
 
 ### Clone, setup, and gulp
 ```bash

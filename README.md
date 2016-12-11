@@ -11,12 +11,14 @@ Tumblr template using SASS, Compass, Gulp, and Bower.
 ### Global Assets
 I assume you have installed node & npm (node package manager):
 
++ https://www.ruby-lang.org/
 + http://nodejs.org/
 + https://www.npmjs.com/
 
 ### Necessary packages
 ```bash
  npm install -g bower  # bower required
+ gem install compass   # compass required
 ```
 
 ### Clone, setup, and gulp

@@ -1,5 +1,15 @@
 body {
   background-image: url('http://static.tumblr.com/3be5f01d65a1abac955e2a4058e3fbca/rh4dbbq/nfsnrbqal/tumblr_static_alqbg7sgt48oo0sokowgc0k4w.jpg');
+
+  .mdl-card__supporting-text {
+    img {
+      max-width:80%;
+      width:auto;
+    }
+  }
+  blockquote {
+    font-style: normal;
+  }
 }
 
 .clearfix {
@@ -31,7 +41,7 @@ p {
 }
 
 blockquote {
-  margin-top: 0;
+  margin: 0 100px 0;
   text-align: left;
 
   &:before, &:after {

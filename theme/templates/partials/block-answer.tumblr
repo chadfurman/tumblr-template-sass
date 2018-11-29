@@ -3,7 +3,7 @@
 	<div class="answer__block">
 		<img class="answer__avatar" src="{AskerPortraitURL-64}">
 		<div class="answer__person">
-			{Asker} asked:
+			{Asker} wrote:
 		</div>
 		<div class="answer__body">
 			{Question}
